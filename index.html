@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AOHARU人事｜RPO・採用代行 | 代表直轄で"組織を創る採用"を、まるごと支援</title>
+<meta name="description" content="専属人事が、いなくていい。採用戦略設計からスカウト・エージェント対応、選考・クロージング・内定者フォローまで、代表・鈴木が全案件を直接PM。スタートアップ〜150名規模の採用を、外部人事部としてまるごと支援します。継続率85.7%。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AOHARU人事｜RPO・採用代行">
+<meta property="og:description" content="専属人事が、いなくていい。代表直轄で"組織を創る採用"をまるごと支援するRPO/採用代行サービス。継続率85.7%。">
+<meta property="og:image" content="https://inc-worcry.github.io/aoharu-jinji-lp/og.png">
+<meta property="og:url" content="https://inc-worcry.github.io/aoharu-jinji-lp/">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans JP",sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.85;font-size:16.5px;}
+:root{
+  --bg:#F5F6F8;--bg2:#EBEDF0;--white:#fff;
+  --line:#E3E6EA;--ink:#22262E;--muted:#6C7280;
+  --graphite:#363B45;--graphite-d:#282C34;--slate:#4B525F;
+  --blue:#29ABE2;--blue-d:#1f8fc4;--blue-soft:rgba(41,171,226,.4);
+  --orange:#F7941D;--orange-d:#e07d05;--orange-soft:rgba(247,148,29,.4);
+}
+a{text-decoration:none;color:inherit}
+img{display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 2.5rem}
+
+/* HEADER */
+header{position:fixed;inset:0 0 auto;z-index:300;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);}
+.hd-logo img{height:24px}
+.hd-r{display:flex;gap:10px;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 22px;border-radius:6px;font-family:inherit;font-size:13.5px;font-weight:700;cursor:pointer;border:none;transition:all .18s;letter-spacing:.02em;}
+.btn-main{background:var(--graphite);color:#fff}
+.btn-main:hover{background:var(--graphite-d);transform:translateY(-1px);box-shadow:0 4px 16px rgba(54,59,69,.28)}
+.btn-out{background:transparent;color:var(--slate);border:1.5px solid #D6DAE0}
+.btn-out:hover{border-color:var(--graphite);background:var(--graphite);color:#fff}
+
+/* HERO */
+.hero{min-height:100vh;padding-top:60px;background:var(--white);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;overflow:hidden;position:relative;}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(var(--line) 1px,transparent 1px);background-size:28px 28px;opacity:.5;pointer-events:none;}
+.hero-glow{position:absolute;width:540px;height:540px;background:radial-gradient(circle,rgba(41,171,226,.12) 0%,transparent 62%);border-radius:50%;top:44%;left:52%;transform:translate(-30%,-50%);pointer-events:none;}
+.hero-glow.o{background:radial-gradient(circle,rgba(247,148,29,.11) 0%,transparent 62%);top:70%;left:16%;width:380px;height:380px}
+.hero-body{position:relative;z-index:2;display:grid;grid-template-columns:1fr 392px;gap:0;align-items:center;max-width:1040px;width:100%;padding:16px 2.5rem 40px;min-height:calc(100vh - 60px);}
+.hero-service-tag{display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:700;letter-spacing:.16em;color:var(--muted);text-transform:uppercase;margin-bottom:18px;}
+.hero-service-tag::before{content:'';width:20px;height:1.5px;background:var(--orange);}
+.hero-badge{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;font-weight:700;letter-spacing:.06em;color:#fff;background:var(--graphite);padding:7px 18px;border-radius:999px;margin-bottom:20px;box-shadow:0 4px 14px rgba(54,59,69,.22)}
+.hero-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--orange)}
+.hero h1{font-size:clamp(2.9rem,6vw,4.6rem);font-weight:900;color:var(--graphite);line-height:1.14;letter-spacing:-0.05em;margin-bottom:26px;}
+.hero h1 em{font-style:normal;color:var(--blue);}
+.hero-quote{border-left:3px solid var(--orange);padding:2px 0 2px 20px;margin-bottom:30px;}
+.hero-quote-main{display:block;font-size:19px;font-weight:900;color:var(--graphite);line-height:1.55;margin-bottom:9px;}
+.hero-quote-sub{display:block;font-size:14.5px;color:var(--muted);line-height:1.85;font-weight:500;}
+.hero-stats{display:flex;align-items:center;gap:0;background:#fff;border:1.5px solid var(--line);border-left:4px solid var(--graphite);border-radius:10px;padding:14px 8px;width:fit-content;box-shadow:0 2px 14px rgba(54,59,69,.07);}
+.hero-stat{display:flex;flex-direction:column;padding:0 18px}
+.hero-num{font-size:clamp(1.5rem,3vw,2rem);font-weight:900;color:var(--graphite);letter-spacing:-0.04em;line-height:1;}
+.hero-num small{font-size:.5em;font-weight:700}
+.hero-num.hi{color:var(--orange)}
+.hero-lbl{font-size:11px;color:var(--muted);margin-top:5px;line-height:1.4}
+.hero-div{width:1px;height:38px;background:var(--line);}
+
+/* HERO CARD (無料相談) */
+.hero-form-card{background:var(--white);border:1px solid var(--line);border-radius:16px;box-shadow:0 8px 48px rgba(54,59,69,.12);overflow:hidden;align-self:center;}
+.hfc-head{background:var(--graphite);padding:22px 26px;}
+.hfc-ttl{font-size:18px;font-weight:900;color:#fff;line-height:1.4}
+.hfc-ttl em{font-style:normal;color:var(--orange)}
+.hfc-sub{font-size:12.5px;color:rgba(255,255,255,.72);margin-top:6px;line-height:1.6}
+.hfc-body{padding:24px 26px 26px}
+.hfc-li{display:flex;gap:11px;align-items:flex-start;margin-bottom:13px;font-size:13.5px;color:var(--slate);font-weight:600;line-height:1.55}
+.hfc-li i{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:rgba(41,171,226,.12);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;font-style:normal;margin-top:1px}
+.hfc-cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:15px;background:var(--blue);border:none;border-radius:8px;color:#fff;font-family:inherit;font-size:15.5px;font-weight:800;cursor:pointer;transition:all .18s;margin-top:8px;letter-spacing:.02em;}
+.hfc-cta:hover{background:var(--blue-d);transform:translateY(-1px);box-shadow:0 6px 20px rgba(41,171,226,.34)}
+.hfc-note{font-size:12px;color:var(--muted);text-align:center;margin-top:11px}
+
+/* SECTION BASE */
+.sec{padding:88px 0}
+.sec.bg2{background:var(--bg2)}
+.sec.bgw{background:var(--white)}
+.stag{display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--slate);margin-bottom:14px;}
+.stag::before{content:'';width:22px;height:2px;background:var(--blue)}
+.stag.o::before{background:var(--orange)}
+.sh{font-size:clamp(1.9rem,4.2vw,2.9rem);font-weight:900;color:var(--graphite);line-height:1.24;letter-spacing:-0.04em;margin-bottom:16px;}
+.sl{font-size:16px;color:var(--muted);line-height:1.95;margin-bottom:52px;max-width:600px;}
+.sec-head{text-align:center;max-width:680px;margin:0 auto 54px}
+.sec-head .stag{justify-content:center}
+.sec-head .sl{margin:0 auto}
+
+/* PROBLEM */
+.prob-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.prob-card{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:30px 26px;border-top:4px solid var(--graphite);box-shadow:0 3px 16px rgba(54,59,69,.05);transition:box-shadow .2s,transform .2s;}
+.prob-card:hover{box-shadow:0 12px 38px rgba(54,59,69,.1);transform:translateY(-3px)}
+.prob-num{font-size:12px;font-weight:900;letter-spacing:.14em;color:var(--blue);margin-bottom:12px}
+.prob-card:nth-child(2n) .prob-num{color:var(--orange)}
+.prob-card h3{font-size:18px;font-weight:900;color:var(--graphite);line-height:1.4;margin-bottom:11px}
+.prob-card p{font-size:14px;color:var(--muted);line-height:1.85;font-weight:500}
+
+/* SOLVE BRIDGE */
+.solve{background:var(--graphite);border-radius:20px;padding:48px 44px;text-align:center;position:relative;overflow:hidden;color:#fff;margin-top:44px}
+.solve::before{content:'';position:absolute;width:340px;height:340px;background:radial-gradient(circle,rgba(41,171,226,.28),transparent 64%);top:-130px;left:-60px;border-radius:50%}
+.solve::after{content:'';position:absolute;width:300px;height:300px;background:radial-gradient(circle,rgba(247,148,29,.22),transparent 64%);bottom:-120px;right:-40px;border-radius:50%}
+.solve h3{position:relative;font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:900;line-height:1.4;letter-spacing:-.02em;margin-bottom:14px}
+.solve p{position:relative;font-size:15px;color:rgba(255,255,255,.82);line-height:1.9;font-weight:500;max-width:640px;margin:0 auto 26px}
+.solve .btn-lg{position:relative;background:var(--blue);color:#fff;font-size:15.5px;font-weight:800;padding:15px 36px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;transition:all .18s}
+.solve .btn-lg:hover{background:var(--blue-d);transform:translateY(-1px);box-shadow:0 8px 24px rgba(41,171,226,.4)}
+
+/* ABOUT */
+.about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.about-lead{font-size:26px;font-weight:900;color:var(--graphite);line-height:1.5;letter-spacing:-.02em;margin-bottom:22px}
+.about-lead em{font-style:normal;color:var(--blue)}
+.about-body{font-size:15px;color:var(--slate);line-height:2.05;font-weight:500;margin-bottom:16px}
+.about-tag{display:inline-block;font-size:17px;font-weight:900;color:var(--orange);letter-spacing:.02em;border-bottom:2.5px solid var(--orange-soft);padding-bottom:3px}
+.about-photos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.about-photos img{width:100%;height:100%;border-radius:14px;object-fit:cover;box-shadow:0 6px 24px rgba(54,59,69,.1)}
+.about-photos .tall{grid-row:span 2;height:100%}
+
+/* FRAMEWORK */
+.fw-formula{display:flex;align-items:stretch;justify-content:center;gap:14px;flex-wrap:wrap;margin:6px 0 50px}
+.fw-node{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:22px 26px;text-align:center;min-width:150px;box-shadow:0 3px 16px rgba(54,59,69,.05)}
+.fw-node .k{font-size:11px;font-weight:900;letter-spacing:.1em;color:var(--muted);margin-bottom:8px}
+.fw-node .v{font-size:22px;font-weight:900;color:var(--graphite);letter-spacing:-.02em}
+.fw-node.n1{border-top:4px solid var(--blue)}
+.fw-node.n2{border-top:4px solid var(--orange)}
+.fw-node.n3{border-top:4px solid var(--slate)}
+.fw-node.res{background:var(--graphite);border:none;position:relative;overflow:hidden}
+.fw-node.res::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 70% 20%,rgba(247,148,29,.3),transparent 60%)}
+.fw-node.res .k{color:rgba(255,255,255,.6);position:relative}
+.fw-node.res .v{color:#fff;position:relative}
+.fw-op{display:flex;align-items:center;font-size:26px;font-weight:900;color:var(--orange)}
+.fw-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.fw-card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:34px 30px;box-shadow:0 4px 20px rgba(54,59,69,.05);transition:box-shadow .22s,transform .22s}
+.fw-card:hover{box-shadow:0 14px 44px rgba(54,59,69,.12);transform:translateY(-4px)}
+.fw-card .num{font-size:12px;font-weight:900;letter-spacing:.08em;color:var(--slate);margin-bottom:14px}
+.fw-card .qty{font-size:22px;font-weight:900;color:var(--graphite);margin-bottom:12px;letter-spacing:-.02em}
+.fw-card .qty b{color:var(--blue)}
+.fw-card:nth-child(2) .qty b{color:var(--orange)}
+.fw-card p{font-size:14px;color:var(--muted);line-height:1.85;font-weight:500;margin-bottom:18px}
+.fw-chips{display:flex;flex-wrap:wrap;gap:7px}
+.fw-chips span{font-size:11.5px;font-weight:700;color:var(--slate);background:var(--bg2);border:1px solid var(--line);padding:5px 11px;border-radius:6px}
+
+/* FEATURES (list) */
+.svc-list{display:flex;flex-direction:column}
+.svc-row{display:flex;gap:22px;padding:26px 0;border-bottom:1px solid var(--line);align-items:flex-start;}
+.svc-row:first-child{border-top:1px solid var(--line)}
+.svc-n{flex-shrink:0;min-width:66px;font-size:42px;font-weight:900;line-height:1;letter-spacing:-.03em;color:transparent;-webkit-text-stroke:1.8px var(--blue);padding-top:2px;font-feature-settings:"tnum"}
+.svc-row:nth-child(2n) .svc-n{-webkit-text-stroke-color:var(--orange)}
+.svc-row:hover .svc-n{-webkit-text-stroke-color:var(--graphite);transition:all .2s}
+.svc-row h3{font-size:19px;font-weight:900;color:var(--graphite);margin-bottom:9px;letter-spacing:-.01em}
+.svc-row p{font-size:14.5px;color:var(--muted);line-height:1.9;font-weight:500}
+.point-card{margin-top:38px;display:flex;gap:22px;align-items:center;background:var(--white);border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:14px;padding:28px 32px;box-shadow:0 4px 20px rgba(54,59,69,.06)}
+.point-card .pc-tag{flex-shrink:0;font-size:11px;font-weight:900;letter-spacing:.14em;color:#fff;background:var(--orange);padding:6px 14px;border-radius:999px}
+.point-card h4{font-size:18px;font-weight:900;color:var(--graphite);margin-bottom:7px}
+.point-card p{font-size:14px;color:var(--muted);line-height:1.8;font-weight:500}
+
+/* AI */
+.ai-wrap{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
+.ai-lead{font-size:15px;color:var(--slate);line-height:2.05;font-weight:500;margin-bottom:20px}
+.ai-quote{font-size:19px;font-weight:900;color:var(--graphite);line-height:1.6;letter-spacing:-.01em;border-left:3px solid var(--blue);padding-left:20px}
+.ai-quote em{font-style:normal;color:var(--blue)}
+.ai-list{display:flex;flex-direction:column;gap:12px}
+.ai-item{display:flex;gap:16px;align-items:flex-start;background:var(--white);border:1px solid var(--line);border-radius:12px;padding:20px 24px;box-shadow:0 2px 12px rgba(54,59,69,.05)}
+.ai-item .ic{flex-shrink:0;width:30px;height:30px;border-radius:8px;background:rgba(41,171,226,.1);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:900}
+.ai-item:nth-child(2n) .ic{background:rgba(247,148,29,.12);color:var(--orange)}
+.ai-item h4{font-size:15.5px;font-weight:900;color:var(--graphite);margin-bottom:5px}
+.ai-item p{font-size:13.5px;color:var(--muted);line-height:1.75;font-weight:500}
+
+/* SCOPE */
+.scope-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.scope-item{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:24px 24px;box-shadow:0 2px 12px rgba(54,59,69,.04);transition:border-color .2s,transform .2s}
+.scope-item:hover{border-color:var(--blue-soft);transform:translateY(-2px)}
+.scope-item .sn{font-size:11px;font-weight:900;color:var(--slate);letter-spacing:.1em;margin-bottom:10px}
+.scope-item h4{font-size:16px;font-weight:900;color:var(--graphite);margin-bottom:8px}
+.scope-item p{font-size:13px;color:var(--muted);line-height:1.75;font-weight:500}
+.scope-item .bar{width:26px;height:3px;border-radius:2px;background:var(--blue);margin-bottom:14px}
+.scope-item:nth-child(3n+2) .bar{background:var(--orange)}
+.scope-item:nth-child(3n) .bar{background:var(--slate)}
+
+/* BUSINESS MAP */
+.map-wrap{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:36px 34px;box-shadow:0 4px 22px rgba(54,59,69,.05)}
+.map-lane{margin-bottom:24px}
+.map-lane:last-child{margin-bottom:0}
+.map-lane .ll{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:900;letter-spacing:.08em;color:#fff;padding:5px 14px;border-radius:6px;margin-bottom:16px}
+.map-lane.recruit .ll{background:var(--blue)}
+.map-lane.org .ll{background:var(--orange)}
+.map-flow{display:flex;align-items:stretch;gap:8px;flex-wrap:wrap}
+.map-step{flex:1;min-width:110px;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:14px 12px;text-align:center;font-size:13px;font-weight:800;color:var(--graphite);line-height:1.4;position:relative;display:flex;align-items:center;justify-content:center}
+.map-lane.recruit .map-step{border-top:3px solid var(--blue)}
+.map-lane.org .map-step{border-top:3px solid var(--orange)}
+.map-cap{text-align:center;font-size:14px;color:var(--slate);font-weight:600;line-height:1.85;margin-top:28px;padding-top:22px;border-top:1px dashed var(--line)}
+.map-cap b{color:var(--graphite)}
+
+/* COMPARISON */
+.cmp{margin-top:8px;border-radius:16px;overflow-x:auto;border:1px solid var(--line);box-shadow:0 4px 20px rgba(54,59,69,.05)}
+.cmp-grid{display:grid;grid-template-columns:1.15fr 1.4fr 1.1fr 1.1fr;min-width:0}
+.cmp-h{padding:20px 14px;text-align:center;font-weight:900;font-size:15px}
+.cmp-h.lbl{background:var(--bg2);color:var(--graphite)}
+.cmp-h.b{background:var(--graphite);color:#fff;font-size:16px}
+.cmp-h.g{background:#EEF0F3;color:var(--muted)}
+.cmp-c{padding:17px 14px;text-align:center;border-top:1px solid var(--line);background:var(--white);font-size:12.5px;line-height:1.6;color:var(--muted)}
+.cmp-c.lbl{font-weight:900;color:var(--graphite);background:#FAFBFC;display:flex;align-items:center;justify-content:center;font-size:13.5px}
+.cmp-c.win{background:#F7FBFE;color:var(--slate);font-weight:600}
+.cmp-mark{font-size:22px;font-weight:900;display:block;margin-bottom:5px;line-height:1}
+.cmp-mark.good{color:var(--blue)}
+.cmp-mark.mid{color:var(--orange)}
+.cmp-mark.bad{color:#B4BAC2}
+
+/* RESULTS */
+.res-note{font-size:13px;color:var(--muted);margin-bottom:28px;font-weight:500}
+.s-grid{display:grid;grid-template-columns:repeat(3,1fr);background:var(--white);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(54,59,69,.05)}
+.s-item{text-align:center;padding:38px 22px;border-right:1px solid var(--line);}
+.s-item:last-child{border-right:none}
+.s-num{font-size:clamp(2rem,4vw,2.8rem);font-weight:900;color:var(--graphite);letter-spacing:-0.05em;line-height:1;}
+.s-num small{font-size:.4em;font-weight:700}
+.s-item.hi .s-num{color:var(--orange)}
+.s-lbl{font-size:12.5px;color:var(--graphite);margin-top:11px;line-height:1.5;font-weight:900}
+.s-fore{font-size:12px;color:var(--muted);margin-top:8px;font-weight:500;line-height:1.5}
+
+/* DATA bars */
+.data-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:8px}
+.data-ttl{font-size:13px;font-weight:900;color:var(--graphite);letter-spacing:.06em;margin-bottom:20px;display:flex;align-items:center;gap:8px}
+.data-ttl span{font-size:11px;font-weight:700;color:#fff;background:var(--slate);padding:2px 9px;border-radius:4px}
+.bar-row{margin-bottom:15px}
+.bar-head{display:flex;justify-content:space-between;font-size:13px;font-weight:700;color:var(--graphite);margin-bottom:5px}
+.bar-head em{font-style:normal;color:var(--blue)}
+.data-grid .data-col:nth-child(2) .bar-head em{color:var(--orange)}
+.bar-track{height:9px;background:#E7EAEE;border-radius:6px;overflow:hidden}
+.bar-fill{height:100%;background:linear-gradient(90deg,var(--blue),#5fc2ea);border-radius:6px}
+.data-grid .data-col:nth-child(2) .bar-fill{background:linear-gradient(90deg,var(--orange),#f9b054)}
+
+/* MEMBER */
+.member-wrap{display:grid;grid-template-columns:300px 1fr;gap:52px;align-items:start}
+.member-photo{position:relative}
+.member-photo img{width:100%;border-radius:16px;object-fit:cover;box-shadow:0 12px 40px rgba(54,59,69,.16)}
+.member-photo .badge{position:absolute;left:16px;bottom:16px;background:var(--graphite);color:#fff;font-size:12px;font-weight:800;padding:8px 16px;border-radius:8px}
+.member-photo .badge b{color:var(--orange)}
+.member-name{font-size:26px;font-weight:900;color:var(--graphite);letter-spacing:-.01em;margin-bottom:6px}
+.member-role{font-size:13.5px;font-weight:700;color:var(--blue);margin-bottom:20px}
+.member-bio{font-size:14.5px;color:var(--slate);line-height:2;font-weight:500;margin-bottom:24px}
+.history{border-left:2px solid var(--line);padding-left:22px;display:flex;flex-direction:column;gap:16px}
+.history-item{position:relative}
+.history-item::before{content:'';position:absolute;left:-27px;top:5px;width:10px;height:10px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 4px rgba(41,171,226,.15)}
+.history-item:last-child::before{background:var(--orange);box-shadow:0 0 0 4px rgba(247,148,29,.18)}
+.history-item .yr{font-size:12px;font-weight:900;color:var(--slate);letter-spacing:.04em;margin-bottom:3px}
+.history-item p{font-size:14px;color:var(--muted);line-height:1.7;font-weight:500}
+
+/* PRICING */
+.price-plans{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:36px}
+.plan{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:26px 22px;text-align:center;box-shadow:0 3px 16px rgba(54,59,69,.05);position:relative}
+.plan.pop{border:2px solid var(--orange);box-shadow:0 12px 36px rgba(247,148,29,.14)}
+.plan .pop-tag{position:absolute;top:-11px;left:50%;transform:translateX(-50%);font-size:10.5px;font-weight:900;letter-spacing:.08em;color:#fff;background:var(--orange);padding:4px 14px;border-radius:999px;white-space:nowrap}
+.plan .pn{font-size:15px;font-weight:900;color:var(--graphite);line-height:1.4;margin-bottom:10px;min-height:42px;display:flex;align-items:center;justify-content:center}
+.plan .pd{font-size:12.5px;color:var(--muted);line-height:1.7;font-weight:500}
+.plan .pt{font-size:11px;font-weight:900;letter-spacing:.08em;color:var(--blue);margin-bottom:12px}
+.plan:nth-child(2) .pt,.plan:nth-child(4) .pt{color:var(--orange)}
+.price-card{background:var(--graphite);border-radius:20px;padding:52px 44px;color:#fff;position:relative;overflow:hidden;box-shadow:0 16px 48px rgba(54,59,69,.22);text-align:center}
+.price-card::before{content:'';position:absolute;width:360px;height:360px;background:radial-gradient(circle,rgba(41,171,226,.26),transparent 64%);top:-120px;right:-70px;border-radius:50%}
+.price-card::after{content:'';position:absolute;width:320px;height:320px;background:radial-gradient(circle,rgba(247,148,29,.2),transparent 64%);bottom:-120px;left:-60px;border-radius:50%}
+.price-kicker{position:relative;font-size:12px;font-weight:700;letter-spacing:.2em;color:var(--blue);text-transform:uppercase;margin-bottom:16px}
+.price-big{position:relative;font-size:clamp(1.8rem,4.4vw,2.8rem);font-weight:900;line-height:1.35;letter-spacing:-0.02em;margin-bottom:14px}
+.price-big em{font-style:normal;color:var(--orange)}
+.price-sub{position:relative;font-size:15px;color:rgba(255,255,255,.8);line-height:1.9;font-weight:500;max-width:580px;margin:0 auto 30px}
+.price-cta{position:relative;display:inline-flex;align-items:center;gap:8px;justify-content:center;padding:16px 44px;background:var(--blue);color:#fff;border-radius:8px;font-size:16px;font-weight:800;transition:all .18s}
+.price-cta:hover{background:var(--blue-d);transform:translateY(-1px);box-shadow:0 8px 24px rgba(41,171,226,.42)}
+
+/* CROSSLINK (family) */
+.family-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.fam-card{position:relative;overflow:hidden;background:var(--white);border:1px solid var(--line);border-radius:16px;padding:32px 30px;box-shadow:0 4px 20px rgba(54,59,69,.06);transition:box-shadow .2s,transform .2s}
+.fam-card:hover{box-shadow:0 14px 40px rgba(54,59,69,.12);transform:translateY(-3px)}
+.fam-card.blue{border-top:4px solid var(--blue)}
+.fam-card.orange{border-top:4px solid var(--orange)}
+.fam-tag{display:inline-block;font-size:11px;font-weight:900;letter-spacing:.1em;padding:5px 13px;border-radius:999px;margin-bottom:14px;color:#fff}
+.fam-card.blue .fam-tag{background:var(--blue)}
+.fam-card.orange .fam-tag{background:var(--orange)}
+.fam-card h3{font-size:20px;font-weight:900;color:var(--graphite);margin-bottom:9px;letter-spacing:-.02em}
+.fam-card p{font-size:14px;color:var(--muted);line-height:1.85;font-weight:500;margin-bottom:16px}
+.fam-link{display:inline-flex;align-items:center;gap:5px;font-size:13.5px;font-weight:800;padding-bottom:2px}
+.fam-card.blue .fam-link{color:var(--blue);border-bottom:1.5px solid var(--blue)}
+.fam-card.orange .fam-link{color:var(--orange);border-bottom:1.5px solid var(--orange)}
+
+/* CTA */
+.cta-sec{background:var(--white);padding:92px 0;text-align:center}
+.cta-h{font-size:clamp(1.75rem,3.6vw,2.5rem);font-weight:900;color:var(--graphite);line-height:1.28;letter-spacing:-0.04em;margin-bottom:14px}
+.cta-lead{font-size:15px;color:var(--muted);margin-bottom:32px;line-height:1.9}
+.cta-btn{display:inline-flex;align-items:center;gap:9px;padding:17px 48px;background:var(--blue);color:#fff;border-radius:999px;font-size:16.5px;font-weight:800;box-shadow:0 10px 30px rgba(41,171,226,.34);transition:all .18s}
+.cta-btn:hover{background:var(--blue-d);transform:translateY(-2px);box-shadow:0 14px 36px rgba(41,171,226,.44)}
+.cta-note{font-size:12.5px;color:var(--muted);margin-top:16px}
+
+/* FOOTER */
+footer{background:var(--graphite-d);padding:44px 32px 36px;text-align:center}
+.f-logos{display:flex;justify-content:center;align-items:center;gap:22px;margin-bottom:16px}
+.f-logos img{height:30px;opacity:.9}
+.f-tagline{font-size:14px;color:rgba(255,255,255,.82);font-weight:700;margin-bottom:8px;letter-spacing:.02em}
+.f-tagline em{font-style:normal;color:var(--orange)}
+footer p{font-size:12px;color:rgba(255,255,255,.5);line-height:1.7}
+
+/* STICKY CTA (mobile) */
+.sp-cta-bar{display:none}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .about-wrap,.ai-wrap{grid-template-columns:1fr;gap:34px}
+  .member-wrap{grid-template-columns:1fr;gap:30px;max-width:520px;margin:0 auto}
+  .member-photo{max-width:320px}
+}
+@media(max-width:860px){
+  header{padding:0 1.4rem}
+  header .btn-out{display:none}
+  header .btn-main{padding:9px 16px;font-size:12.5px}
+  .hero-form-card{display:none}
+  .hero-body{grid-template-columns:1fr;padding-top:36px;padding-bottom:40px;min-height:auto}
+  body{padding-bottom:76px}
+  .prob-grid,.fw-cards,.scope-grid,.family-grid{grid-template-columns:1fr}
+  .s-grid{grid-template-columns:1fr}
+  .s-item{border-right:none;border-bottom:1px solid var(--line);padding:28px}
+  .s-item:last-child{border-bottom:none}
+  .data-grid{grid-template-columns:1fr;gap:32px}
+  .price-plans{grid-template-columns:1fr 1fr}
+  .fw-formula{gap:10px}
+  .fw-node{min-width:0;flex:1;padding:16px 14px}
+  .fw-node .v{font-size:17px}
+  .solve{padding:36px 24px}
+  .about-photos{max-width:440px}
+  /* sticky CTA */
+  .sp-cta-bar{display:flex;align-items:center;justify-content:space-between;position:fixed;bottom:0;left:0;right:0;background:var(--white);border-top:1px solid var(--line);padding:11px 18px calc(11px + env(safe-area-inset-bottom));z-index:999;box-shadow:0 -4px 20px rgba(54,59,69,.1)}
+  .sp-cta-text{font-size:11.5px;color:var(--muted);line-height:1.4}
+  .sp-cta-text strong{display:block;font-size:13px;color:var(--graphite);font-weight:800}
+  .sp-cta-btn{background:var(--blue);color:#fff;font-size:13px;font-weight:800;padding:12px 22px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 14px rgba(41,171,226,.4);flex-shrink:0}
+}
+@media(max-width:640px){
+  header{padding:0 1.1rem}
+  .wrap{padding:0 1.25rem}
+  .sec{padding:56px 0}
+  .hero h1{font-size:clamp(2rem,8.4vw,2.8rem)}
+  .sh{font-size:clamp(1.55rem,6vw,2.1rem)}
+  .about-lead{font-size:21px}
+  .fw-formula{flex-direction:column;align-items:stretch}
+  .fw-op{justify-content:center;font-size:20px}
+  .scope-grid{grid-template-columns:1fr}
+  .price-plans{grid-template-columns:1fr}
+  .cmp-grid{min-width:640px}
+  .about-photos{grid-template-columns:1fr 1fr;max-width:100%}
+  .hero-stats{width:100%;justify-content:space-between}
+  .hero-stat{padding:0 10px}
+}
+@media(max-width:480px){
+  .wrap{padding:0 1.05rem}
+  .sec{padding:46px 0}
+  .price-card{padding:34px 22px}
+  .cta-btn{width:100%;justify-content:center;padding:16px 24px}
+  .member-photo .badge{font-size:11px;padding:7px 12px}
+  .map-step{min-width:calc(50% - 8px)}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a class="hd-logo" href="#top"><img src="data:image/webp;base64,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" alt="AOHARU"></a>
+  <div class="hd-r">
+    <a href="https://inc-worcry.github.io/aoharu-intern/" target="_blank" rel="noopener" class="btn btn-out" style="font-size:12.5px">新卒・インターン支援はこちら</a>
+    <a href="#contact" class="btn btn-main">無料相談を予約</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-glow"></div>
+  <div class="hero-glow o"></div>
+  <div class="hero-body">
+    <div class="hero-text">
+      <span class="hero-service-tag">AOHARU人事 ／ RPO・採用代行</span>
+      <span class="hero-badge">スタートアップ〜150名規模の採用に強い</span>
+      <h1>専属人事が、<br><em>いなくていい。</em></h1>
+      <div class="hero-quote">
+        <span class="hero-quote-main">採用の「丸投げ」ではなく、「伴走型の外部人事」。</span>
+        <span class="hero-quote-sub">戦略設計・スカウト・エージェント対応・選考・クロージング・内定者フォローまで。<br>代表・鈴木が全案件を直接PMとして、まるごとお任せいただけます。</span>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-num hi">85.7<small>%</small></span>
+          <span class="hero-lbl">支援企業の継続率</span>
+        </div>
+        <div class="hero-div"></div>
+        <div class="hero-stat">
+          <span class="hero-num">15<small>名</small></span>
+          <span class="hero-lbl">新卒採用支援</span>
+        </div>
+        <div class="hero-div"></div>
+        <div class="hero-stat">
+          <span class="hero-num">14<small>名</small></span>
+          <span class="hero-lbl">中途採用支援</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-form-card">
+      <div class="hfc-head">
+        <div class="hfc-ttl">まずは、<em>30分の無料相談</em>から。</div>
+        <div class="hfc-sub">貴社の採用課題とフェーズをお聞かせください。最適な進め方をその場でご提案します。</div>
+      </div>
+      <div class="hfc-body">
+        <div class="hfc-li"><i>✓</i><span>専属人事がいない・採用が片手間になっている</span></div>
+        <div class="hfc-li"><i>✓</i><span>スカウト／エージェント運用のノウハウがない</span></div>
+        <div class="hfc-li"><i>✓</i><span>内定辞退・早期離脱を減らしたい</span></div>
+        <a class="hfc-cta" href="https://app.spirinc.com/t/H_vQ01vClf0LmLgUwmVWY/as/XMn5n8Z_s_rK6GUlabUGi/confirm" target="_blank" rel="noopener">無料相談を予約する →</a>
+        <div class="hfc-note">オンライン30分 · 相談無料 · 勧誘なし</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="sec bg2" id="problem">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="stag">Problem</span>
+      <h2 class="sh">こんなお悩み、ありませんか？</h2>
+      <p class="sl">採用がうまく回らない理由の多くは、「人を採る」前の設計と、採った後の定着にあります。</p>
+    </div>
+    <div class="prob-grid">
+      <div class="prob-card"><div class="prob-num">01</div><h3>専属の採用担当者がいない</h3><p>社長や現場が採用業務を兼務しており、どうしても片手間になってしまっている。</p></div>
+      <div class="prob-card"><div class="prob-num">02</div><h3>採るべき人物像がブレている</h3><p>選考基準が面接官によってバラバラ。ペルソナが言語化できていない。</p></div>
+      <div class="prob-card"><div class="prob-num">03</div><h3>内定を出しても辞退が多い</h3><p>クロージングの打ち手が分からず、優秀層が競合に流れてしまう。</p></div>
+      <div class="prob-card"><div class="prob-num">04</div><h3>採用しても早期離脱する</h3><p>オンボーディングが整備されておらず、入社後の戦力化が遅い。</p></div>
+      <div class="prob-card"><div class="prob-num">05</div><h3>そもそも応募が集まらない</h3><p>スカウト・エージェント活用のノウハウが社内に蓄積されていない。</p></div>
+      <div class="prob-card"><div class="prob-num">06</div><h3>外注しても結果が出ない</h3><p>エージェント・媒体任せで、自社に採用力が残らない。</p></div>
+    </div>
+    <div class="solve">
+      <h3>それ、AOHARU人事が解決します。</h3>
+      <p>採用の「丸投げ」ではなく、「伴走型の外部人事」として。<br>目先の1名だけでなく、組織そのものが強くなる採用を設計します。</p>
+      <a class="btn-lg" href="#contact">無料相談を予約する →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="sec bgw" id="about">
+  <div class="wrap">
+    <div class="about-wrap">
+      <div>
+        <span class="stag o">About</span>
+        <p class="about-lead">採用は、<em>「組織を創る」</em>ための、<br>未来への投資です。</p>
+        <p class="about-body">採用は、ただ人を増やすことではありません。"どんな仲間と、どんな組織をつくるか"を決める意思決定だと私たちは考えています。</p>
+        <p class="about-body">株式会社WorCryは「はたらくに、青春を。」を掲げ、採用を起点に"熱狂する組織づくり"を支援する会社です。目標に挑戦できる環境・成長を実感できる仕事・仲間と本気で向き合える組織——その3つが揃ったとき、人も組織も大きく成長する。単なる採用代行ではなく、採用を通じて組織の未来をつくる。それが、WorCryの考えるRPOです。</p>
+        <span class="about-tag">はたらくに、青春を。</span>
+      </div>
+      <div class="about-photos">
+        <img class="tall" src="images/team.jpg" alt="WorCryチーム">
+        <img src="images/office1.jpg" alt="オフィス">
+        <img src="images/office2.jpg" alt="オフィス">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FRAMEWORK -->
+<section class="sec bg2" id="framework">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="stag">Framework</span>
+      <h2 class="sh">「AOHARUデータ」で、<br>組織を創る採用を加速する</h2>
+      <p class="sl">3つの質で社風を言語化し、貴社独自の「AOHARUデータ」を作成。採用から組織開発まで一貫性をもたせることで、強い組織が生まれます。</p>
+    </div>
+    <div class="fw-formula">
+      <div class="fw-node n1"><div class="k">思考の質</div><div class="v">目標</div></div>
+      <div class="fw-op">×</div>
+      <div class="fw-node n2"><div class="k">行動の質</div><div class="v">成長</div></div>
+      <div class="fw-op">×</div>
+      <div class="fw-node n3"><div class="k">関係の質</div><div class="v">仲間</div></div>
+      <div class="fw-op">＝</div>
+      <div class="fw-node res"><div class="k">Result</div><div class="v">熱狂する組織</div></div>
+    </div>
+    <div class="fw-cards">
+      <div class="fw-card"><div class="num">01 ｜ 思考の質</div><div class="qty"><b>目標</b></div><p>組織が目指す高い景色を共有し、個人のMVVとつなげる。目標の明確さと自己決定感を高めます。</p><div class="fw-chips"><span>MVVへの共感</span><span>目標の明確さ</span><span>貢献実感</span><span>進捗の見える化</span></div></div>
+      <div class="fw-card"><div class="num">02 ｜ 行動の質</div><div class="qty"><b>成長</b></div><p>一人ひとりの個性をプロデュースし、自己効力感を育てる。挑戦機会と強みの発揮を設計します。</p><div class="fw-chips"><span>専門性の向上</span><span>キャリア形成</span><span>チャレンジ機会</span><span>強みの発揮</span></div></div>
+      <div class="fw-card"><div class="num">03 ｜ 関係の質</div><div class="qty"><b>仲間</b></div><p>本音で繋がれる居場所をつくり、組織効力感を高める。心理的安全性とシナジーを生みます。</p><div class="fw-chips"><span>相互協力</span><span>感謝・承認文化</span><span>心理的安全性</span><span>一体感</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="sec bgw" id="features">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="stag o">Features</span>
+      <h2 class="sh">AOHARU人事、5つの特徴</h2>
+      <p class="sl">"外部人事部"として、採用の入口から入社後の定着まで一気通貫で伴走します。</p>
+    </div>
+    <div class="svc-list">
+      <div class="svc-row"><div class="svc-n">01</div><div><h3>スタートアップ〜150名規模に強い</h3><p>専属人事が不在の段階から採用の"型"を作ることが得意領域。スタートアップ特有のスピード感と採用文化への理解をもとに、競争の激しい人材市場で勝てる戦略を設計します。</p></div></div>
+      <div class="svc-row"><div class="svc-n">02</div><div><h3>スカウト・エージェント管理が得意</h3><p>ダイレクトリクルーティングのスカウト文章設計から、複数エージェントの一元管理・マネジメントまで対応。採用チャネルを最大限に活用し、質の高い母集団を構築します。</p></div></div>
+      <div class="svc-row"><div class="svc-n">03</div><div><h3>志望度UPで全体ステップ率を改善</h3><p>求職者一人ひとりの価値観・ストーリーに寄り添い、自己実現の場として貴社を選んでもらえるようアプローチ。応募から内定承諾までの通過率を継続的に改善します。</p></div></div>
+      <div class="svc-row"><div class="svc-n">04</div><div><h3>社員インタビューで精度の高いペルソナ設計</h3><p>3名以上の社員インタビューを実施し、「実際に活躍している人の共通点」を言語化。曖昧な人物像ではなく、再現性の高い選考基準を設計します。</p></div></div>
+      <div class="svc-row"><div class="svc-n">05</div><div><h3>入社・オンボーディングまで担当</h3><p>採用支援で終わらず、内定者フォロー研修・入社研修まで一貫して担当。若手・リーダー研修や内定者研修のオーダーも増加中。早期戦力化を支援します。</p></div></div>
+    </div>
+    <div class="point-card">
+      <span class="pc-tag">POINT</span>
+      <div><h4>全案件、代表・鈴木が直接PM。</h4><p>プロジェクトの丸投げはしません。採用のプロとして長年のキャリアを持つ代表・鈴木が全案件のPMを直接担当。近い距離で、スピーディな対応が可能です。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- AI -->
+<section class="sec bg2" id="ai">
+  <div class="wrap">
+    <div class="ai-wrap">
+      <div>
+        <span class="stag">AI × Persona</span>
+        <h2 class="sh" style="margin-bottom:22px">AIで、採用の<br>「再現性」を高める</h2>
+        <p class="ai-lead">「主体性がある」「コミュニケーション力が高い」——ペルソナはどうしても曖昧な表現になりがちです。AOHARU人事では、AIを活用して過去の選考データ・入社者傾向を分析。「どんな方が活躍しやすいか」「どこで見誤りやすいか」まで、解像度高く設計します。</p>
+        <p class="ai-quote">"良さそうな人を見抜く"から、<br><em>"活躍する人を、再現性高く見極める"</em>へ。</p>
+      </div>
+      <div class="ai-list">
+        <div class="ai-item"><div class="ic">1</div><div><h4>過去データの定量分析</h4><p>選考通過者・離脱者・活躍者のデータをAIで分析し、傾向を可視化。</p></div></div>
+        <div class="ai-item"><div class="ic">2</div><div><h4>活躍人材の共通点を特定</h4><p>「実際に成果を出した人」の共通項を言語化し、選考基準に落とし込む。</p></div></div>
+        <div class="ai-item"><div class="ic">3</div><div><h4>面接質問の設計</h4><p>「どんな質問でズレなく判断できるか」まで設計し、面接官スキルへの依存を減らす。</p></div></div>
+        <div class="ai-item"><div class="ic">4</div><div><h4>見誤りポイントの洗い出し</h4><p>「一見良さそうで実は合わない」パターンを事前に特定し、ミスマッチを防ぐ。</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCOPE -->
+<section class="sec bgw" id="scope">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="stag o">Scope</span>
+      <h2 class="sh">対応可能な業務範囲</h2>
+      <p class="sl">採用プロセス全体を一元管理・実行。必要な部分だけのご依頼も可能です。</p>
+    </div>
+    <div class="scope-grid">
+      <div class="scope-item"><div class="bar"></div><div class="sn">STRATEGY</div><h4>採用戦略設計</h4><p>採用KPI・ペルソナ・チャネル設計、スケジュール策定。</p></div>
+      <div class="scope-item"><div class="bar"></div><div class="sn">BRANDING</div><h4>採用広報</h4><p>求人票・会社説明資料・SNS発信・採用サイト改善。</p></div>
+      <div class="scope-item"><div class="bar"></div><div class="sn">SCOUT</div><h4>スカウト運用</h4><p>DRのスカウト文章・ターゲット設計・送信運用。</p></div>
+      <div class="scope-item"><div class="bar"></div><div class="sn">AGENT</div><h4>エージェント管理</h4><p>複数エージェントの一元管理・マネジメント・評価。</p></div>
+      <div class="scope-item"><div class="bar"></div><div class="sn">SELECTION</div><h4>選考設計・運用</h4><p>面接設計・書類選考代行・面接同席・評価基準整備。</p></div>
+      <div class="scope-item"><div class="bar"></div><div class="sn">CLOSING</div><h4>クロージング支援</h4><p>志望度向上施策・内定者フォロー・承諾率改善。</p></div>
+      <div class="scope-item"><div class="bar"></div><div class="sn">ONBOARDING</div><h4>入社・研修</h4><p>内定者研修・新卒／中途入社研修・カルチャー浸透。</p></div>
+      <div class="scope-item"><div class="bar"></div><div class="sn">ORG DEV</div><h4>組織開発</h4><p>若手・リーダー研修・1on1・人事評価運用支援。</p></div>
+      <div class="scope-item"><div class="bar"></div><div class="sn">AI</div><h4>オリジナル診断（AI活用）</h4><p>活躍人材分析・面接設計まで、AIで採用精度を強化。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BUSINESS MAP -->
+<section class="sec bg2" id="map">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="stag">Business Map</span>
+      <h2 class="sh">採用から組織開発まで、一気通貫。</h2>
+      <p class="sl">AOHARU（青春）をベースに、外部人事として"組織を創る採用"を、入口から出口まで支援します。</p>
+    </div>
+    <div class="map-wrap">
+      <div class="map-lane recruit">
+        <span class="ll">採用</span>
+        <div class="map-flow">
+          <div class="map-step">採用戦略設計</div>
+          <div class="map-step">採用広報</div>
+          <div class="map-step">採用業者対応</div>
+          <div class="map-step">選考</div>
+          <div class="map-step">クロージング</div>
+        </div>
+      </div>
+      <div class="map-lane org">
+        <span class="ll">組織開発</span>
+        <div class="map-flow">
+          <div class="map-step">入社</div>
+          <div class="map-step">オンボーディング</div>
+          <div class="map-step">育成</div>
+          <div class="map-step">エンゲージメント向上</div>
+          <div class="map-step">人事評価</div>
+        </div>
+      </div>
+      <p class="map-cap">採用して終わり、ではありません。<b>入社後の定着・戦力化・組織づくり</b>まで見据えて設計するから、採用力が資産として社内に残ります。</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="sec bgw" id="comparison">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="stag o">Comparison</span>
+      <h2 class="sh">他社RPOとの比較</h2>
+      <p class="sl">"採用業務の外注"ではなく、"外部人事部"として伴走する。ここが決定的に違います。</p>
+    </div>
+    <div class="cmp">
+      <div class="cmp-grid">
+        <div class="cmp-h lbl">比較項目</div>
+        <div class="cmp-h b">AOHARU人事</div>
+        <div class="cmp-h g">採用代行A社</div>
+        <div class="cmp-h g">採用代行B社</div>
+
+        <div class="cmp-c lbl">担当体制</div>
+        <div class="cmp-c win"><span class="cmp-mark good">◎</span>代表が直接PM担当</div>
+        <div class="cmp-c"><span class="cmp-mark mid">△</span>担当者制（途中変更あり）</div>
+        <div class="cmp-c"><span class="cmp-mark mid">△</span>分業制（窓口と運用が別）</div>
+
+        <div class="cmp-c lbl">採用戦略の設計</div>
+        <div class="cmp-c win"><span class="cmp-mark good">◎</span>経営・組織視点から設計</div>
+        <div class="cmp-c"><span class="cmp-mark mid">○</span>母集団形成中心</div>
+        <div class="cmp-c"><span class="cmp-mark bad">△</span>業務の代行中心</div>
+
+        <div class="cmp-c lbl">ペルソナ設計</div>
+        <div class="cmp-c win"><span class="cmp-mark good">◎</span>社員インタビューを徹底</div>
+        <div class="cmp-c"><span class="cmp-mark mid">○</span>ヒアリングベース</div>
+        <div class="cmp-c"><span class="cmp-mark bad">△</span>テンプレート設計</div>
+
+        <div class="cmp-c lbl">AI活用</div>
+        <div class="cmp-c win"><span class="cmp-mark good">◎</span>活躍人材・面接分析まで</div>
+        <div class="cmp-c"><span class="cmp-mark mid">○</span>スカウト効率化中心</div>
+        <div class="cmp-c"><span class="cmp-mark bad">△</span>一部活用</div>
+
+        <div class="cmp-c lbl">面接設計</div>
+        <div class="cmp-c win"><span class="cmp-mark good">◎</span>質問・見極め基準まで設計</div>
+        <div class="cmp-c"><span class="cmp-mark mid">△</span>現場依存になりやすい</div>
+        <div class="cmp-c"><span class="cmp-mark mid">○</span>基本フォーマットあり</div>
+
+        <div class="cmp-c lbl">入社後フォロー</div>
+        <div class="cmp-c win"><span class="cmp-mark good">◎</span>定着・研修・組織開発まで</div>
+        <div class="cmp-c"><span class="cmp-mark bad">△</span>原則採用まで</div>
+        <div class="cmp-c"><span class="cmp-mark mid">△</span>一部オプション対応</div>
+
+        <div class="cmp-c lbl">ノウハウの蓄積</div>
+        <div class="cmp-c win"><span class="cmp-mark good">◎</span>社内に残る仕組みを構築</div>
+        <div class="cmp-c"><span class="cmp-mark bad">△</span>ブラックボックス化しやすい</div>
+        <div class="cmp-c"><span class="cmp-mark mid">△</span>運用依存になりやすい</div>
+
+        <div class="cmp-c lbl">支援スタンス</div>
+        <div class="cmp-c win"><span class="cmp-mark good">◎</span>"外部人事部"として伴走</div>
+        <div class="cmp-c"><span class="cmp-mark mid">○</span>採用業務の外注型</div>
+        <div class="cmp-c"><span class="cmp-mark mid">○</span>工数削減型</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="sec bg2" id="results">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="stag">Results</span>
+      <h2 class="sh">創業1年5ヶ月での実績</h2>
+    </div>
+    <p class="res-note">スタートアップと共に走り続けた結果です。</p>
+    <div class="s-grid">
+      <div class="s-item hi"><div class="s-num">85.7<small>%</small></div><div class="s-lbl">支援企業 継続率</div><div class="s-fore">圧倒的な継続率が、成果の証明。</div></div>
+      <div class="s-item"><div class="s-num">15<small>名</small></div><div class="s-lbl">新卒採用支援</div><div class="s-fore">ゼロから採用の型を作り上げた企業多数。</div></div>
+      <div class="s-item"><div class="s-num">14<small>名</small></div><div class="s-lbl">中途・インターン支援</div><div class="s-fore">中途9名＋インターン5名。多様な採用形態に対応。</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DATA -->
+<section class="sec bgw" id="data">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="stag o">Data</span>
+      <h2 class="sh">RPOサービス支援実績</h2>
+      <p class="sl">創業1年5ヶ月で積み上げた、業種・職種別の支援データです。</p>
+    </div>
+    <div class="data-grid">
+      <div class="data-col">
+        <div class="data-ttl"><span>業種別</span> RPO支援実績</div>
+        <div class="bar-row"><div class="bar-head"><span>物流</span><em>40%</em></div><div class="bar-track"><div class="bar-fill" style="width:40%"></div></div></div>
+        <div class="bar-row"><div class="bar-head"><span>メーカー</span><em>35%</em></div><div class="bar-track"><div class="bar-fill" style="width:35%"></div></div></div>
+        <div class="bar-row"><div class="bar-head"><span>IT・WEB</span><em>10%</em></div><div class="bar-track"><div class="bar-fill" style="width:10%"></div></div></div>
+        <div class="bar-row"><div class="bar-head"><span>商社</span><em>10%</em></div><div class="bar-track"><div class="bar-fill" style="width:10%"></div></div></div>
+        <div class="bar-row"><div class="bar-head"><span>その他</span><em>5%</em></div><div class="bar-track"><div class="bar-fill" style="width:5%"></div></div></div>
+      </div>
+      <div class="data-col">
+        <div class="data-ttl"><span>職種別</span> RPO支援実績</div>
+        <div class="bar-row"><div class="bar-head"><span>営業</span><em>40%</em></div><div class="bar-track"><div class="bar-fill" style="width:40%"></div></div></div>
+        <div class="bar-row"><div class="bar-head"><span>ドライバー</span><em>30%</em></div><div class="bar-track"><div class="bar-fill" style="width:30%"></div></div></div>
+        <div class="bar-row"><div class="bar-head"><span>コーポレート</span><em>15%</em></div><div class="bar-track"><div class="bar-fill" style="width:15%"></div></div></div>
+        <div class="bar-row"><div class="bar-head"><span>エンジニア</span><em>10%</em></div><div class="bar-track"><div class="bar-fill" style="width:10%"></div></div></div>
+        <div class="bar-row"><div class="bar-head"><span>その他</span><em>5%</em></div><div class="bar-track"><div class="bar-fill" style="width:5%"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEMBER -->
+<section class="sec bg2" id="member">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="stag">Member</span>
+      <h2 class="sh">担当者紹介</h2>
+    </div>
+    <div class="member-wrap">
+      <div class="member-photo">
+        <img src="images/suzuki.jpg" alt="鈴木 脩平">
+        <span class="badge">全案件 <b>代表直PM</b></span>
+      </div>
+      <div>
+        <div class="member-name">鈴木 脩平</div>
+        <div class="member-role">株式会社WorCry 代表取締役 ／ 全案件PM</div>
+        <p class="member-bio">新卒で株式会社ジェイックに入社後、一貫して人材・採用領域でキャリアを積む。新人賞・トップセールス賞を複数回受賞し、最年少で福岡支店長を経験。その後、経営企画・新卒事業を経てシニアマネージャー、ゼネラルマネージャーを歴任。2024年12月にWorCryを創業し、RPO・人材紹介・組織開発を融合した「組織を創る採用」サービスを展開。創業1年5ヶ月で複数社の採用力を変革し、継続率85.7%を達成。スカウト・エージェントマネジメント・AI活用ペルソナ設計まで、採用の一気通貫支援が強み。</p>
+        <div class="history">
+          <div class="history-item"><div class="yr">2014</div><p>株式会社ジェイック入社。新人賞・トップセールス賞を連続受賞。</p></div>
+          <div class="history-item"><div class="yr">2017</div><p>最年少で福岡支店長に就任。支店の立ち上げを担当。</p></div>
+          <div class="history-item"><div class="yr">2020〜</div><p>経営企画 → 新卒事業 → シニアマネージャー → ゼネラルマネージャー。</p></div>
+          <div class="history-item"><div class="yr">2024.12</div><p>株式会社WorCry 創業。採用コンサルタントとして独立。</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="sec bgw" id="pricing">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="stag o">Pricing</span>
+      <h2 class="sh">料金プラン</h2>
+      <p class="sl">採用課題や規模感・フェーズによって、最適なプランをご提案します。必要な部分だけのご依頼も可能です。</p>
+    </div>
+    <div class="price-plans">
+      <div class="plan"><div class="pt">STRATEGY</div><div class="pn">採用戦略設計プラン</div><div class="pd">戦略設計・業者選定・スカウト運用（原稿作成／ABテスト含む）。まずは"型"づくりから。</div></div>
+      <div class="plan pop"><span class="pop-tag">人気No.1</span><div class="pt">FULL</div><div class="pn">新卒支援（DR代行＋クロージング）</div><div class="pd">スカウト・候補者対応・面接代行・アトラクトからクロージングまで一気通貫で代行。</div></div>
+      <div class="plan"><div class="pt">DR / AGT</div><div class="pn">採用実務代行プラン</div><div class="pd">DR代行・エージェント定期商談（逆営業）・候補者対応・面接代行。新卒／中途に対応。</div></div>
+      <div class="plan"><div class="pt">ORG DEV</div><div class="pn">研修・組織開発オプション</div><div class="pd">1on1・若手／新入社員研修・リーダー研修・人事制度運用・内定者オンボーディング。</div></div>
+    </div>
+    <div class="price-card">
+      <div class="price-kicker">Free Consulting</div>
+      <div class="price-big">まずは、<em>無料</em>でご相談ください。</div>
+      <p class="price-sub">全案件を代表・鈴木が直接PMとして担当するため、品質を最優先にご支援社数を限定しています。30分の無料相談で、貴社の状況をお聞かせください。最適なプランと進め方をその場でご提案します。</p>
+      <a class="price-cta" href="https://app.spirinc.com/t/H_vQ01vClf0LmLgUwmVWY/as/XMn5n8Z_s_rK6GUlabUGi/confirm" target="_blank" rel="noopener">無料相談を予約する →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAMILY / CROSSLINK -->
+<section class="sec bg2" id="family">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="stag">Lineup</span>
+      <h2 class="sh">AOHARUの、採用サービスラインナップ</h2>
+      <p class="sl">"はたらくに、青春を。" 同じ想いで、新卒・インターン領域もご支援しています。</p>
+    </div>
+    <div class="family-grid">
+      <a class="fam-card orange" href="https://inc-worcry.github.io/aoharu-intern/" target="_blank" rel="noopener">
+        <span class="fam-tag">AOHARUインターン</span>
+        <h3>大学2年生からの新卒採用支援</h3>
+        <p>2年生秋冬インターンから本選考接続まで。誰も動いていない早期から、優秀層に先に会う。</p>
+        <span class="fam-link">サービスを見る →</span>
+      </a>
+      <a class="fam-card blue" href="https://inc-worcry.github.io/aoharu-intern/long-intern/" target="_blank" rel="noopener">
+        <span class="fam-tag">AOHARUインターン 長期</span>
+        <h3>大学1・2年生特化 長期インターン紹介</h3>
+        <p>掲載して待つ、ではなく。全員と面談し、貴社に本当に合う大学1・2年生だけをご紹介。</p>
+        <span class="fam-link">サービスを見る →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec" id="contact">
+  <div class="wrap">
+    <h2 class="cta-h">採用を、"組織を創る投資"に変える。</h2>
+    <p class="cta-lead">専属人事がいなくても、採用は強くできます。<br>まずは30分、貴社の採用課題をお聞かせください。</p>
+    <a class="cta-btn" href="https://app.spirinc.com/t/H_vQ01vClf0LmLgUwmVWY/as/XMn5n8Z_s_rK6GUlabUGi/confirm" target="_blank" rel="noopener">無料相談を予約する →</a>
+    <div class="cta-note">オンライン30分 · 相談無料 · 全案件 代表・鈴木が直接対応</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-logos">
+    <img src="images/aoharu_logo.png" alt="AOHARU人事">
+    <img src="images/worcry_logo.png" alt="WorCry">
+  </div>
+  <div class="f-tagline">"はたらく"に、<em>青春</em>を。</div>
+  <p>© 2026 株式会社WorCry｜AOHARU人事（RPO・採用代行）</p>
+</footer>
+
+<!-- STICKY CTA (mobile) -->
+<div class="sp-cta-bar">
+  <div class="sp-cta-text"><strong>まずは無料相談</strong>オンライン30分・相談無料</div>
+  <a class="sp-cta-btn" href="https://app.spirinc.com/t/H_vQ01vClf0LmLgUwmVWY/as/XMn5n8Z_s_rK6GUlabUGi/confirm" target="_blank" rel="noopener">予約する →</a>
+</div>
+
+</body>
+</html>
