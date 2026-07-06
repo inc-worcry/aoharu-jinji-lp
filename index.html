@@ -240,6 +240,19 @@ footer{background:var(--bg-alt);border-top:1px solid var(--line);padding:42px va
 .f-tag{font-size:var(--fs-sm);font-weight:800;color:var(--ink);margin-bottom:7px}
 footer .cp{font-size:var(--fs-cap);color:var(--muted)}
 
+/* COMPLETION MODAL */
+#done-modal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(21,22,26,.55);align-items:center;justify-content:center;padding:20px}
+#done-modal.on{display:flex}
+#done-modal .dm{background:#fff;border-radius:18px;max-width:420px;width:100%;padding:36px 30px 30px;text-align:center;box-shadow:0 22px 64px rgba(21,22,26,.3);position:relative;animation:dmin .25s ease}
+@keyframes dmin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+#done-modal .dm-x{position:absolute;top:12px;right:16px;border:none;background:none;font-size:20px;color:var(--muted);cursor:pointer;line-height:1;padding:4px}
+#done-modal .dm-x:hover{color:var(--ink)}
+#done-modal .dm-ic{width:56px;height:56px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:700;margin:0 auto 16px}
+#done-modal .dm-t{font-size:1.2rem;font-weight:900;color:var(--ink);margin-bottom:8px;letter-spacing:-.02em}
+#done-modal .dm-s{font-size:var(--fs-cap);color:var(--muted);line-height:1.85;margin-bottom:22px}
+#done-modal .dm-spir{display:inline-flex;align-items:center;gap:7px;background:var(--accent);color:#fff;font-weight:800;font-size:var(--fs-sm);padding:13px 26px;border-radius:999px;transition:.18s}
+#done-modal .dm-spir:hover{background:var(--accent-d);transform:translateY(-1px)}
+
 /* sticky mobile CTA */
 .sp{display:none}
 
@@ -510,12 +523,14 @@ footer .cp{font-size:var(--fs-cap);color:var(--muted)}
         <a class="spir" href="https://app.spirinc.com/t/H_vQ01vClf0LmLgUwmVWY/as/XMn5n8Z_s_rK6GUlabUGi/confirm" target="_blank" rel="noopener">日程を選んで予約する（オンライン30分）→</a>
       </div>
       <form class="cform" id="heroForm">
-        <div class="fl"><label>会社名</label><input type="text" name="company" placeholder="株式会社○○" required></div>
-        <div class="fl"><label>お名前</label><input type="text" name="name" placeholder="山田 太郎" required></div>
+        <input type="hidden" name="_form" value="RPO-お問い合わせ">
+        <div class="fl"><label>会社名</label><input type="text" name="会社名" placeholder="株式会社○○" required></div>
+        <div class="fl"><label>お名前</label><input type="text" name="お名前" placeholder="山田 太郎" required></div>
         <div class="fl"><label>メールアドレス</label><input type="email" name="email" placeholder="taro@company.co.jp" required></div>
-        <div class="fl"><label>ご相談内容（任意）</label><textarea name="message" rows="2" placeholder="採用の課題・フェーズ など"></textarea></div>
+        <div class="fl"><label>電話番号（任意）</label><input type="tel" name="電話番号" placeholder="03-0000-0000"></div>
+        <div class="fl"><label>ご相談内容（任意）</label><textarea name="ご相談内容" rows="2" placeholder="採用の課題・フェーズ など"></textarea></div>
         <button type="submit" class="btn btn-accent">送信する <span class="ar">→</span></button>
-        <div class="cform-note">送信すると、宛先 saiyou@worcry.com へのメール作成画面が開きます。</div>
+        <div class="cform-note">送信後、1営業日以内に代表よりご返信します。</div>
       </form>
     </div>
   </div>
@@ -537,17 +552,44 @@ footer .cp{font-size:var(--fs-cap);color:var(--muted)}
   <a href="#contact-form">相談する →</a>
 </div>
 
+<!-- COMPLETION MODAL -->
+<div id="done-modal" role="dialog" aria-modal="true" aria-labelledby="done-title">
+  <div class="dm">
+    <button class="dm-x" type="button" onclick="closeDone()" aria-label="閉じる">×</button>
+    <div class="dm-ic">✓</div>
+    <div class="dm-t" id="done-title">送信ありがとうございます！</div>
+    <div class="dm-s">担当（代表・鈴木）より、1営業日以内にご連絡いたします。<br>お急ぎの場合は、下記からそのままご予約いただけます。</div>
+    <a class="dm-spir" href="https://app.spirinc.com/t/H_vQ01vClf0LmLgUwmVWY/as/XMn5n8Z_s_rK6GUlabUGi/confirm" target="_blank" rel="noopener">日程を選んで予約する →</a>
+  </div>
+</div>
+
 <script>
 (function(){
-  var f=document.getElementById('heroForm');
-  if(!f)return;
-  f.addEventListener('submit',function(e){
+  /* ▼ Apps Script をデプロイして得た「ウェブアプリURL(.../exec)」をここに貼り付け ▼
+     空のままだと、送信時にメール作成画面（saiyou@worcry.com宛）を開くフォールバックになります。 */
+  var GAS_URL = '';
+
+  var f = document.getElementById('heroForm');
+  var modal = document.getElementById('done-modal');
+  function openDone(){ if(modal){ modal.classList.add('on'); document.body.style.overflow='hidden'; } }
+  window.closeDone = function(){ if(modal){ modal.classList.remove('on'); document.body.style.overflow=''; } };
+  if(modal) modal.addEventListener('click', function(e){ if(e.target===modal) closeDone(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeDone(); });
+  if(!f) return;
+
+  function val(k){ var el=f.querySelector('[name="'+k+'"]'); return el ? el.value : ''; }
+
+  f.addEventListener('submit', function(e){
     e.preventDefault();
-    var c=f.company.value,n=f.name.value,m=f.email.value,msg=f.message.value;
-    var body='会社名: '+c+'\nお名前: '+n+'\nメールアドレス: '+m+'\n\nご相談内容:\n'+(msg||'（未記入）');
-    var href='mailto:saiyou@worcry.com?subject='+encodeURIComponent('【無料相談・お問い合わせ】'+c+' '+n+' 様')+'&body='+encodeURIComponent(body);
-    window.location.href=href;
-    f.innerHTML='<div class="form-done"><div class="ok">✓</div><b>ありがとうございます。</b><span>メール作成画面が開きます。届き次第、代表よりご返信します。</span></div>';
+    if(GAS_URL){
+      fetch(GAS_URL, { method:'POST', mode:'no-cors', body:new URLSearchParams(new FormData(f)) })
+        .then(after).catch(after);
+    } else {
+      var body='会社名: '+val('会社名')+'\nお名前: '+val('お名前')+'\nメールアドレス: '+val('email')+'\n電話番号: '+val('電話番号')+'\n\nご相談内容:\n'+(val('ご相談内容')||'（未記入）');
+      window.location.href='mailto:saiyou@worcry.com?subject='+encodeURIComponent('【無料相談・お問い合わせ】'+val('会社名')+' '+val('お名前')+' 様')+'&body='+encodeURIComponent(body);
+      after();
+    }
+    function after(){ try{ f.reset(); }catch(_){} openDone(); }
   });
 })();
 </script>
