@@ -233,6 +233,10 @@ header{position:fixed;inset:0 0 auto;z-index:200;height:64px;display:flex;align-
 .cform input:focus,.cform textarea:focus{border-color:var(--accent);background:rgba(255,255,255,.1)}
 .cform .btn{width:100%;justify-content:center;margin-top:5px}
 .cform-note{font-size:var(--fs-cap);color:rgba(255,255,255,.42);text-align:center;margin-top:10px;line-height:1.6}
+.cform-consent{display:flex;align-items:flex-start;gap:9px;margin:2px 0 14px;font-size:var(--fs-cap);color:rgba(255,255,255,.74);line-height:1.6;cursor:pointer}
+.cform-consent input{width:16px;height:16px;margin-top:2px;flex-shrink:0;accent-color:var(--accent);cursor:pointer}
+.cform-consent a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+.cform-consent a:hover{color:var(--accent)}
 .form-done{padding:34px 20px;text-align:center}
 .form-done .ok{width:44px;height:44px;border-radius:50%;background:rgba(242,107,29,.18);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;margin:0 auto 14px}
 .form-done b{display:block;font-size:var(--fs-h3);font-weight:800;color:#fff;margin-bottom:6px}
@@ -539,8 +543,9 @@ footer .cp{font-size:var(--fs-cap);color:var(--muted)}
         <div class="fl"><label>会社名</label><input type="text" name="会社名" placeholder="株式会社○○" required></div>
         <div class="fl"><label>お名前</label><input type="text" name="お名前" placeholder="山田 太郎" required></div>
         <div class="fl"><label>メールアドレス</label><input type="email" name="email" placeholder="taro@company.co.jp" required></div>
-        <div class="fl"><label>電話番号（任意）</label><input type="tel" name="電話番号" placeholder="03-0000-0000"></div>
+        <div class="fl"><label>電話番号</label><input type="tel" name="電話番号" placeholder="03-0000-0000" required></div>
         <div class="fl"><label>ご相談内容（任意）</label><textarea name="ご相談内容" rows="2" placeholder="採用の課題・フェーズ など"></textarea></div>
+        <label class="cform-consent"><input type="checkbox" name="同意" required><span><a href="https://www.worcry.com/privacy-policy" target="_blank" rel="noopener">プライバシーポリシー</a>に同意します</span></label>
         <button type="submit" class="btn btn-accent">送信する <span class="ar">→</span></button>
         <div class="cform-note">送信後、1営業日以内に代表よりご返信します。</div>
       </form>
