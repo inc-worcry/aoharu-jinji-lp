@@ -101,23 +101,29 @@ header{position:fixed;inset:0 0 auto;z-index:200;height:64px;display:flex;align-
 .hero-note b{color:var(--ink-soft);font-weight:700}
 .hero-visual{position:relative}
 .hero-visual img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;box-shadow:0 16px 40px rgba(21,22,26,.16)}
-/* hero features strip */
-.hero-feat{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
-.hf{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
-.hf .t{font-size:var(--fs-sm);font-weight:800;color:var(--ink);letter-spacing:-.01em;margin-bottom:6px;display:flex;align-items:center;gap:8px}
-.hf .t::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);flex-shrink:0}
-.hf:nth-child(2) .t::before{background:var(--blue)}
+/* hero features strip — editorial hairline style */
+.hero-feat{display:grid;grid-template-columns:repeat(3,1fr);margin-top:30px;border-top:1px solid var(--line)}
+.hf{padding:24px 28px 6px 0;border-right:1px solid var(--line)}
+.hf:last-child{border-right:none;padding-right:0}
+.hf .bar{width:22px;height:2px;border-radius:2px;background:var(--accent);margin-bottom:14px}
+.hf:nth-child(2) .bar{background:var(--blue)}
+.hf:nth-child(3) .bar{background:var(--ink-soft)}
+.hf .t{font-size:var(--fs-sm);font-weight:800;color:var(--ink);letter-spacing:-.01em;margin-bottom:6px}
 .hf .d{font-size:var(--fs-cap);color:var(--muted);line-height:1.7}
 
 /* FV PHOTO GRID */
 .fvg{padding:clamp(22px,3.5vw,40px) 0 clamp(36px,5vw,58px)}
-.fvg-cap{text-align:center;font-weight:500;font-size:clamp(1.05rem,2.1vw,1.4rem);letter-spacing:.01em;color:var(--ink);margin-bottom:clamp(16px,2.2vw,24px)}
-.fvg-cap small{display:block;font-size:var(--fs-cap);font-weight:600;color:var(--muted);margin-top:7px;letter-spacing:.03em}
+.fvg-head{text-align:center;margin-bottom:clamp(20px,2.6vw,30px)}
+.fvg-kicker{display:inline-flex;align-items:center;gap:11px;font-size:var(--fs-label);font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--faint);margin-bottom:13px}
+.fvg-kicker::before,.fvg-kicker::after{content:"";width:24px;height:1px;background:var(--line-2)}
+.fvg-phrase{font-size:clamp(1.15rem,2.3vw,1.55rem);font-weight:700;letter-spacing:.02em;color:var(--ink)}
+.fvg-phrase span{font-weight:800}
+.fvg-note{font-size:var(--fs-cap);color:var(--muted);margin-top:8px;letter-spacing:.02em}
 .fvg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .fvg-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;box-shadow:0 8px 24px rgba(21,22,26,.09)}
 
 /* WHY */
-.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4.5vw,68px);align-items:start}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4.5vw,68px);align-items:center}
 .why-grid .h1{margin:0}
 .why-body p{font-size:var(--fs-body);line-height:2.05;color:var(--ink-soft);margin-bottom:18px}
 .why-body p b{color:var(--ink);font-weight:800}
@@ -268,7 +274,10 @@ footer .cp{font-size:var(--fs-cap);color:var(--muted)}
   .feat-grid{grid-template-columns:1fr}
   .feat.wide{grid-column:span 1;flex-direction:column;align-items:flex-start;gap:12px}
   .flow{grid-template-columns:1fr;gap:22px}
-  .hero-feat,.fvg-grid{grid-template-columns:repeat(2,1fr)}
+  .fvg-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-feat{grid-template-columns:1fr;border-top:none}
+  .hf{border-right:none;border-top:1px solid var(--line);padding:18px 0 14px}
+  .hf .bar{margin-bottom:11px}
   .member{max-width:540px;margin:0 auto}
   .member-photo{max-width:280px}
   .about{max-width:560px;margin:0 auto}
@@ -317,9 +326,9 @@ footer .cp{font-size:var(--fs-cap);color:var(--muted)}
       </div>
     </div>
     <div class="hero-feat">
-      <div class="hf"><div class="t">定着まで責任を持つ</div><div class="d">採用〜定着まで、一気通貫で伴走。</div></div>
-      <div class="hf"><div class="t">新卒採用に強い</div><div class="d">大学1・2年からの独自母集団。</div></div>
-      <div class="hf"><div class="t">組織開発までコミット</div><div class="d">1on1・新入社員／リーダー研修 等。</div></div>
+      <div class="hf"><div class="bar"></div><div class="t">定着まで責任を持つ</div><div class="d">採用〜定着まで、一気通貫で伴走。</div></div>
+      <div class="hf"><div class="bar"></div><div class="t">新卒採用に強い</div><div class="d">大学1・2年からの独自母集団。</div></div>
+      <div class="hf"><div class="bar"></div><div class="t">組織開発までコミット</div><div class="d">1on1・新入社員／リーダー研修 等。</div></div>
     </div>
   </div>
 </section>
@@ -327,7 +336,11 @@ footer .cp{font-size:var(--fs-cap);color:var(--muted)}
 <!-- FV PHOTO GRID -->
 <div class="fvg">
   <div class="wrap">
-    <div class="fvg-cap">“はたらく”に、<span class="ao">青</span><span class="haru">春</span>を。<small>〜 採用を起点に、熱狂する組織をつくる 〜</small></div>
+    <div class="fvg-head">
+      <span class="fvg-kicker">Our Culture</span>
+      <p class="fvg-phrase">“はたらく”に、<span class="ao">青</span><span class="haru">春</span>を。</p>
+      <p class="fvg-note">採用を起点に、熱狂する組織をつくる。</p>
+    </div>
     <div class="fvg-grid">
       <img src="images/ev1.jpg" alt="WorCry ビジョンマップ">
       <img src="images/ev2.jpg" alt="WorCry ワークショップ">
@@ -344,7 +357,6 @@ footer .cp{font-size:var(--fs-cap);color:var(--muted)}
     <div class="why-grid">
       <h2 class="h1">多くの採用代行は、<br><br>　“手”は貸すが、<br>　“責任”は持たない。</h2>
       <div class="why-body">
-        <p>スカウトの送信も、日程調整も、面接のセッティングも<br>——<b>“作業”は代わりにやってくれます</b>。<br>でも、「どんな人を採るべきか」「なぜ人が辞めるのか」<br>という一番大事な意思決定には、踏み込んでくれない。<br>採用がうまくいかない本当の理由は、そこにあります。</p>
         <p class="why-pull">作業を外注しても、採用は良くならない。<br>必要なのは、意思決定まで持つ“責任者”です。</p>
       </div>
     </div>
