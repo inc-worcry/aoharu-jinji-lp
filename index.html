@@ -26,9 +26,10 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
   --line:#EAEAE7;--line-2:#DEDED9;
   --bg:#FFFFFF;--bg-alt:#F8F8F6;--dark:#16171B;
   --accent:#F26B1D;--accent-soft:#FCE9DC;--accent-d:#d95c12;
+  --accent-lt:#FDF0E6;--accent-lt-br:#F3CFAF;
   --blue:#29ABE2;--blue-soft:#E4F4FB;
   --font:"Noto Sans JP",sans-serif;
-  --fs-display:clamp(2.7rem,6.6vw,4.7rem);
+  --fs-display:clamp(2.6rem,6vw,4.4rem);
   --fs-h1:clamp(1.8rem,3.7vw,2.7rem);
   --fs-h2:clamp(1.28rem,2.3vw,1.55rem);
   --fs-h3:1.0625rem;
@@ -81,69 +82,63 @@ header{position:fixed;inset:0 0 auto;z-index:200;height:66px;display:flex;align-
 .hd-cta:hover{background:#000}
 
 /* HERO */
-.hero{padding:calc(66px + clamp(48px,7vw,78px)) 0 clamp(48px,7vw,80px);position:relative;overflow:hidden}
-.hero::after{content:"";position:absolute;top:-14%;right:-10%;width:min(520px,52vw);height:min(520px,52vw);background:radial-gradient(circle,var(--accent-soft),transparent 68%);opacity:.7;border-radius:50%;pointer-events:none;z-index:0}
+.hero{padding:calc(66px + clamp(44px,6vw,72px)) 0 clamp(40px,6vw,68px);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;top:-14%;right:-8%;width:min(500px,50vw);height:min(500px,50vw);background:radial-gradient(circle,var(--accent-soft),transparent 68%);opacity:.65;border-radius:50%;pointer-events:none;z-index:0}
 .hero .wrap{position:relative;z-index:1}
-.hero-grid{display:grid;grid-template-columns:1.05fr 400px;gap:clamp(32px,5vw,64px);align-items:start}
-.hero-eyebrow{font-size:var(--fs-label);font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);margin-bottom:26px;display:flex;align-items:center;gap:12px}
-.hero-eyebrow::before{content:"";width:26px;height:1.5px;background:var(--accent)}
-.hero h1{font-size:var(--fs-display);font-weight:900;line-height:1.08;letter-spacing:-.05em;color:var(--ink);margin-bottom:30px}
-.hero-sub{font-size:var(--fs-lead);line-height:2;color:var(--ink-soft);font-weight:500;margin-bottom:20px}
-.hero-punch{font-size:clamp(1.02rem,1.6vw,1.18rem);font-weight:800;color:var(--ink);line-height:1.7;margin-bottom:30px;letter-spacing:-.01em}
-.hero-punch b{color:var(--accent)}
-.hero-actions{display:flex;flex-direction:column;align-items:flex-start;gap:12px;margin-bottom:14px}
-.hero-note{font-size:var(--fs-cap);color:var(--muted);line-height:1.7}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(330px,360px);gap:clamp(30px,4.5vw,60px);align-items:center}
+.hero-text{min-width:0}
+.hero-eyebrow{font-size:var(--fs-label);font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);margin-bottom:24px;display:flex;align-items:center;gap:12px}
+.hero-eyebrow::before{content:"";width:26px;height:1.5px;background:var(--accent);flex-shrink:0}
+.hero h1{font-size:var(--fs-display);font-weight:900;line-height:1.1;letter-spacing:-.04em;color:var(--ink);margin-bottom:28px}
+.hero-sub{font-size:var(--fs-lead);line-height:2;color:var(--ink-soft);font-weight:500;margin-bottom:22px}
+.hero-actions{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.hero-note{font-size:var(--fs-cap);color:var(--muted);line-height:1.75}
 .hero-note b{color:var(--ink-soft);font-weight:700}
-
-/* HERO features strip */
-.hero-feat{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);margin-top:34px}
-.hf{padding:22px 26px 4px 0;border-right:1px solid var(--line)}
-.hf:last-child{border-right:none}
+/* hero features strip */
+.hero-feat{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);margin-top:32px}
+.hf{padding:20px 22px 2px 0;border-right:1px solid var(--line)}
+.hf:last-child{border-right:none;padding-right:0}
 .hf .t{font-size:var(--fs-sm);font-weight:800;color:var(--ink);letter-spacing:-.01em;margin-bottom:6px;display:flex;align-items:center;gap:8px}
 .hf .t::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);flex-shrink:0}
 .hf:nth-child(2) .t::before{background:var(--blue)}
 .hf .d{font-size:var(--fs-cap);color:var(--muted);line-height:1.7}
-
-/* HERO form */
-.hform{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 12px 40px rgba(21,22,26,.08);overflow:hidden;position:sticky;top:90px}
-.hform-h{padding:22px 26px 18px;border-bottom:1px solid var(--line)}
+/* hero form */
+.hform{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 16px 44px rgba(21,22,26,.09);overflow:hidden}
+.hform-h{padding:20px 24px 16px;border-bottom:1px solid var(--line)}
 .hform-h .t{font-size:var(--fs-h3);font-weight:800;color:var(--ink)}
 .hform-h .s{font-size:var(--fs-cap);color:var(--muted);margin-top:5px}
-.hform-b{padding:20px 26px 24px}
-.fl{margin-bottom:13px}
+.hform-b{padding:18px 24px 22px}
+.fl{margin-bottom:12px}
 .fl label{display:block;font-size:var(--fs-label);font-weight:700;letter-spacing:.04em;color:var(--muted);margin-bottom:6px}
 .fl input,.fl textarea{width:100%;padding:11px 13px;background:var(--bg-alt);border:1px solid var(--line-2);border-radius:8px;font-family:var(--font);font-size:var(--fs-sm);color:var(--ink);outline:none;transition:.16s;resize:vertical}
 .fl input:focus,.fl textarea:focus{border-color:var(--ink);background:#fff}
 .hform-submit{width:100%;justify-content:center;margin-top:4px}
-.hform-note{font-size:var(--fs-cap);color:var(--faint);text-align:center;margin-top:11px;line-height:1.6}
+.hform-note{font-size:var(--fs-cap);color:var(--faint);text-align:center;margin-top:10px;line-height:1.6}
 .form-done{padding:40px 26px;text-align:center}
 .form-done .ok{width:46px;height:46px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;margin:0 auto 16px}
 .form-done b{display:block;font-size:var(--fs-h3);font-weight:800;color:var(--ink);margin-bottom:6px}
 .form-done span{font-size:var(--fs-cap);color:var(--muted)}
 
-/* PHOTO BAND */
-.band{position:relative;height:clamp(190px,30vw,320px);overflow:hidden;background:var(--ink)}
-.band img{width:100%;height:100%;object-fit:cover;object-position:center 42%;opacity:.82}
-.band::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(21,22,26,.74),rgba(21,22,26,.12))}
-.band-cap{position:absolute;inset:0;display:flex;align-items:center;z-index:2}
-.band-cap .wrap{width:100%}
-.band-cap p{color:#fff;font-weight:900;font-size:clamp(1.3rem,2.8vw,2.1rem);letter-spacing:-.02em;line-height:1.4}
-.band-cap .bc-sub{color:rgba(255,255,255,.78);font-size:var(--fs-cap);font-weight:600;display:block;margin-top:10px;letter-spacing:.04em}
+/* FV PHOTO GRID */
+.fvg{padding:clamp(24px,4vw,44px) 0 clamp(40px,6vw,64px)}
+.fvg-cap{text-align:center;font-weight:900;font-size:clamp(1.15rem,2.4vw,1.6rem);letter-spacing:-.02em;color:var(--ink);margin-bottom:clamp(18px,2.5vw,26px)}
+.fvg-cap small{display:block;font-size:var(--fs-cap);font-weight:600;color:var(--muted);margin-top:8px;letter-spacing:.03em}
+.fvg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.fvg-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;box-shadow:0 8px 24px rgba(21,22,26,.08)}
 
 /* WHY */
 .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,72px);align-items:start}
-.why-grid .h1{margin-bottom:0}
-.why-body{padding-top:2px}
-.why-body p{font-size:var(--fs-body);line-height:2.05;color:var(--ink-soft);margin-bottom:18px}
+.why-grid .h1{margin:0}
+.why-body p{font-size:var(--fs-body);line-height:2.1;color:var(--ink-soft);margin-bottom:20px}
 .why-body p b{color:var(--ink);font-weight:800}
-.why-pull{font-size:clamp(1.08rem,1.8vw,1.3rem);font-weight:800;color:var(--ink);line-height:1.6;letter-spacing:-.02em;border-left:3px solid var(--accent);padding-left:22px;margin-top:6px}
+.why-pull{font-size:clamp(1.08rem,1.8vw,1.3rem);font-weight:800;color:var(--ink);line-height:1.6;letter-spacing:-.02em;border-left:3px solid var(--accent);padding-left:22px}
 
 /* FEATURES */
 .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
-.feat{background:var(--bg);padding:30px 28px;display:flex;flex-direction:column}
-.feat .fn{font-size:.8rem;font-weight:800;letter-spacing:.1em;color:var(--accent);margin-bottom:16px}
-.feat h3{font-size:var(--fs-h3);font-weight:800;line-height:1.5;color:var(--ink);margin-bottom:10px;letter-spacing:-.01em}
-.feat p{font-size:var(--fs-cap);line-height:1.85;color:var(--muted)}
+.feat{background:var(--bg);padding:32px 30px;display:flex;flex-direction:column}
+.feat .fn{font-size:.78rem;font-weight:800;letter-spacing:.14em;color:var(--accent);margin-bottom:18px}
+.feat h3{font-size:1.28rem;font-weight:900;line-height:1.4;color:var(--ink);margin-bottom:12px;letter-spacing:-.025em}
+.feat p{font-size:var(--fs-cap);line-height:1.9;color:var(--muted)}
 .feat.wide{grid-column:span 3;flex-direction:row;align-items:center;gap:26px;background:var(--dark)}
 .feat.wide .fn{color:var(--accent);margin-bottom:0;flex-shrink:0}
 .feat.wide h3{color:#fff;margin-bottom:4px}
@@ -158,17 +153,17 @@ header{position:fixed;inset:0 0 auto;z-index:200;height:66px;display:flex;align-
 
 /* PROOF */
 .proof-wrap{display:grid;grid-template-columns:0.95fr 1.05fr;gap:clamp(34px,5vw,70px);align-items:center}
-.proof-figure{position:relative;display:inline-block}
 .proof-big{font-size:clamp(4.6rem,12vw,8.6rem);font-weight:900;letter-spacing:-.05em;line-height:.9;color:var(--ink);font-feature-settings:"tnum" 1}
 .proof-big small{font-size:.28em;font-weight:700;color:var(--accent);margin-left:6px}
-.proof-badge{position:absolute;top:-18px;right:-16px;transform:translateX(100%);background:var(--blue-soft);border:1px solid #BFE6F5;border-radius:12px;padding:10px 16px;text-align:left;white-space:nowrap}
-.proof-badge .pb-n{font-size:clamp(1.5rem,2.6vw,2.05rem);font-weight:900;letter-spacing:-.03em;color:var(--blue);line-height:1;font-feature-settings:"tnum" 1}
-.proof-badge .pb-l{font-size:11px;font-weight:700;color:var(--ink-soft);margin-top:4px}
 .proof-big-l{font-size:var(--fs-h3);font-weight:800;color:var(--ink);margin-top:16px}
 .proof-big-s{font-size:var(--fs-cap);color:var(--muted);margin-top:8px;max-width:360px;line-height:1.85}
 .proof-stats{display:flex;flex-direction:column}
+.proof-hero-stat{padding:0 0 20px;border-bottom:1px solid var(--line);margin-bottom:4px}
+.proof-hero-stat .phs-n{font-size:clamp(2.6rem,5.4vw,3.7rem);font-weight:900;letter-spacing:-.04em;line-height:1;color:var(--ink);font-feature-settings:"tnum" 1}
+.proof-hero-stat .phs-n small{font-size:.3em;font-weight:700;color:var(--accent);margin-left:4px}
+.proof-hero-stat .phs-l{font-size:var(--fs-sm);font-weight:800;color:var(--ink);margin-top:8px}
+.proof-hero-stat .phs-l span{display:block;font-size:var(--fs-cap);font-weight:600;color:var(--muted);margin-top:3px}
 .proof-row{display:flex;align-items:baseline;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
-.proof-row:first-child{border-top:1px solid var(--line)}
 .proof-row .rn{font-size:1.6rem;font-weight:900;letter-spacing:-.02em;color:var(--ink);min-width:82px;font-feature-settings:"tnum" 1}
 .proof-row .rn small{font-size:.5em;font-weight:700;margin-left:2px}
 .proof-row .rl{font-size:var(--fs-cap);color:var(--muted);font-weight:600}
@@ -178,17 +173,17 @@ header{position:fixed;inset:0 0 auto;z-index:200;height:66px;display:flex;align-
 .vs{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .vs-card{border-radius:16px;padding:clamp(28px,3.4vw,40px);border:1px solid var(--line)}
 .vs-card.them{background:var(--bg-alt)}
-.vs-card.us{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 16px 44px rgba(242,107,29,.28)}
+.vs-card.us{background:var(--accent-lt);border:1.5px solid var(--accent-lt-br);box-shadow:0 12px 34px rgba(242,107,29,.12)}
 .vs-tag{font-size:var(--fs-label);font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:24px;display:inline-block;padding-bottom:10px;border-bottom:1px solid var(--line-2)}
 .vs-card.them .vs-tag{color:var(--muted)}
-.vs-card.us .vs-tag{color:#fff;border-color:rgba(255,255,255,.4)}
+.vs-card.us .vs-tag{color:var(--accent-d);border-color:var(--accent-lt-br)}
 .vs-row{display:grid;grid-template-columns:88px 1fr;gap:14px;padding:15px 0;font-size:var(--fs-sm);line-height:1.6;border-top:1px solid var(--line)}
-.vs-card.us .vs-row{border-color:rgba(255,255,255,.28)}
+.vs-card.us .vs-row{border-color:#EEDBC9}
 .vs-row:first-of-type{border-top:none}
 .vs-row .k{font-size:var(--fs-cap);font-weight:700;color:var(--faint)}
-.vs-card.us .vs-row .k{color:rgba(255,255,255,.82)}
+.vs-card.us .vs-row .k{color:#B98A5F}
 .vs-card.them .vs-row .v{color:var(--muted)}
-.vs-card.us .vs-row .v{color:#fff;font-weight:700}
+.vs-card.us .vs-row .v{color:var(--ink);font-weight:700}
 
 /* FLOW */
 .flow{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,3vw,40px)}
@@ -202,7 +197,6 @@ header{position:fixed;inset:0 0 auto;z-index:200;height:66px;display:flex;align-
 .about-body p{font-size:var(--fs-body);line-height:2.15;color:var(--ink-soft);margin-bottom:20px}
 .about-tag{display:inline-block;font-size:1.1rem;font-weight:900;color:var(--ink);letter-spacing:-.01em;margin-top:4px}
 .about-photo img{width:100%;border-radius:16px;object-fit:cover;box-shadow:0 14px 40px rgba(21,22,26,.12);aspect-ratio:4/3}
-.about-photo .cap{font-size:var(--fs-cap);color:var(--muted);margin-top:12px;text-align:center}
 
 /* MEMBER */
 .member{display:grid;grid-template-columns:320px 1fr;gap:clamp(38px,5vw,64px);align-items:center}
@@ -246,19 +240,19 @@ footer .cp{font-size:var(--fs-cap);color:var(--muted)}
 .sp{display:none}
 
 /* ===== RESPONSIVE ===== */
-@media(max-width:920px){
-  .hero-grid{grid-template-columns:1fr;gap:34px}
-  .hform{position:static;max-width:460px}
+@media(max-width:1000px){
+  .hero-grid{grid-template-columns:1fr;gap:32px}
+  .hform{max-width:460px}
 }
 @media(max-width:880px){
   .why-grid,.proof-wrap,.about,.member,.vs,.lineup{grid-template-columns:1fr}
-  .why-grid{gap:24px}
+  .why-grid{gap:22px}
   .feat-grid{grid-template-columns:1fr}
   .feat.wide{grid-column:span 1;flex-direction:column;align-items:flex-start;gap:12px}
   .flow{grid-template-columns:1fr;gap:24px}
+  .fvg-grid{grid-template-columns:repeat(2,1fr)}
   .member{max-width:560px;margin:0 auto}
   .member-photo{max-width:300px}
-  .proof-badge{position:static;transform:none;display:inline-block;margin-top:14px}
   .about{max-width:560px;margin:0 auto}
   header .hd-link{display:none}
   body{padding-bottom:72px}
@@ -282,7 +276,8 @@ footer .cp{font-size:var(--fs-cap);color:var(--muted)}
 <header>
   <a class="hd-logo" href="#top"><img src="images/aoharu_logo.png" alt="AOHARU人事"></a>
   <div class="hd-r">
-    <a class="hd-link" href="https://inc-worcry.github.io/aoharu-intern/" target="_blank" rel="noopener">新卒・インターン支援</a>
+    <a class="hd-link" href="https://inc-worcry.github.io/aoharu-intern/long-intern/" target="_blank" rel="noopener">長期インターン紹介</a>
+    <a class="hd-link" href="https://inc-worcry.github.io/aoharu-intern/" target="_blank" rel="noopener">新卒採用支援</a>
     <a class="hd-cta" href="#contact-form">無料相談</a>
   </div>
 </header>
@@ -294,7 +289,7 @@ footer .cp{font-size:var(--fs-cap);color:var(--muted)}
       <div class="hero-text">
         <div class="hero-eyebrow">AOHARU人事 — RPO / 採用代行</div>
         <h1>本気で、<br>寄り添う。</h1>
-        <p class="hero-sub">採用「代行」ではなく、<br>採用のプロである代表が、あなたの会社の<em class="u">“採用責任者”</em>に。<br>戦略設計から、定着・組織づくりまで。</p>
+        <p class="hero-sub">採用「代行」ではなく、採用のプロである代表が、<br>あなたの会社の<em class="u">“採用責任者”</em>に。<br>戦略設計から、定着・組織づくりまで。</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="https://app.spirinc.com/t/H_vQ01vClf0LmLgUwmVWY/as/XMn5n8Z_s_rK6GUlabUGi/confirm" target="_blank" rel="noopener">無料で相談する <span class="ar">→</span></a>
           <p class="hero-note">オンライン・相談無料。<br><b>当社代表の鈴木が、打ち合わせを直接対応いたします。</b></p>
@@ -323,30 +318,35 @@ footer .cp{font-size:var(--fs-cap);color:var(--muted)}
   </div>
 </section>
 
-<!-- PHOTO BAND -->
-<div class="band">
-  <img src="images/office1.jpg" alt="WorCry オフィス">
-  <div class="band-cap"><div class="wrap"><p>“はたらく”に、<span class="ao">青</span><span class="haru">春</span>を。</p><span class="bc-sub">〜 採用を起点に、熱狂する組織をつくる 〜</span></div></div>
+<!-- FV PHOTO GRID -->
+<div class="fvg">
+  <div class="wrap">
+    <div class="fvg-cap">“はたらく”に、<span class="ao">青</span><span class="haru">春</span>を。<small>〜 採用を起点に、熱狂する組織をつくる 〜</small></div>
+    <div class="fvg-grid">
+      <img src="images/team.jpg" alt="WorCry メンバー">
+      <img src="images/office1.jpg" alt="WorCry オフィス">
+      <img src="images/office2.jpg" alt="WorCry の様子">
+      <img src="images/office3.jpg" alt="WorCry の様子">
+    </div>
+  </div>
 </div>
 
 <!-- WHY -->
-<section class="sec" id="why">
+<section class="sec alt" id="why">
   <div class="wrap">
+    <div class="label" data-n="01" style="margin-bottom:clamp(28px,4vw,44px)">Why</div>
     <div class="why-grid">
-      <div>
-        <div class="label" data-n="01">Why</div>
-        <h2 class="h1" style="margin-top:16px">多くの採用代行は、<br>“手”は増えても、<br>“責任”は増えない。</h2>
-      </div>
+      <h2 class="h1">多くの採用代行は、<br>“手”は貸すが、<br>“責任”は持たない。</h2>
       <div class="why-body">
-        <p>多くの採用代行は、工数を安く巻き取るモデルです。担当は分業や若手のオペレーターで、採れない・辞めるの<b>本質</b>——採用戦略の設計と、入社後の定着——には、踏み込みません。</p>
-        <p class="why-pull">採用は、“作業”を外注しても解決しない。<br>“意思決定”を持てる人が、必要だ。</p>
+        <p>スカウトの送信も、日程調整も、面接のセッティングも——<b>“作業”は代わりにやってくれます</b>。でも、「どんな人を採るべきか」「なぜ人が辞めるのか」という一番大事な意思決定には、踏み込んでくれない。採用がうまくいかない本当の理由は、そこにあります。</p>
+        <p class="why-pull">作業を外注しても、採用は良くならない。<br>必要なのは、意思決定まで持つ“責任者”です。</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- FEATURES -->
-<section class="sec alt" id="features">
+<section class="sec" id="features">
   <div class="wrap">
     <div class="sec-head center">
       <div class="label" data-n="02">What makes us different</div>
@@ -380,17 +380,17 @@ footer .cp{font-size:var(--fs-cap);color:var(--muted)}
     </div>
     <div class="proof-wrap">
       <div>
-        <div class="proof-figure">
-          <div class="proof-big num">85.7<small>%</small></div>
-          <div class="proof-badge"><div class="pb-n num">96.6%</div><div class="pb-l">入社後の定着率</div></div>
-        </div>
+        <div class="proof-big num">85.7<small>%</small></div>
         <div class="proof-big-l">支援企業の継続率</div>
-        <div class="proof-big-s">創業1年5ヶ月、スタートアップと共に走り続けた結果。採用支援した29名のうち、退職はわずか1名。“採って終わり”にしないから、選ばれ続けています。</div>
+        <div class="proof-big-s">創業1年5ヶ月、スタートアップと共に走り続けた結果。“採って終わり”にしないから、選ばれ続けています。</div>
       </div>
       <div class="proof-stats">
+        <div class="proof-hero-stat">
+          <div class="phs-n num">96.6<small>%</small></div>
+          <div class="phs-l">入社後の定着率<span>採用支援した29名のうち、退職はわずか1名。</span></div>
+        </div>
         <div class="proof-row"><div class="rn num">15<small>名</small></div><div class="rl"><b>新卒採用支援</b>ゼロから採用の型を作り上げた企業多数</div></div>
         <div class="proof-row"><div class="rn num">14<small>名</small></div><div class="rl"><b>中途・インターン支援</b>中途9名＋インターン5名。多様な形態に対応</div></div>
-        <div class="proof-row"><div class="rn num">1<small>名</small></div><div class="rl"><b>採用支援29名のうち、退職はわずか1名</b>入社後の定着率 96.6%</div></div>
       </div>
     </div>
   </div>
