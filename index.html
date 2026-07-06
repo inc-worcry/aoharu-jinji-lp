@@ -316,7 +316,7 @@ footer .cp{font-size:var(--fs-cap);color:var(--muted)}
           <div class="fl"><label>メールアドレス</label><input type="email" name="email" placeholder="taro@company.co.jp" required></div>
           <div class="fl"><label>ご相談内容（任意）</label><textarea name="message" rows="2" placeholder="採用の課題・フェーズ など"></textarea></div>
           <button type="submit" class="btn btn-primary hform-submit">送信する <span class="ar">→</span></button>
-          <div class="hform-note">送信すると、代表・鈴木宛のメール作成画面が開きます。</div>
+          <div class="hform-note">送信すると、宛先 saiyou@worcry.com へのメール作成画面が開きます。</div>
         </form>
       </div>
     </div>
@@ -539,7 +539,7 @@ footer .cp{font-size:var(--fs-cap);color:var(--muted)}
     e.preventDefault();
     var c=f.company.value,n=f.name.value,m=f.email.value,msg=f.message.value;
     var body='会社名: '+c+'\nお名前: '+n+'\nメールアドレス: '+m+'\n\nご相談内容:\n'+(msg||'（未記入）');
-    var href='mailto:ssuzuki@worcry.com?subject='+encodeURIComponent('【無料相談】'+c+' '+n+' 様')+'&body='+encodeURIComponent(body);
+    var href='mailto:saiyou@worcry.com?subject='+encodeURIComponent('【無料相談・お問い合わせ】'+c+' '+n+' 様')+'&body='+encodeURIComponent(body);
     window.location.href=href;
     f.parentNode.innerHTML='<div class="form-done"><div class="ok">✓</div><b>ありがとうございます。</b><span>メール作成画面が開きます。届き次第、代表よりご返信します。</span></div>';
   });
