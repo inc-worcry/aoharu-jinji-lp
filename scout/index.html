@@ -44,7 +44,8 @@
   img{max-width:100%;display:block}
   h1,h2,h3{margin:0;text-wrap:balance}
   .shell{max-width:1160px;margin:0 auto;padding-inline:var(--pad)}
-  .col{max-width:800px}
+  .w{max-width:820px}
+  .lede{margin:0;color:var(--ink-soft)}
 
   /* 見出し：約物を詰め（palt）、漢字は原寸・かなを一段落として組む */
   .disp{font-weight:900;letter-spacing:-.025em;line-height:1.42;font-feature-settings:"palt" 1}
@@ -154,7 +155,7 @@
   /* ---------- 04 範囲と体制 ---------- */
   .scope{padding-block:96px}
   .scope h2{font-size:clamp(1.625rem,3.2vw,2.375rem);margin-bottom:18px}
-  .scope>p{margin:0;color:var(--ink-soft)}
+
   .excl{display:flex;flex-wrap:wrap;gap:9px;margin:28px 0 0;padding:0;list-style:none}
   .excl li{background:var(--surface);color:var(--ink-soft);font-size:.8125rem;padding:8px 15px;border-radius:999px}
   .excl li i{font-style:normal;color:var(--sky-deep);font-family:var(--la);font-size:.62rem;font-weight:600;letter-spacing:.14em;margin-left:8px}
@@ -288,10 +289,12 @@
   </section>
 
   <!-- 02 -->
-  <section class="shell col three" id="s2">
-    <p class="eyebrow">Why students</p>
-    <h2 class="disp" data-kn>返信<span class="kn">するかどうかは</span>、最初<span class="kn">の</span>三行<span class="kn">で</span>決<span class="kn">まっている</span>。</h2>
-    <p class="note">その三行を、学生の感覚で判断できる人は、たいていの人事部にいません。同じ企業から同じ候補者に宛てた、二通の書き出しです。</p>
+  <section class="shell three" id="s2">
+    <div class="w">
+      <p class="eyebrow">Why students</p>
+      <h2 class="disp" data-kn>返信<span class="kn">するかどうかは</span>、最初<span class="kn">の</span>三行<span class="kn">で</span>決<span class="kn">まっている</span>。</h2>
+      <p class="note">その三行を、学生の感覚で判断できる人は、たいていの人事部にいません。同じ企業から同じ候補者に宛てた、二通の書き出しです。</p>
+    </div>
 
     <div class="pair">
       <div class="msg">
@@ -326,10 +329,12 @@
   <!-- 03 -->
   <section class="pin" id="s3">
     <div class="stage">
-      <div class="shell col stage-head">
-        <p class="eyebrow">What we do</p>
-        <h2 class="disp" data-kn>月額<span class="kn">に</span>含<span class="kn">む</span>、八<span class="kn">つの</span>実務。</h2>
-        <p>設計から報告まで、実際に作業する順番のまま並べています。学生2名が手を動かし、実務経験者が外に出す前に全件を見ます。</p>
+      <div class="shell stage-head">
+        <div class="w">
+          <p class="eyebrow">What we do</p>
+          <h2 class="disp" data-kn>月額<span class="kn">に</span>含<span class="kn">む</span>、八<span class="kn">つの</span>実務。</h2>
+          <p>設計から報告まで、実際に作業する順番のまま並べています。学生2名が手を動かし、実務経験者が外に出す前に全件を見ます。</p>
+        </div>
       </div>
       <div class="track" id="track">
         <div class="card"><b>01</b><h3 data-kn><span class="kn">ペルソナ</span>設計</h3><p>学生目線で「誰に当てるか」を定義します。</p></div>
@@ -346,10 +351,12 @@
   </section>
 
   <!-- 04 -->
-  <section class="shell col scope" id="s4">
-    <p class="eyebrow">Scope</p>
-    <h2 class="disp" data-kn>面接<span class="kn">は</span>代行<span class="kn">しません</span>。面接<span class="kn">に</span>座<span class="kn">らせるまでを</span>引<span class="kn">き</span>受<span class="kn">けます</span>。</h2>
-    <p>面接まで踏み込むと、学生の手を離れて単価も上がります。私たちが伸ばすのは、日程が決まった後に本当に来るかどうかのほうです。</p>
+  <section class="shell scope" id="s4">
+    <div class="w">
+      <p class="eyebrow">Scope</p>
+      <h2 class="disp" data-kn>面接<span class="kn">は</span>代行<span class="kn">しません</span>。面接<span class="kn">に</span>座<span class="kn">らせるまでを</span>引<span class="kn">き</span>受<span class="kn">けます</span>。</h2>
+      <p class="lede">面接まで踏み込むと、学生の手を離れて単価も上がります。私たちが伸ばすのは、日程が決まった後に本当に来るかどうかのほうです。</p>
+    </div>
     <ul class="excl">
       <li>面接の代行<i>OPTION</i></li>
       <li>学生モニター座談会<i>OPTION</i></li>
@@ -374,7 +381,7 @@
 
   <!-- 05 -->
   <section class="band" id="s5">
-    <div class="shell col">
+    <div class="shell w">
       <p class="eyebrow">Price</p>
       <h2 class="disp" data-kn>月額98,000円<span class="kn">のみ</span>。成果報酬<span class="kn">も</span>、初期費用<span class="kn">もありません</span>。</h2>
       <div class="price"><b>98,000</b><span>円 / 月（税抜）</span></div>
@@ -392,10 +399,12 @@
   </section>
 
   <div class="closing" id="contact">
-    <div class="shell col closing-in">
+    <div class="shell closing-in">
+      <div class="w">
       <p class="eyebrow">Free trial</p>
       <h2 class="disp" data-kn><span><span class="kn">まず</span>、御社<span class="kn">の</span>今<span class="kn">のスカウト</span>文<span class="kn">を</span></span><span>学生<span class="kn">に</span>読<span class="kn">ませてみませんか</span>。</span></h2>
       <p class="closing-lead">2週間・300通を無償でお試しいただけます。見る数字は、返信率と面接設定数の2つだけです。</p>
+      </div>
 
       <form id="heroForm" class="form" novalidate>
         <input type="hidden" name="_form" value="RPO-学生スカウト代行">
