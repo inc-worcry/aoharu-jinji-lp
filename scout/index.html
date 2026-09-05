@@ -60,7 +60,7 @@
 
   /* hero */
   .hero{background:var(--surface);border-bottom:1px solid var(--line)}
-  .hero-in{padding-block:60px 52px}
+  .hero-in{padding-block:52px 44px}
   .hero h1{
     font-size:clamp(2rem,5.6vw,3.2rem);font-weight:900;line-height:1.26;
     letter-spacing:-.015em;margin-bottom:20px;
@@ -68,14 +68,14 @@
   .hero h1 span{display:inline-block}
   .hero h1 em{font-style:normal;border-bottom:5px solid var(--sky);padding-bottom:2px}
   .lead{font-size:1.0625rem;color:var(--ink-soft);max-width:35em;margin:0}
-  .facts{display:flex;flex-wrap:wrap;margin-top:32px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .fact{padding:16px 26px 16px 0;margin-right:26px;border-right:1px solid var(--line-soft)}
+  .facts{display:flex;flex-wrap:wrap;margin-top:28px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .fact{padding:14px 26px 14px 0;margin-right:26px;border-right:1px solid var(--line-soft)}
   .fact:last-child{border-right:0;margin-right:0;padding-right:0}
   .fact dt{font-family:"IBM Plex Sans",sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.12em;color:var(--ink-faint);margin:0 0 1px}
   .fact dd{margin:0;font-family:"IBM Plex Sans","Zen Kaku Gothic New",sans-serif;font-size:1.2rem;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.4}
   .fact dd small{font-size:.78rem;font-weight:500;color:var(--ink-soft);margin-left:3px}
   .cta{
-    display:inline-block;margin-top:30px;background:var(--sky-deep);color:#FFFFFF;
+    display:inline-block;margin-top:26px;background:var(--sky-deep);color:#FFFFFF;
     font-size:1.0625rem;font-weight:700;text-decoration:none;padding:14px 38px;border-radius:2px;
     transition:opacity .15s ease,transform .15s ease;
   }
@@ -84,19 +84,20 @@
   .cta-sub{margin:12px 0 0;font-size:.8125rem;color:var(--ink-faint)}
 
   /* sections */
-  .sec{padding-block:56px}
+  .sec{padding-block:46px}
   .sec h2{font-size:1.4375rem;font-weight:700;line-height:1.5;letter-spacing:-.01em;margin-bottom:14px}
   .sec p{margin:0 0 1em;color:var(--ink-soft)}
   .sec p:last-child{margin-bottom:0}
   .sec p strong{color:var(--ink);font-weight:700}
 
   /* horizontal flow */
-  .flow{padding-block:56px 52px}
+  .flow{padding-block:46px 42px}
   .rail{
-    display:flex;gap:14px;overflow-x:auto;margin-top:28px;
+    display:flex;gap:14px;overflow-x:auto;margin-top:24px;
     scroll-snap-type:x proximity;
-    padding-inline:max(24px,calc((100% - 1000px) / 2 + 24px)) 24px;
-    padding-block:2px 16px;
+    padding-left:max(24px, calc((100% - 720px) / 2 + 24px));
+    padding-right:24px;
+    padding-block:2px 14px;
     scrollbar-width:thin;scrollbar-color:var(--sky) var(--line-soft);
   }
   .rail::-webkit-scrollbar{height:6px}
@@ -128,20 +129,21 @@
     font-size:.8125rem;padding:6px 12px;border-radius:2px;
   }
   .excl li i{font-style:normal;color:var(--sky-deep);font-family:"IBM Plex Sans",sans-serif;font-size:.68rem;letter-spacing:.06em;margin-left:6px}
-  .team{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:34px}
-  .team div{background:var(--surface);border:1px solid var(--line);padding:18px 18px 20px;border-radius:2px}
-  .team dt{font-family:"IBM Plex Sans",sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.12em;color:var(--sky-deep);margin-bottom:6px}
-  .team dd{margin:0;font-size:.875rem;line-height:1.7;color:var(--ink-soft)}
-  .team dd b{display:block;color:var(--ink);font-weight:700;font-size:.9375rem;margin-bottom:3px}
-  .note{margin-top:24px;padding:16px 18px;background:var(--sky-wash);border-left:3px solid var(--sky);font-size:.9375rem;color:var(--ink-soft)}
+  .roles{display:grid;grid-template-columns:repeat(3,1fr);margin-top:28px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .roles div{padding:15px 20px 17px 0;border-right:1px solid var(--line-soft)}
+  .roles div+div{padding-left:20px}
+  .roles div:last-child{border-right:0;padding-right:0}
+  .roles dt{font-family:"IBM Plex Sans",sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.12em;color:var(--sky-deep);margin-bottom:4px}
+  .roles dd{margin:0;font-size:.8125rem;line-height:1.65;color:var(--ink-soft)}
+  .roles dd b{display:block;color:var(--ink);font-weight:700;font-size:.9375rem;margin-bottom:2px}
 
   /* price band */
-  .band{background:var(--band);border-block:1px solid var(--line);padding-block:54px}
+  .band{background:var(--band);border-block:1px solid var(--line);padding-block:44px}
   .price{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin:6px 0 4px;font-family:"IBM Plex Sans","Zen Kaku Gothic New",sans-serif;font-variant-numeric:tabular-nums}
   .price b{font-size:clamp(2.75rem,9vw,4rem);font-weight:600;line-height:1;letter-spacing:-.02em}
   .price span{font-size:1.0625rem;font-weight:500;color:var(--ink-soft)}
   .price-note{color:var(--ink-soft);font-size:.875rem;margin:0}
-  .opt{border-top:1px solid var(--line);margin-top:28px;padding-top:22px}
+  .opt{border-top:1px solid var(--line);margin-top:24px;padding-top:20px}
   .opt h3{font-family:"IBM Plex Sans","Zen Kaku Gothic New",sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.1em;color:var(--ink-faint);margin-bottom:10px}
   .opt ul{list-style:none;margin:0;padding:0}
   .opt li{display:flex;justify-content:space-between;gap:20px;padding:10px 0;border-bottom:1px solid var(--line);font-size:.9375rem}
@@ -150,10 +152,11 @@
 
   /* form */
   .closing{background:var(--surface);border-bottom:1px solid var(--line)}
-  .closing-in{padding-block:56px}
+  .closing-in{padding-block:46px}
   .closing h2{font-size:clamp(1.4375rem,3.4vw,1.875rem);font-weight:900;line-height:1.45;margin-bottom:14px}
   .closing h2 span{display:inline-block}
-  .form{margin-top:28px;display:grid;gap:14px;max-width:540px}
+  .closing-lead{margin:0;color:var(--ink-soft);max-width:34em}
+  .form{margin-top:24px;display:grid;gap:13px;max-width:540px}
   .form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
   .form label{display:block;font-family:"IBM Plex Sans","Zen Kaku Gothic New",sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.08em;color:var(--ink-faint);margin-bottom:5px}
   .form label i{font-style:normal;color:var(--sky-deep);margin-left:4px}
@@ -161,7 +164,7 @@
     width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:2px;
     background:var(--ground);color:var(--ink);font:inherit;font-size:.9375rem;line-height:1.6;
   }
-  .form textarea{min-height:84px;resize:vertical}
+  .form textarea{min-height:72px;resize:vertical}
   .form input:focus-visible,.form textarea:focus-visible{outline:2px solid var(--sky);outline-offset:1px;border-color:var(--sky)}
   .consent{display:flex;gap:9px;align-items:flex-start;font-size:.8125rem;color:var(--ink-soft);line-height:1.7}
   .consent input{margin-top:5px;accent-color:var(--sky-deep);flex:none}
@@ -190,7 +193,10 @@
     .facts{display:block}
     .fact{border-right:0;border-bottom:1px solid var(--line-soft);margin-right:0;padding:13px 0}
     .fact:last-child{border-bottom:0}
-    .team{grid-template-columns:1fr}
+    .roles{grid-template-columns:1fr}
+    .roles div{padding:14px 0;border-right:0;border-bottom:1px solid var(--line-soft)}
+    .roles div+div{padding-left:0}
+    .roles div:last-child{border-bottom:0}
     .form .row{grid-template-columns:1fr}
     .cta{display:block;text-align:center}
     .card{flex-basis:230px}
@@ -247,7 +253,7 @@
 
   <div class="shell col sec">
     <h2>面接は代行しません。面接に「座らせる」までを引き受けます。</h2>
-    <p>面接まで踏み込むと、学生の手を離れて単価も上がります。私たちが伸ばすのは、日程が決まった後に本当に来るかどうかのほうです。</p>
+    <p>面接まで踏み込むと、学生の手を離れて単価も上がります。私たちが伸ばすのは、日程が決まった後に本当に来るかどうかのほうです。担当学生の氏名・大学・学年はレポートに記載し、外に出す文面はすべて実務経験者のレビューを通します。</p>
     <ul class="excl">
       <li>面接の代行<i>オプション</i></li>
       <li>学生モニター座談会<i>オプション</i></li>
@@ -257,12 +263,11 @@
       <li>中途採用の支援（新卒のみ）</li>
     </ul>
 
-    <dl class="team">
-      <div><dt>MAIN</dt><dd><b>学生メンバー / 主担当</b>ターゲット定義、原稿作成、返信対応。月20時間。</dd></div>
-      <div><dt>SUB</dt><dd><b>学生メンバー / 副担当</b>送信とリマインド。試験期間の引き継ぎも担保。月10時間。</dd></div>
-      <div><dt>REVIEW</dt><dd><b>新卒採用の実務経験者</b>外に出す前の全件レビューと、月次定例への同席。</dd></div>
+    <dl class="roles">
+      <div><dt>MAIN</dt><dd><b>学生 / 主担当</b>ターゲット定義、原稿、返信対応。月20時間。</dd></div>
+      <div><dt>SUB</dt><dd><b>学生 / 副担当</b>送信とリマインド。月10時間。</dd></div>
+      <div><dt>REVIEW</dt><dd><b>実務経験者</b>外に出す前の全件レビュー。</dd></div>
     </dl>
-    <p class="note">担当学生の氏名・大学・学年はレポートに記載します。学生が考え、実務経験者が確かめたものだけをお出しします。</p>
   </div>
 
   <div class="band">
@@ -287,7 +292,7 @@
     <div class="shell col closing-in">
       <p class="eyebrow">無償トライアル</p>
       <h2><span>まず、御社の今のスカウト文を</span><span>学生に読ませてみませんか。</span></h2>
-      <p class="lead">2週間・300通を無償でお試しいただけます。見る数字は、返信率と面接設定数の2つだけです。</p>
+      <p class="closing-lead">2週間・300通を無償でお試しいただけます。見る数字は、返信率と面接設定数の2つだけです。</p>
 
       <form id="heroForm" class="form" novalidate>
         <input type="hidden" name="_form" value="RPO-学生スカウト代行">
