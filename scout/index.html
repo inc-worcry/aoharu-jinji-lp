@@ -94,7 +94,6 @@
   .flow{padding-block:46px 42px}
   .rail{
     display:flex;gap:14px;overflow-x:auto;margin-top:24px;
-    scroll-snap-type:x proximity;
     padding-left:max(24px, calc((100% - 720px) / 2 + 24px));
     padding-right:24px;
     padding-block:2px 14px;
@@ -104,7 +103,7 @@
   .rail::-webkit-scrollbar-track{background:var(--line-soft);border-radius:3px}
   .rail::-webkit-scrollbar-thumb{background:var(--sky);border-radius:3px}
   .card{
-    flex:0 0 250px;scroll-snap-align:start;
+    flex:0 0 250px;
     background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--sky);
     padding:20px 20px 22px;border-radius:2px;
   }
