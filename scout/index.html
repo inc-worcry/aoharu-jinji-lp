@@ -107,18 +107,20 @@
   .head-note{font-family:var(--la);font-size:.7rem;letter-spacing:.1em;color:var(--mute)}
 
   /* ===== 01 FV ===== */
-  .hero{min-height:calc(100vh - 65px);display:flex;flex-direction:column;justify-content:center;padding-block:48px 40px}
-  .hero-in{padding-block:0 60px}
-  .hero h1{font-size:clamp(2.4rem,6.4vw,4.75rem);margin-bottom:32px;max-width:15em}
+  .hero{min-height:calc(100vh - 65px);display:flex;flex-direction:column;justify-content:center;padding-block:44px 56px}
+  .hero-in{display:grid;grid-template-columns:minmax(0,1fr) 470px;gap:60px;align-items:center}
+  .hero h1{font-size:clamp(2.2rem,4.4vw,3.5rem);margin-bottom:28px}
   .hero h1 span{display:inline-block}
   .hero h1 em{font-style:normal;box-shadow:inset 0 -.3em 0 var(--sky-wash), inset 0 -.34em 0 -.28em var(--sky)}
   .lead{font-size:1.0625rem;color:var(--ink-soft);margin:0;max-width:34em}
-  .hero-cta{margin-top:38px}
+  .form-h{margin:0 0 6px;font-size:1.125rem;font-weight:900;letter-spacing:-.02em;font-feature-settings:"palt" 1}
+  .form-sub{margin:0 0 6px;font-size:.8125rem;line-height:1.75;color:var(--ink-soft)}
+  .closing-cta{margin:34px 0 0}
   @media (prefers-reduced-motion:no-preference){
-    .hero .eyebrow,.hero h1,.hero .lead,.hero-cta{animation:rise .8s cubic-bezier(.16,.84,.44,1) both}
+    .hero .eyebrow,.hero h1,.hero .lead,.hero-form{animation:rise .8s cubic-bezier(.16,.84,.44,1) both}
     .hero h1{animation-delay:.06s}
     .hero .lead{animation-delay:.16s}
-    .hero-cta{animation-delay:.24s}
+    .hero-form{animation-delay:.24s}
   }
   @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 
@@ -224,7 +226,9 @@
   .foot-in small{font-family:var(--la);font-size:.68rem;color:var(--mute);letter-spacing:.08em}
 
   @media (max-width:980px){
-    .hero{min-height:0;padding-block:36px 40px}
+    .hero{min-height:0;padding-block:32px 44px}
+    .hero-in{grid-template-columns:1fr;gap:40px}
+    .hero h1{font-size:clamp(2.2rem,6.2vw,3.2rem)}
     .pair{grid-template-columns:1fr;gap:20px}
     .pgrid{grid-template-columns:1fr;gap:40px}
     .rowset{grid-template-columns:1fr}
@@ -234,7 +238,6 @@
   }
   @media (max-width:660px){
     :root{--pad:22px;--sec:64px}
-    .hero-in{padding-block:0 40px}
     .msg{padding:24px 22px 22px}
     .faq-list{padding-inline:22px}
     .faq summary{padding:20px 40px 20px 0;font-size:1rem}
@@ -270,12 +273,29 @@
   <!-- 01 -->
   <section class="hero" id="s1">
     <div class="shell hero-in">
-      <p class="eyebrow">新卒ダイレクトリクルーティング戦略</p>
-      <h1 class="disp" data-kn><span>学生<span class="kn">が</span>、</span><span>学生<span class="kn">のために</span></span><span><em>考<span class="kn">える</span></em>新卒採用。</span></h1>
-      <p class="lead">スカウトを受け取るのは学生なのに、戦略を立てているのは学生ではない人たちです。現役の大学生2名が主担当となり、御社の新卒ダイレクトリクルーティングを設計から運用まで回します。</p>
-      <div class="hero-cta">
-        <a class="btn" href="#contact">まずは相談する</a>
-        <p class="btn-sub">現在お使いの媒体と募集ポジションをうかがい、当てるターゲットと文面の方向性をご提案します。</p>
+      <div class="hero-txt">
+        <p class="eyebrow">新卒ダイレクトリクルーティング戦略</p>
+        <h1 class="disp" data-kn><span>学生<span class="kn">が</span>、</span><span>学生<span class="kn">のために</span></span><span><em>考<span class="kn">える</span></em>新卒採用。</span></h1>
+        <p class="lead">スカウトを受け取るのは学生なのに、戦略を立てているのは学生ではない人たちです。現役の大学生2名が主担当となり、御社の新卒ダイレクトリクルーティングを設計から運用まで回します。</p>
+      </div>
+      <div class="hero-form" id="contact">
+        <form id="heroForm" class="form" novalidate>
+          <p class="form-h">相談を申し込む</p>
+          <p class="form-sub">現在お使いの媒体と募集ポジションをうかがい、当てるターゲットと文面の方向性をご提案します。</p>
+          <input type="hidden" name="_form" value="RPO-学生スカウト代行">
+      <div class="row">
+        <div><label for="f-co">会社名<i>*</i></label><input id="f-co" type="text" name="会社名" placeholder="株式会社○○" required></div>
+        <div><label for="f-nm">お名前<i>*</i></label><input id="f-nm" type="text" name="お名前" placeholder="山田 太郎" required></div>
+      </div>
+      <div class="row">
+        <div><label for="f-em">メールアドレス<i>*</i></label><input id="f-em" type="email" name="email" placeholder="taro@company.co.jp" required></div>
+        <div><label for="f-tl">電話番号<i>*</i></label><input id="f-tl" type="tel" name="電話番号" placeholder="03-0000-0000" required></div>
+      </div>
+      <div><label for="f-ms">ご相談内容（任意）</label><textarea id="f-ms" name="ご相談内容" placeholder="現在お使いの媒体、新卒の採用予定人数 など"></textarea></div>
+      <label class="consent"><input type="checkbox" name="同意" required><span><a href="https://www.worcry.com/privacy-policy" target="_blank" rel="noopener">個人情報の取り扱い</a>に同意します</span></label>
+      <button class="btn" type="submit">相談を申し込む</button>
+        </form>
+        <p class="btn-sub">新卒採用のみ対応。中途採用のご相談はお受けしていません。</p>
       </div>
     </div>
   </section>
@@ -438,28 +458,14 @@
   </section>
 
   <!-- 06 -->
-  <section class="shell sec closing" id="contact">
+  <section class="shell sec closing" id="s6">
     <div class="w">
       <p class="eyebrow">Contact</p>
       <h2 class="disp" data-kn><span><span class="kn">まず</span>、御社<span class="kn">の</span>今<span class="kn">のスカウト</span>文<span class="kn">を</span></span><span>学生<span class="kn">に</span>読<span class="kn">ませてみませんか</span>。</span></h2>
       <p class="lede">現在お使いの媒体と募集ポジションをうかがえれば、初回の打ち合わせで当てるターゲットと文面の方向性までお出しします。</p>
+      <p class="closing-cta"><a class="btn" href="#contact">相談を申し込む</a></p>
+      <p class="btn-sub">新卒採用のみ対応しています。中途採用のご相談はお受けしていません。</p>
     </div>
-
-    <form id="heroForm" class="form body-w" novalidate>
-      <input type="hidden" name="_form" value="RPO-学生スカウト代行">
-      <div class="row">
-        <div><label for="f-co">会社名<i>*</i></label><input id="f-co" type="text" name="会社名" placeholder="株式会社○○" required></div>
-        <div><label for="f-nm">お名前<i>*</i></label><input id="f-nm" type="text" name="お名前" placeholder="山田 太郎" required></div>
-      </div>
-      <div class="row">
-        <div><label for="f-em">メールアドレス<i>*</i></label><input id="f-em" type="email" name="email" placeholder="taro@company.co.jp" required></div>
-        <div><label for="f-tl">電話番号<i>*</i></label><input id="f-tl" type="tel" name="電話番号" placeholder="03-0000-0000" required></div>
-      </div>
-      <div><label for="f-ms">ご相談内容（任意）</label><textarea id="f-ms" name="ご相談内容" placeholder="現在お使いの媒体、新卒の採用予定人数 など"></textarea></div>
-      <label class="consent"><input type="checkbox" name="同意" required><span><a href="https://www.worcry.com/privacy-policy" target="_blank" rel="noopener">個人情報の取り扱い</a>に同意します</span></label>
-      <button class="btn" type="submit">相談を申し込む</button>
-    </form>
-    <p class="btn-sub">新卒採用のみ対応しています。中途採用のご相談はお受けしていません。</p>
   </section>
 </main>
 
