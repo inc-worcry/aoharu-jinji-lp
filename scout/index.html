@@ -65,7 +65,9 @@
   /* ===== 共通のタイポ =====
      見出しは palt で約物を詰め、漢字は原寸・かなを一段落として組む */
   .disp{font-weight:900;letter-spacing:-.025em;line-height:1.42;font-feature-settings:"palt" 1}
-  .kn{font-size:.82em;letter-spacing:.01em}
+  .kn{font-size:.82em;letter-spacing:.01em;display:inline}
+  /* ここでだけ改行させる区切り */
+  .br{display:inline-block}
   h2.disp{font-size:clamp(1.625rem,3.2vw,2.375rem);margin-bottom:18px}
   .lede{margin:0;color:var(--ink-soft);max-width:33em}
   .eyebrow{
@@ -114,7 +116,6 @@
   .hero{min-height:calc(100vh - 65px);display:flex;flex-direction:column;justify-content:center;padding-block:36px 44px}
   .hero-in{display:grid;grid-template-columns:minmax(0,1fr) 470px;gap:60px;align-items:center}
   .hero h1{font-size:clamp(2.2rem,4.4vw,3.5rem);margin-bottom:28px}
-  .hero h1 span{display:inline-block}
   .hero h1 em{font-style:normal;box-shadow:inset 0 -.3em 0 var(--sky-wash), inset 0 -.34em 0 -.28em var(--sky)}
   .lead{font-size:1.0625rem;color:var(--ink-soft);margin:0;max-width:34em}
   .form-h{margin:0 0 6px;font-size:1.125rem;font-weight:900;letter-spacing:-.02em;font-feature-settings:"palt" 1}
@@ -314,7 +315,7 @@
     <div class="shell hero-in">
       <div class="hero-txt">
         <p class="eyebrow">新卒ダイレクトリクルーティング戦略</p>
-        <h1 class="disp" data-kn><span>学生<span class="kn">が</span>、</span><span>学生<span class="kn">のために</span></span><span><em>考<span class="kn">える</span></em>新卒採用。</span></h1>
+        <h1 class="disp" data-kn><span class="br">学生<span class="kn">が</span>、</span><span class="br">学生<span class="kn">のために</span></span><span class="br"><em>考<span class="kn">える</span></em>新卒採用。</span></h1>
         <p class="lead">スカウトを受け取るのは学生なのに、戦略を立てているのは学生ではない人たちです。現役の大学生2名が主担当となり、御社の新卒ダイレクトリクルーティングを設計から運用まで回します。</p>
       </div>
       <div class="hero-form" id="contact">
@@ -343,7 +344,7 @@
   <section class="shell sec three" id="s2">
     <div class="w">
       <p class="eyebrow">Why students</p>
-      <h2 class="disp" data-kn>返信<span class="kn">するかどうかは</span>、最初<span class="kn">の</span>三行<span class="kn">で</span>決<span class="kn">まっている</span>。</h2>
+      <h2 class="disp" data-kn><span class="br">返信<span class="kn">するかどうかは</span>、</span><span class="br">最初<span class="kn">の</span>三行<span class="kn">で</span>決<span class="kn">まっている</span>。</span></h2>
       <p class="lede">その三行を、学生の感覚で判断できる人は、たいていの人事部にいません。同じ企業から同じ候補者に宛てた、二通の書き出しです。</p>
     </div>
 
@@ -379,11 +380,11 @@
 
   <section class="say">
     <div class="shell"><div class="w">
-      <p class="big" data-kn>変わるのは、いつも言葉ひとつ。</p>
+      <p class="big" data-kn><span class="br">変わるのは、</span><span class="br">いつも言葉ひとつ。</span></p>
       <ul>
-        <li data-kn>スカウトの書き出しひとつで、返信率は跳ねる。</li>
-        <li data-kn>求人票の一行を差し替えるだけで、応募の質が動く。</li>
-        <li data-kn>選ぶ語を変えれば、志望度まで変わる。</li>
+        <li data-kn><span class="br">スカウトの書き出しひとつで、</span><span class="br">返信率は跳ねる。</span></li>
+        <li data-kn><span class="br">求人票の一行を差し替えるだけで、</span><span class="br">応募の質が動く。</span></li>
+        <li data-kn><span class="br">選ぶ語を変えれば、</span><span class="br">志望度まで変わる。</span></li>
       </ul>
       <p class="sub">その一語を選べるのは、いま就活を控えている学生です。</p>
     </div></div>
@@ -418,7 +419,7 @@
     <div class="shell">
       <div class="w">
         <p class="eyebrow">Price</p>
-        <h2 class="disp" data-kn>月額98,000円<span class="kn">のみ</span>。成果報酬<span class="kn">も</span>、初期費用<span class="kn">もありません</span>。</h2>
+        <h2 class="disp" data-kn><span class="br">月額98,000円<span class="kn">のみ</span>。</span><span class="br">成果報酬<span class="kn">も</span>、初期費用<span class="kn">もありません</span>。</span></h2>
         <p class="lede">私たちが引き受けるのは、候補者が面接の席に着くまでです。誰に当てるかを決め、届く言葉で書き、返信を受け、日程を確定させ、当日そこに来てもらう。新卒採用でいちばん歩留まりの落ちる区間を、まるごと預かります。</p>
         <div class="price"><b class="num">98,000</b><span>円 / 月（税抜）</span></div>
         <p class="price-note">最低契約期間なし・月次解約可。合わないと感じた月で止められます。</p>
@@ -500,7 +501,7 @@
   <section class="shell sec closing" id="s6">
     <div class="w">
       <p class="eyebrow">Contact</p>
-      <h2 class="disp" data-kn><span><span class="kn">まず</span>、御社<span class="kn">の</span>今<span class="kn">のスカウト</span>文<span class="kn">を</span></span><span>学生<span class="kn">に</span>読<span class="kn">ませてみませんか</span>。</span></h2>
+      <h2 class="disp" data-kn><span class="br"><span class="kn">まず</span>、御社<span class="kn">の</span>今<span class="kn">のスカウト</span>文<span class="kn">を</span></span><span class="br">学生<span class="kn">に</span>読<span class="kn">ませてみませんか</span>。</span></h2>
       <p class="lede">現在お使いの媒体と募集ポジションをうかがえれば、初回の打ち合わせで当てるターゲットと文面の方向性までお出しします。</p>
       <p class="closing-cta"><a class="btn" href="#contact">相談を申し込む</a></p>
       <p class="btn-sub">新卒採用のみ対応しています。中途採用のご相談はお受けしていません。</p>
