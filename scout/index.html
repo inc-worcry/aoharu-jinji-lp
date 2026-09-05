@@ -145,13 +145,19 @@
   .foot-note{margin:32px 0 0;font-size:.8125rem;color:var(--mute)}
 
   /* ===== 色面はページで1箇所だけ。ここに寄せる ===== */
-  .say{background:var(--sky);color:var(--ink);padding-block:clamp(84px,12vw,148px)}
+  .say{background:var(--sky);color:var(--ink);padding-block:clamp(48px,5.6vw,68px)}
   .say .big{
-    font-size:clamp(1.9rem,4.6vw,3.4rem);font-weight:900;line-height:1.46;
-    letter-spacing:-.025em;font-feature-settings:"palt" 1;margin:0;max-width:19em;
+    font-size:clamp(1.75rem,4vw,2.875rem);font-weight:900;line-height:1.4;
+    letter-spacing:-.03em;font-feature-settings:"palt" 1;margin:0 0 26px;
   }
-  .say .sub{margin:26px 0 0;font-size:1rem;color:rgba(0,0,0,.64);max-width:30em}
-  .say .mark{display:block;width:56px;height:4px;background:var(--ink);margin-bottom:34px}
+  .say ul{border-top:1px solid var(--on-sky-rule)}
+  .say li{
+    padding:12px 0;border-bottom:1px solid var(--on-sky-rule-soft);
+    font-size:clamp(1rem,1.7vw,1.1875rem);font-weight:700;line-height:1.7;
+    font-feature-settings:"palt" 1;
+  }
+  .say li:last-child{border-bottom:1px solid var(--on-sky-rule)}
+  .say .sub{margin:22px 0 0;font-size:.9375rem;color:var(--on-sky-soft)}
 
   /* ===== 03 ピン留め横スクロール ===== */
   .pin{position:relative;background:var(--surface)}
@@ -169,13 +175,24 @@
   .prog small{font-family:var(--la);font-size:.62rem;letter-spacing:.22em;color:var(--mute)}
 
   /* ===== 04 料金（提供範囲と体制を内包） ===== */
-  .band{padding-block:var(--sec)}
-  .pcard{background:var(--surface);border-radius:var(--r);border-top:4px solid var(--sky);padding:clamp(30px,4vw,52px);margin-top:44px}
-  .price{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:0 0 8px}
+  .band{background:var(--sky);color:var(--ink);padding-block:var(--sec)}
+  .band .eyebrow{color:var(--ink)}
+  .band .eyebrow::after{background:var(--on-sky-rule)}
+  .band h2{color:var(--ink)}
+  .band .lede{color:var(--ink)}
+  .band .lbl{color:var(--on-sky-soft)}
+  .band .price-note{color:var(--on-sky-soft)}
+  .band .plist li{border-bottom:1px solid var(--on-sky-rule-soft)}
+  .band .plist em{color:var(--on-sky-soft)}
+  .band .rowset div{border-right-color:var(--on-sky-rule-soft)}
+  .band .rowset dt{color:var(--ink)}
+  .band .rowset dd{color:var(--on-sky-soft)}
+  .band .rowset dd b{color:var(--ink)}
+  .price{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:30px 0 8px}
   .price b{font-size:clamp(3.5rem,10vw,6rem);line-height:.95;color:var(--ink)}
-  .price span{font-family:var(--jp);font-size:1rem;font-weight:500;color:var(--ink-soft)}
+  .price span{font-family:var(--jp);font-size:1rem;font-weight:500;color:var(--on-sky-soft)}
   .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:52px}
-  .band .rowset{margin-top:44px}
+  .band .rowset{margin-top:48px;border-color:var(--on-sky-rule)}
 
   /* ===== 05 FAQ ===== */
   .faq-list{background:var(--surface);border-radius:var(--r);padding-inline:32px}
@@ -233,6 +250,7 @@
     .pgrid{grid-template-columns:1fr;gap:40px}
     .rowset{grid-template-columns:1fr}
     .rowset div{padding:18px 0;border-right:0;border-bottom:1px solid var(--rule-soft)}
+    .band .rowset div{border-bottom-color:var(--on-sky-rule-soft)}
     .rowset div+div{padding-left:0}
     .rowset div:last-child{border-bottom:0}
   }
@@ -340,9 +358,13 @@
 
   <section class="say">
     <div class="shell"><div class="w">
-      <span class="mark"></span>
-      <p class="big" data-kn>送った数ではなく、席に着いた数で見てください。</p>
-      <p class="sub">毎月の報告は、返信率と面接設定数の二つだけです。読み合わせに時間はかかりません。</p>
+      <p class="big" data-kn>変わるのは、いつも言葉ひとつ。</p>
+      <ul>
+        <li data-kn>スカウトの書き出しひとつで、返信率は跳ねる。</li>
+        <li data-kn>求人票の一行を差し替えるだけで、応募の質が動く。</li>
+        <li data-kn>選ぶ語を変えれば、志望度まで変わる。</li>
+      </ul>
+      <p class="sub">その一語を選べるのは、いま就活を控えている学生です。</p>
     </div></div>
   </section>
 
@@ -377,11 +399,9 @@
         <p class="eyebrow">Price</p>
         <h2 class="disp" data-kn>月額98,000円<span class="kn">のみ</span>。成果報酬<span class="kn">も</span>、初期費用<span class="kn">もありません</span>。</h2>
         <p class="lede">私たちが引き受けるのは、候補者が面接の席に着くまでです。誰に当てるかを決め、届く言葉で書き、返信を受け、日程を確定させ、当日そこに来てもらう。新卒採用でいちばん歩留まりの落ちる区間を、まるごと預かります。</p>
+        <div class="price"><b class="num">98,000</b><span>円 / 月（税抜）</span></div>
+        <p class="price-note">最低契約期間なし・月次解約可。合わないと感じた月で止められます。</p>
       </div>
-
-      <div class="pcard">
-      <div class="price"><b class="num">98,000</b><span>円 / 月（税抜）</span></div>
-      <p class="price-note">最低契約期間なし・月次解約可。合わないと感じた月で止められます。</p>
 
       <div class="pgrid">
         <div>
@@ -406,8 +426,6 @@
             <li>中途採用の支援<em>対象外</em></li>
           </ul>
         </div>
-      </div>
-
       </div>
 
       <dl class="rowset">
