@@ -26,11 +26,14 @@
     --mute:#868D96;
     --rule:#E1E5E9;
     --rule-soft:#EDEFF2;
+    /* WorCry ブランドの水色。面・罫線・ボタンはこの色をそのまま使う */
     --sky:#29ABE2;
+    /* 白地に小さな文字を置くとき用に同系で暗くしたもの（#29ABE2 は白地で 2.7:1 しか出ない） */
     --sky-deep:#0F7BAA;
     --sky-wash:#E6F3FA;
-    --on-blue-rule:rgba(255,255,255,.30);
-    --on-blue-rule-soft:rgba(255,255,255,.18);
+    --on-sky-rule:rgba(0,0,0,.24);
+    --on-sky-rule-soft:rgba(0,0,0,.13);
+    --on-sky-soft:rgba(0,0,0,.62);
     --jp:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
     --la:"Noto Sans","Helvetica Neue",Arial,sans-serif;
     --pad:32px;
@@ -75,13 +78,13 @@
 
   /* ===== 共通の部品 ===== */
   .btn{
-    display:inline-block;background:var(--sky-deep);color:#FFFFFF;
+    display:inline-block;background:var(--sky);color:var(--ink);
     font-family:var(--jp);font-size:1.0625rem;font-weight:700;text-decoration:none;
     padding:16px 42px;border-radius:999px;border:0;cursor:pointer;
     transition:opacity .16s ease,transform .16s ease;
   }
   .btn:hover{opacity:.9;transform:translateY(-1px)}
-  .btn:focus-visible{outline:2px solid var(--sky);outline-offset:3px}
+  .btn:focus-visible{outline:2px solid var(--sky-deep);outline-offset:3px}
   .btn-sub{margin:14px 0 0;font-size:.8125rem;color:var(--mute);max-width:33em}
 
   /* 罫線で仕切る横並び（体制など） */
@@ -151,23 +154,23 @@
   .prog small{font-family:var(--la);font-size:.62rem;letter-spacing:.22em;color:var(--mute)}
 
   /* ===== 04 料金（提供範囲と体制を内包） ===== */
-  .band{background:var(--sky-deep);color:#FFFFFF;padding-block:var(--sec)}
-  .band .eyebrow{color:#FFFFFF}
-  .band .eyebrow::after{background:var(--on-blue-rule)}
-  .band h2{color:#FFFFFF}
-  .band .lede{color:#FFFFFF}
-  .band .lbl{color:rgba(255,255,255,.82)}
+  .band{background:var(--sky);color:var(--ink);padding-block:var(--sec)}
+  .band .eyebrow{color:var(--ink)}
+  .band .eyebrow::after{background:var(--on-sky-rule)}
+  .band h2{color:var(--ink)}
+  .band .lede{color:var(--ink)}
+  .band .lbl{color:var(--on-sky-soft)}
   .price{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:28px 0 8px}
   .price b{font-size:clamp(3.5rem,10vw,6rem);line-height:.95}
   .price span{font-family:var(--jp);font-size:1rem;font-weight:500}
   .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:52px}
-  .band .plist li{border-bottom:1px solid var(--on-blue-rule-soft)}
-  .band .plist em{color:rgba(255,255,255,.88)}
-  .band .rowset{margin-top:48px;border-color:var(--on-blue-rule)}
-  .band .rowset div{border-right-color:var(--on-blue-rule-soft)}
-  .band .rowset dt{color:#FFFFFF}
-  .band .rowset dd{color:rgba(255,255,255,.9)}
-  .band .rowset dd b{color:#FFFFFF}
+  .band .plist li{border-bottom:1px solid var(--on-sky-rule-soft)}
+  .band .plist em{color:var(--on-sky-soft)}
+  .band .rowset{margin-top:48px;border-color:var(--on-sky-rule)}
+  .band .rowset div{border-right-color:var(--on-sky-rule-soft)}
+  .band .rowset dt{color:var(--ink)}
+  .band .rowset dd{color:var(--on-sky-soft)}
+  .band .rowset dd b{color:var(--ink)}
 
   /* ===== 05 FAQ ===== */
   .faq-list{background:var(--surface);border-radius:var(--r);padding-inline:32px}
@@ -212,7 +215,7 @@
   #done .dm-x{position:absolute;top:8px;right:10px;background:none;border:0;cursor:pointer;font-size:1.4rem;line-height:1;color:var(--mute);padding:6px}
   #done .dm-t{font-size:1.1875rem;font-weight:900;margin-bottom:9px}
   #done .dm-s{font-size:.9375rem;color:var(--ink-soft);margin:0 0 22px}
-  #done .dm-spir{display:block;text-align:center;text-decoration:none;border:1px solid var(--sky-deep);color:var(--sky-deep);padding:12px;font-weight:700;font-size:.9375rem;border-radius:999px}
+  #done .dm-spir{display:block;text-align:center;text-decoration:none;border:1.5px solid var(--sky);color:var(--sky-deep);padding:12px;font-weight:700;font-size:.9375rem;border-radius:999px}
   #done .dm-spir:hover{background:var(--sky-wash)}
 
   footer{padding-block:30px 48px}
@@ -230,7 +233,7 @@
     .rowset div{padding:18px 0;border-right:0;border-bottom:1px solid var(--rule-soft)}
     .rowset div+div{padding-left:0}
     .rowset div:last-child{border-bottom:0}
-    .band .rowset div{border-bottom-color:var(--on-blue-rule-soft)}
+    .band .rowset div{border-bottom-color:var(--on-sky-rule-soft)}
   }
   @media (max-width:660px){
     :root{--pad:22px;--sec:64px}
