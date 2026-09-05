@@ -19,48 +19,17 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <style>
   :root{
-    --ground:#FFFFFF;
-    --panel:#F3F4F6;
-    --panel-deep:#EDEFF2;
-    --wash:#EAF5FB;
-    --ink:#2E3138;
-    --ink-soft:#5D6068;
-    --ink-faint:#8E9199;
-    --line:#E4E6EA;
-    --line-strong:#CBCED4;
-    --accent:#29ABE2;
-    --accent-deep:#127EAE;
-    --accent-ink:#FFFFFF;
-  }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --ground:#1A1D21;
-      --panel:#22262B;
-      --panel-deep:#1F2328;
-      --wash:#1A2A33;
-      --ink:#E9EBEE;
-      --ink-soft:#A6AAB2;
-      --ink-faint:#7B7F87;
-      --line:#31353B;
-      --line-strong:#464B52;
-      --accent:#4FBDEC;
-      --accent-deep:#79CEF5;
-      --accent-ink:#12181C;
-    }
-  }
-  :root[data-theme="dark"]{
-    --ground:#1A1D21;
-    --panel:#22262B;
-    --panel-deep:#1F2328;
-    --wash:#1A2A33;
-    --ink:#E9EBEE;
-    --ink-soft:#A6AAB2;
-    --ink-faint:#7B7F87;
-    --line:#31353B;
-    --line-strong:#464B52;
-    --accent:#4FBDEC;
-    --accent-deep:#79CEF5;
-    --accent-ink:#12181C;
+    --ground:#EEF1F4;
+    --surface:#FFFFFF;
+    --band:#E1E6EB;
+    --ink:#2A2E35;
+    --ink-soft:#545B66;
+    --ink-faint:#626973;
+    --line:#D5DBE1;
+    --line-soft:#E4E8EC;
+    --sky:#29ABE2;
+    --sky-deep:#127EAE;
+    --sky-wash:#E4F2FA;
   }
 
   *{box-sizing:border-box}
@@ -69,192 +38,164 @@
     background:var(--ground);
     color:var(--ink);
     font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
-    font-size:16px;
-    line-height:1.9;
+    font-size:16px;line-height:1.85;
     -webkit-font-smoothing:antialiased;
   }
   .shell{max-width:1000px;margin:0 auto;padding-inline:24px}
   .col{max-width:720px}
+  h1,h2,h3{text-wrap:balance;margin:0}
   .eyebrow{
     font-family:"IBM Plex Sans","Zen Kaku Gothic New",sans-serif;
     font-size:.72rem;font-weight:600;letter-spacing:.16em;
-    color:var(--accent-deep);text-transform:uppercase;
-    display:flex;align-items:center;gap:10px;margin:0 0 18px;
+    color:var(--sky-deep);text-transform:uppercase;
+    display:flex;align-items:center;gap:10px;margin:0 0 16px;
   }
-  .eyebrow::after{content:"";flex:1;height:1px;background:var(--line);max-width:120px}
-  h1,h2,h3{text-wrap:balance;margin:0}
+  .eyebrow::after{content:"";flex:1;height:1px;background:var(--line);max-width:110px}
 
-  header{border-bottom:1px solid var(--line)}
-  .head-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px}
-  .head-in img{height:26px;width:auto;display:block}
-  .head-note{
-    font-family:"IBM Plex Sans",sans-serif;font-size:.75rem;letter-spacing:.06em;
-    color:var(--ink-faint);
-  }
+  /* header */
+  header{background:var(--surface);border-bottom:1px solid var(--line)}
+  .head-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:15px}
+  .head-in img{height:24px;width:auto;display:block}
+  .head-note{font-family:"IBM Plex Sans",sans-serif;font-size:.75rem;letter-spacing:.06em;color:var(--ink-faint)}
 
-  .hero{padding-block:72px 56px}
+  /* hero */
+  .hero{background:var(--surface);border-bottom:1px solid var(--line)}
+  .hero-in{padding-block:60px 52px}
   .hero h1{
-    font-size:clamp(2.1rem,6vw,3.4rem);font-weight:900;line-height:1.24;
-    letter-spacing:-.015em;margin-bottom:24px;
+    font-size:clamp(2rem,5.6vw,3.2rem);font-weight:900;line-height:1.26;
+    letter-spacing:-.015em;margin-bottom:20px;
   }
   .hero h1 span{display:inline-block}
-  .hero h1 em{font-style:normal;border-bottom:5px solid var(--accent);padding-bottom:2px}
-  .lead{font-size:1.0625rem;color:var(--ink-soft);max-width:36em;margin:0}
-  .facts{
-    display:flex;flex-wrap:wrap;gap:0;margin-top:38px;
-    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-  }
-  .fact{padding:18px 28px 18px 0;margin-right:28px;border-right:1px solid var(--line)}
+  .hero h1 em{font-style:normal;border-bottom:5px solid var(--sky);padding-bottom:2px}
+  .lead{font-size:1.0625rem;color:var(--ink-soft);max-width:35em;margin:0}
+  .facts{display:flex;flex-wrap:wrap;margin-top:32px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .fact{padding:16px 26px 16px 0;margin-right:26px;border-right:1px solid var(--line-soft)}
   .fact:last-child{border-right:0;margin-right:0;padding-right:0}
-  .fact dt{
-    font-family:"IBM Plex Sans",sans-serif;font-size:.7rem;font-weight:600;
-    letter-spacing:.12em;color:var(--ink-faint);margin:0 0 2px;
-  }
-  .fact dd{
-    margin:0;font-family:"IBM Plex Sans","Zen Kaku Gothic New",sans-serif;
-    font-size:1.25rem;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.4;
-  }
-  .fact dd small{font-size:.8rem;font-weight:500;color:var(--ink-soft);margin-left:3px}
-
+  .fact dt{font-family:"IBM Plex Sans",sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.12em;color:var(--ink-faint);margin:0 0 1px}
+  .fact dd{margin:0;font-family:"IBM Plex Sans","Zen Kaku Gothic New",sans-serif;font-size:1.2rem;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.4}
+  .fact dd small{font-size:.78rem;font-weight:500;color:var(--ink-soft);margin-left:3px}
   .cta{
-    display:inline-block;margin-top:34px;
-    background:var(--accent-deep);color:var(--accent-ink);
-    font-size:1.0625rem;font-weight:700;text-decoration:none;
-    padding:15px 40px;border-radius:2px;
-    transition:transform .15s ease, opacity .15s ease;
+    display:inline-block;margin-top:30px;background:var(--sky-deep);color:#FFFFFF;
+    font-size:1.0625rem;font-weight:700;text-decoration:none;padding:14px 38px;border-radius:2px;
+    transition:opacity .15s ease,transform .15s ease;
   }
-  .cta:hover{opacity:.88;transform:translateY(-1px)}
-  .cta:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-  .cta-sub{margin:14px 0 0;font-size:.8125rem;color:var(--ink-faint)}
+  .cta:hover{opacity:.9;transform:translateY(-1px)}
+  .cta:focus-visible{outline:2px solid var(--sky);outline-offset:3px}
+  .cta-sub{margin:12px 0 0;font-size:.8125rem;color:var(--ink-faint)}
 
-  section{border-top:1px solid var(--line);padding-block:60px}
-  section h2{font-size:1.5rem;font-weight:700;line-height:1.5;margin-bottom:18px;letter-spacing:-.01em}
-  section p{margin:0 0 1.1em;color:var(--ink-soft)}
-  section p:last-child{margin-bottom:0}
-  section p strong{color:var(--ink);font-weight:700}
+  /* sections */
+  .sec{padding-block:56px}
+  .sec h2{font-size:1.4375rem;font-weight:700;line-height:1.5;letter-spacing:-.01em;margin-bottom:14px}
+  .sec p{margin:0 0 1em;color:var(--ink-soft)}
+  .sec p:last-child{margin-bottom:0}
+  .sec p strong{color:var(--ink);font-weight:700}
 
-  .scope{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:34px;border-top:1px solid var(--line-strong)}
-  .scope > div{padding:24px 28px 26px 0}
-  .scope > div + div{padding-left:32px;border-left:1px solid var(--line)}
-  .scope h3{
+  /* horizontal flow */
+  .flow{padding-block:56px 52px}
+  .rail{
+    display:flex;gap:14px;overflow-x:auto;margin-top:28px;
+    scroll-snap-type:x proximity;
+    padding-inline:max(24px,calc((100% - 1000px) / 2 + 24px)) 24px;
+    padding-block:2px 16px;
+    scrollbar-width:thin;scrollbar-color:var(--sky) var(--line-soft);
+  }
+  .rail::-webkit-scrollbar{height:6px}
+  .rail::-webkit-scrollbar-track{background:var(--line-soft);border-radius:3px}
+  .rail::-webkit-scrollbar-thumb{background:var(--sky);border-radius:3px}
+  .card{
+    flex:0 0 250px;scroll-snap-align:start;
+    background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--sky);
+    padding:20px 20px 22px;border-radius:2px;
+  }
+  .card b{
+    display:block;font-family:"IBM Plex Sans",sans-serif;font-variant-numeric:tabular-nums;
+    font-size:1.5rem;font-weight:600;color:var(--sky-deep);line-height:1;margin-bottom:12px;
+  }
+  .card h3{font-size:1rem;font-weight:700;line-height:1.6;margin-bottom:6px}
+  .card p{margin:0;font-size:.875rem;line-height:1.7;color:var(--ink-soft)}
+  .rail-note{
     font-family:"IBM Plex Sans","Zen Kaku Gothic New",sans-serif;
-    font-size:.78rem;font-weight:600;letter-spacing:.1em;margin-bottom:14px;
+    font-size:.75rem;letter-spacing:.06em;color:var(--ink-faint);margin:2px 0 0;
   }
-  .scope .yes h3{color:var(--ink)}
-  .scope .no h3{color:var(--ink-faint)}
-  .scope ul{list-style:none;margin:0;padding:0;font-size:.9375rem;line-height:1.75}
-  .scope li{padding:7px 0;border-bottom:1px solid var(--line)}
-  .scope li:last-child{border-bottom:0}
-  .scope .no li{color:var(--ink-faint)}
-  .scope .no li span{
-    font-family:"IBM Plex Sans",sans-serif;font-size:.7rem;letter-spacing:.06em;
-    color:var(--accent-deep);margin-left:6px;
-  }
-  .note{
-    margin-top:26px;padding:18px 20px;background:var(--wash);
-    border-left:3px solid var(--accent);font-size:.9375rem;color:var(--ink-soft);
-  }
+  .flow h2{font-size:1.4375rem;font-weight:700;line-height:1.5;letter-spacing:-.01em;margin-bottom:14px}
+  .flow-lead{margin:0;color:var(--ink-soft)}
+  .band h2{font-size:1.4375rem;font-weight:700;line-height:1.5;letter-spacing:-.01em;margin-bottom:14px}
 
-  .team{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);margin-top:32px;border:1px solid var(--line)}
-  .team div{background:var(--ground);padding:22px 20px}
-  .team dt{
-    font-family:"IBM Plex Sans",sans-serif;font-size:.7rem;font-weight:600;
-    letter-spacing:.12em;color:var(--accent-deep);margin-bottom:8px;
+  /* exclusions + team */
+  .excl{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;padding:0;list-style:none}
+  .excl li{
+    background:var(--surface);border:1px solid var(--line);color:var(--ink-soft);
+    font-size:.8125rem;padding:6px 12px;border-radius:2px;
   }
-  .team dd{margin:0;font-size:.9375rem;line-height:1.7;color:var(--ink-soft)}
-  .team dd b{display:block;color:var(--ink);font-weight:700;font-size:1rem;margin-bottom:4px}
+  .excl li i{font-style:normal;color:var(--sky-deep);font-family:"IBM Plex Sans",sans-serif;font-size:.68rem;letter-spacing:.06em;margin-left:6px}
+  .team{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:34px}
+  .team div{background:var(--surface);border:1px solid var(--line);padding:18px 18px 20px;border-radius:2px}
+  .team dt{font-family:"IBM Plex Sans",sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.12em;color:var(--sky-deep);margin-bottom:6px}
+  .team dd{margin:0;font-size:.875rem;line-height:1.7;color:var(--ink-soft)}
+  .team dd b{display:block;color:var(--ink);font-weight:700;font-size:.9375rem;margin-bottom:3px}
+  .note{margin-top:24px;padding:16px 18px;background:var(--sky-wash);border-left:3px solid var(--sky);font-size:.9375rem;color:var(--ink-soft)}
 
-  .band{background:var(--panel-deep);border-top:4px solid var(--accent);padding-block:62px}
-  .price{
-    display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;
-    margin:8px 0 4px;font-family:"IBM Plex Sans","Zen Kaku Gothic New",sans-serif;
-    font-variant-numeric:tabular-nums;
-  }
-  .price b{font-size:clamp(3rem,10vw,4.5rem);font-weight:600;line-height:1;letter-spacing:-.02em;color:var(--ink)}
-  .price span{font-size:1.125rem;font-weight:500;color:var(--ink-soft)}
-  .price-note{color:var(--ink-soft);font-size:.875rem;margin:0 0 30px}
-  .opt{border-top:1px solid var(--line-strong);margin-top:34px;padding-top:26px}
-  .opt h3{
-    font-family:"IBM Plex Sans","Zen Kaku Gothic New",sans-serif;
-    font-size:.78rem;font-weight:600;letter-spacing:.1em;color:var(--ink-faint);margin-bottom:14px;
-  }
+  /* price band */
+  .band{background:var(--band);border-block:1px solid var(--line);padding-block:54px}
+  .price{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin:6px 0 4px;font-family:"IBM Plex Sans","Zen Kaku Gothic New",sans-serif;font-variant-numeric:tabular-nums}
+  .price b{font-size:clamp(2.75rem,9vw,4rem);font-weight:600;line-height:1;letter-spacing:-.02em}
+  .price span{font-size:1.0625rem;font-weight:500;color:var(--ink-soft)}
+  .price-note{color:var(--ink-soft);font-size:.875rem;margin:0}
+  .opt{border-top:1px solid var(--line);margin-top:28px;padding-top:22px}
+  .opt h3{font-family:"IBM Plex Sans","Zen Kaku Gothic New",sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.1em;color:var(--ink-faint);margin-bottom:10px}
   .opt ul{list-style:none;margin:0;padding:0}
-  .opt li{
-    display:flex;justify-content:space-between;gap:20px;
-    padding:11px 0;border-bottom:1px solid var(--line);font-size:.9375rem;
-  }
+  .opt li{display:flex;justify-content:space-between;gap:20px;padding:10px 0;border-bottom:1px solid var(--line);font-size:.9375rem}
   .opt li:last-child{border-bottom:0}
-  .opt li em{
-    font-style:normal;color:var(--ink-soft);font-family:"IBM Plex Sans",sans-serif;
-    font-variant-numeric:tabular-nums;white-space:nowrap;
-  }
-
-  .closing{padding-block:64px 20px}
-  .closing h2{font-size:clamp(1.5rem,3.6vw,2rem);font-weight:900;line-height:1.45;margin-bottom:16px}
-  .closing h2 span{display:inline-block}
-  footer{border-top:1px solid var(--line);margin-top:56px;padding-block:22px 40px}
-  .foot-in{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
-  .foot-in img{height:20px;width:auto;opacity:.7}
-  .foot-in small{font-family:"IBM Plex Sans",sans-serif;font-size:.72rem;color:var(--ink-faint);letter-spacing:.04em}
+  .opt li em{font-style:normal;color:var(--ink-soft);font-family:"IBM Plex Sans",sans-serif;font-variant-numeric:tabular-nums;white-space:nowrap}
 
   /* form */
-  .form{margin-top:34px;display:grid;gap:15px;max-width:560px}
-  .form .row{display:grid;grid-template-columns:1fr 1fr;gap:15px}
-  .form label{
-    display:block;font-family:"IBM Plex Sans","Zen Kaku Gothic New",sans-serif;
-    font-size:.72rem;font-weight:600;letter-spacing:.08em;color:var(--ink-faint);margin-bottom:6px;
-  }
-  .form label i{font-style:normal;color:var(--accent-deep);margin-left:4px}
+  .closing{background:var(--surface);border-bottom:1px solid var(--line)}
+  .closing-in{padding-block:56px}
+  .closing h2{font-size:clamp(1.4375rem,3.4vw,1.875rem);font-weight:900;line-height:1.45;margin-bottom:14px}
+  .closing h2 span{display:inline-block}
+  .form{margin-top:28px;display:grid;gap:14px;max-width:540px}
+  .form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .form label{display:block;font-family:"IBM Plex Sans","Zen Kaku Gothic New",sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.08em;color:var(--ink-faint);margin-bottom:5px}
+  .form label i{font-style:normal;color:var(--sky-deep);margin-left:4px}
   .form input[type=text],.form input[type=email],.form input[type=tel],.form textarea{
-    width:100%;padding:11px 13px;border:1px solid var(--line-strong);border-radius:2px;
+    width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:2px;
     background:var(--ground);color:var(--ink);font:inherit;font-size:.9375rem;line-height:1.6;
   }
-  .form textarea{min-height:92px;resize:vertical}
-  .form input:focus-visible,.form textarea:focus-visible{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+  .form textarea{min-height:84px;resize:vertical}
+  .form input:focus-visible,.form textarea:focus-visible{outline:2px solid var(--sky);outline-offset:1px;border-color:var(--sky)}
   .consent{display:flex;gap:9px;align-items:flex-start;font-size:.8125rem;color:var(--ink-soft);line-height:1.7}
-  .consent input{margin-top:5px;accent-color:var(--accent-deep);flex:none}
-  .consent a{color:var(--accent-deep)}
-  button.cta{border:0;cursor:pointer;font-family:inherit;width:100%;margin-top:4px}
+  .consent input{margin-top:5px;accent-color:var(--sky-deep);flex:none}
+  .consent a{color:var(--sky-deep)}
+  button.cta{border:0;cursor:pointer;font-family:inherit;width:100%;margin-top:2px}
 
   /* modal */
-  #done{
-    position:fixed;inset:0;background:rgba(20,24,28,.55);
-    display:none;align-items:center;justify-content:center;padding:24px;z-index:50;
-  }
+  #done{position:fixed;inset:0;background:rgba(38,44,52,.5);display:none;align-items:center;justify-content:center;padding:24px;z-index:50}
   #done.on{display:flex}
-  #done .dm{
-    background:var(--ground);border-top:4px solid var(--accent);
-    max-width:420px;width:100%;padding:34px 30px 30px;position:relative;border-radius:2px;
-  }
-  #done .dm-x{
-    position:absolute;top:10px;right:12px;background:none;border:0;cursor:pointer;
-    font-size:1.4rem;line-height:1;color:var(--ink-faint);padding:6px;
-  }
-  #done .dm-t{font-size:1.1875rem;font-weight:700;margin-bottom:10px}
-  #done .dm-s{font-size:.9375rem;color:var(--ink-soft);margin:0 0 22px}
-  #done .dm-spir{
-    display:block;text-align:center;text-decoration:none;
-    border:1px solid var(--accent-deep);color:var(--accent-deep);
-    padding:12px;font-weight:700;font-size:.9375rem;border-radius:2px;
-  }
-  #done .dm-spir:hover{background:var(--wash)}
+  #done .dm{background:var(--surface);border-top:4px solid var(--sky);max-width:420px;width:100%;padding:32px 28px 28px;position:relative;border-radius:2px}
+  #done .dm-x{position:absolute;top:8px;right:10px;background:none;border:0;cursor:pointer;font-size:1.4rem;line-height:1;color:var(--ink-faint);padding:6px}
+  #done .dm-t{font-size:1.1875rem;font-weight:700;margin-bottom:8px}
+  #done .dm-s{font-size:.9375rem;color:var(--ink-soft);margin:0 0 20px}
+  #done .dm-spir{display:block;text-align:center;text-decoration:none;border:1px solid var(--sky-deep);color:var(--sky-deep);padding:11px;font-weight:700;font-size:.9375rem;border-radius:2px}
+  #done .dm-spir:hover{background:var(--sky-wash)}
+
+  footer{padding-block:20px 34px}
+  .foot-in{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .foot-in img{height:19px;width:auto;opacity:.65}
+  .foot-in small{font-family:"IBM Plex Sans",sans-serif;font-size:.72rem;color:var(--ink-faint);letter-spacing:.04em}
 
   @media (max-width:660px){
-    .form .row{grid-template-columns:1fr}
-    .hero{padding-block:52px 44px}
-    section{padding-block:48px}
+    .hero-in{padding-block:44px 40px}
+    .sec,.flow,.closing-in{padding-block:44px}
+    .band{padding-block:44px}
     .facts{display:block}
-    .fact{border-right:0;border-bottom:1px solid var(--line);margin-right:0;padding:14px 0}
+    .fact{border-right:0;border-bottom:1px solid var(--line-soft);margin-right:0;padding:13px 0}
     .fact:last-child{border-bottom:0}
-    .scope{grid-template-columns:1fr}
-    .scope > div{padding:22px 0}
-    .scope > div + div{padding-left:0;border-left:0;border-top:1px solid var(--line)}
     .team{grid-template-columns:1fr}
+    .form .row{grid-template-columns:1fr}
     .cta{display:block;text-align:center}
+    .card{flex-basis:230px}
   }
-  @media (prefers-reduced-motion:reduce){
-    *{transition:none!important;animation:none!important}
-  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
@@ -266,81 +207,70 @@
 </header>
 
 <main>
-  <div class="shell col hero">
-    <p class="eyebrow">新卒ダイレクトリクルーティング代行</p>
-    <h1><span>学生が、</span><span>学生のために</span><span><em>考える</em>新卒採用。</span></h1>
-    <p class="lead">スカウトを受け取るのは学生なのに、戦略を立てているのは学生ではない人たちです。現役の大学生2名が主担当となり、御社の新卒ダイレクトリクルーティングを設計から運用まで回します。</p>
+  <div class="hero">
+    <div class="shell col hero-in">
+      <p class="eyebrow">新卒ダイレクトリクルーティング代行</p>
+      <h1><span>学生が、</span><span>学生のために</span><span><em>考える</em>新卒採用。</span></h1>
+      <p class="lead">スカウトを受け取るのは学生なのに、戦略を立てているのは学生ではない人たちです。現役の大学生2名が主担当となり、御社の新卒ダイレクトリクルーティングを設計から運用まで回します。</p>
 
-    <dl class="facts">
-      <div class="fact"><dt>MONTHLY</dt><dd>98,000<small>円 / 税抜</small></dd></div>
-      <div class="fact"><dt>WORKLOAD</dt><dd>30<small>時間 / 月</small></dd></div>
-      <div class="fact"><dt>SCOUT</dt><dd>300<small>通 / 月</small></dd></div>
-      <div class="fact"><dt>CONTRACT</dt><dd>月次<small>解約可</small></dd></div>
-    </dl>
+      <dl class="facts">
+        <div class="fact"><dt>MONTHLY</dt><dd>98,000<small>円 / 税抜</small></dd></div>
+        <div class="fact"><dt>WORKLOAD</dt><dd>30<small>時間 / 月</small></dd></div>
+        <div class="fact"><dt>SCOUT</dt><dd>300<small>通 / 月</small></dd></div>
+        <div class="fact"><dt>CONTRACT</dt><dd>月次<small>解約可</small></dd></div>
+      </dl>
 
-    <a class="cta" href="#contact">まず1社分の文面を見てみる</a>
-    <p class="cta-sub">初回は無償で、現行のスカウト文と返信率を比べるところから始めます。</p>
+      <a class="cta" href="#contact">まず1社分の文面を見てみる</a>
+      <p class="cta-sub">初回は無償で、現行のスカウト文と返信率を比べるところから始めます。</p>
+    </div>
   </div>
 
-  <section class="shell col">
-    <h2>学生に届く言葉を、学生以外が決めている。</h2>
-    <p>スカウトの返信率は、送信数ではなく最初の3行で決まります。けれどその3行を、学生の感覚で判断できる人は、たいていの人事部にいません。媒体の担当者に相談しても、返ってくるのは他社の成功例です。</p>
-    <p>だから私たちは、<strong>今まさに就職活動を控えている大学生</strong>を主担当に置いています。自分がもらって嬉しいスカウトを考え、求人票のどこで読むのをやめるかを知っている当事者が、ターゲットを決め、原稿を書く。安く提供できるのはその結果であって、目的ではありません。</p>
-  </section>
-
-  <section class="shell col">
-    <h2>やること、やらないこと</h2>
-    <p>面接は代行しません。面接に「座らせる」ところまでを引き受けます。</p>
-
-    <div class="scope">
-      <div class="yes">
-        <h3>月額に含む</h3>
-        <ul>
-          <li>ペルソナ設計・ターゲット定義</li>
-          <li>求人票・募集要項のリライト</li>
-          <li>スカウト原稿の作成（A/Bテスト込み）</li>
-          <li>スカウト送信 月300通</li>
-          <li>返信の一次対応</li>
-          <li>面接までの日程調整</li>
-          <li>面接前日のリマインド・意向上げ連絡</li>
-          <li>月次レポート（返信率・面接設定数）</li>
-        </ul>
-      </div>
-      <div class="no">
-        <h3>含まないもの</h3>
-        <ul>
-          <li>面接の代行<span>オプション</span></li>
-          <li>学生モニター座談会<span>オプション</span></li>
-          <li>学生10名によるスカウト添削会<span>オプション</span></li>
-          <li>内定承諾フォロー<span>オプション</span></li>
-          <li>媒体・ツールの利用料（実費）</li>
-          <li>中途採用の支援（新卒のみ）</li>
-        </ul>
-      </div>
+  <div class="flow">
+    <div class="shell col">
+      <p class="eyebrow">月額に含む実務</p>
+      <h2>学生に届く言葉を、学生以外が決めている。</h2>
+      <p class="flow-lead">返信率は送信数ではなく最初の3行で決まります。その3行を判断できる当事者が、設計から運用までを順に担当します。</p>
     </div>
 
-    <p class="note">月300通を上限にしているのは、量をこなした瞬間に「学生が書いた文面」が嘘になるからです。500通以上をご希望の場合は別途お見積りします。</p>
-  </section>
+    <div class="rail">
+      <div class="card"><b>01</b><h3>ペルソナ設計</h3><p>学生目線で「誰に当てるか」を定義します。</p></div>
+      <div class="card"><b>02</b><h3>求人票リライト</h3><p>読むのをやめる一文を、当事者が見つけて消します。</p></div>
+      <div class="card"><b>03</b><h3>スカウト原稿</h3><p>A/Bで2パターン用意し、勝った型に寄せます。</p></div>
+      <div class="card"><b>04</b><h3>送信 月300通</h3><p>セグメント別に出し分けて送信します。</p></div>
+      <div class="card"><b>05</b><h3>返信の一次対応</h3><p>温度が下がる前に、その日のうちに返します。</p></div>
+      <div class="card"><b>06</b><h3>日程調整</h3><p>面接が決まるまでのやりとりを代行します。</p></div>
+      <div class="card"><b>07</b><h3>前日リマインド</h3><p>同世代から連絡し、当日の着座率を上げます。</p></div>
+      <div class="card"><b>08</b><h3>月次レポート</h3><p>返信率と面接設定数の2つだけを報告します。</p></div>
+    </div>
+    <div class="shell col"><p class="rail-note">← 横にスクロールできます</p></div>
+  </div>
 
-  <section class="shell col">
-    <h2>主役は学生。名前も、そのままお伝えします。</h2>
-    <p>誰が考えているか分からない代行にはしません。レポートには担当学生の氏名と大学・学年を記載します。学生目線の指摘が、そのまま御社の採用広報の材料になります。</p>
+  <div class="shell col sec">
+    <h2>面接は代行しません。面接に「座らせる」までを引き受けます。</h2>
+    <p>面接まで踏み込むと、学生の手を離れて単価も上がります。私たちが伸ばすのは、日程が決まった後に本当に来るかどうかのほうです。</p>
+    <ul class="excl">
+      <li>面接の代行<i>オプション</i></li>
+      <li>学生モニター座談会<i>オプション</i></li>
+      <li>スカウト添削会<i>オプション</i></li>
+      <li>内定承諾フォロー<i>オプション</i></li>
+      <li>媒体・ツールの利用料（実費）</li>
+      <li>中途採用の支援（新卒のみ）</li>
+    </ul>
 
     <dl class="team">
-      <div><dt>MAIN</dt><dd><b>学生メンバー / 主担当</b>ターゲット定義、原稿作成、返信対応、日程調整。月20時間。</dd></div>
-      <div><dt>SUB</dt><dd><b>学生メンバー / 副担当</b>送信とリマインドの実働。試験期間の引き継ぎを担保。月10時間。</dd></div>
+      <div><dt>MAIN</dt><dd><b>学生メンバー / 主担当</b>ターゲット定義、原稿作成、返信対応。月20時間。</dd></div>
+      <div><dt>SUB</dt><dd><b>学生メンバー / 副担当</b>送信とリマインド。試験期間の引き継ぎも担保。月10時間。</dd></div>
       <div><dt>REVIEW</dt><dd><b>新卒採用の実務経験者</b>外に出す前の全件レビューと、月次定例への同席。</dd></div>
     </dl>
-    <p class="note">学生が考え、実務経験者が確かめる。候補者に届く文面は、すべてレビューを通過したものだけをお出しします。</p>
-  </section>
+    <p class="note">担当学生の氏名・大学・学年はレポートに記載します。学生が考え、実務経験者が確かめたものだけをお出しします。</p>
+  </div>
 
-  <section class="band">
+  <div class="band">
     <div class="shell col">
       <p class="eyebrow">料金</p>
       <h2>月額 98,000円のみ。成果報酬も、初期費用もありません。</h2>
       <div class="price"><b>98,000</b><span>円 / 月（税抜）</span></div>
       <p class="price-note">最低契約期間なし・月次解約可。合わないと感じた月で止められます。</p>
-
       <div class="opt">
         <h3>オプション</h3>
         <ul>
@@ -351,28 +281,30 @@
         </ul>
       </div>
     </div>
-  </section>
+  </div>
 
-  <div class="shell col closing" id="contact">
-    <p class="eyebrow">無償トライアル</p>
-    <h2><span>まず、御社の今のスカウト文を</span><span>学生に読ませてみませんか。</span></h2>
-    <p class="lead">2週間・300通を無償でお試しいただけます。見る数字は、返信率と面接設定数の2つだけです。</p>
+  <div class="closing" id="contact">
+    <div class="shell col closing-in">
+      <p class="eyebrow">無償トライアル</p>
+      <h2><span>まず、御社の今のスカウト文を</span><span>学生に読ませてみませんか。</span></h2>
+      <p class="lead">2週間・300通を無償でお試しいただけます。見る数字は、返信率と面接設定数の2つだけです。</p>
 
-    <form id="heroForm" class="form" novalidate>
-      <input type="hidden" name="_form" value="RPO-学生スカウト代行">
-      <div class="row">
-        <div><label for="f-co">会社名<i>*</i></label><input id="f-co" type="text" name="会社名" placeholder="株式会社○○" required></div>
-        <div><label for="f-nm">お名前<i>*</i></label><input id="f-nm" type="text" name="お名前" placeholder="山田 太郎" required></div>
-      </div>
-      <div class="row">
-        <div><label for="f-em">メールアドレス<i>*</i></label><input id="f-em" type="email" name="email" placeholder="taro@company.co.jp" required></div>
-        <div><label for="f-tl">電話番号<i>*</i></label><input id="f-tl" type="tel" name="電話番号" placeholder="03-0000-0000" required></div>
-      </div>
-      <div><label for="f-ms">ご相談内容（任意）</label><textarea id="f-ms" name="ご相談内容" placeholder="現在お使いの媒体、新卒の採用予定人数 など"></textarea></div>
-      <label class="consent"><input type="checkbox" name="同意" required><span><a href="https://www.worcry.com/privacy-policy" target="_blank" rel="noopener">個人情報の取り扱い</a>に同意します</span></label>
-      <button class="cta" type="submit">無償トライアルを相談する</button>
-    </form>
-    <p class="cta-sub">新卒採用のみ対応しています。中途採用のご相談はお受けしていません。</p>
+      <form id="heroForm" class="form" novalidate>
+        <input type="hidden" name="_form" value="RPO-学生スカウト代行">
+        <div class="row">
+          <div><label for="f-co">会社名<i>*</i></label><input id="f-co" type="text" name="会社名" placeholder="株式会社○○" required></div>
+          <div><label for="f-nm">お名前<i>*</i></label><input id="f-nm" type="text" name="お名前" placeholder="山田 太郎" required></div>
+        </div>
+        <div class="row">
+          <div><label for="f-em">メールアドレス<i>*</i></label><input id="f-em" type="email" name="email" placeholder="taro@company.co.jp" required></div>
+          <div><label for="f-tl">電話番号<i>*</i></label><input id="f-tl" type="tel" name="電話番号" placeholder="03-0000-0000" required></div>
+        </div>
+        <div><label for="f-ms">ご相談内容（任意）</label><textarea id="f-ms" name="ご相談内容" placeholder="現在お使いの媒体、新卒の採用予定人数 など"></textarea></div>
+        <label class="consent"><input type="checkbox" name="同意" required><span><a href="https://www.worcry.com/privacy-policy" target="_blank" rel="noopener">個人情報の取り扱い</a>に同意します</span></label>
+        <button class="cta" type="submit">無償トライアルを相談する</button>
+      </form>
+      <p class="cta-sub">新卒採用のみ対応しています。中途採用のご相談はお受けしていません。</p>
+    </div>
   </div>
 </main>
 
