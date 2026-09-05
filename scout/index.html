@@ -127,7 +127,7 @@
   .head-cta:focus-visible{outline:2px solid var(--sky-deep);outline-offset:3px}
 
   /* ===== 01 FV ===== */
-  .hero{min-height:calc(100vh - 70px);display:flex;flex-direction:column;justify-content:center;padding-block:36px 44px}
+  .hero{min-height:calc(100svh - 84px);display:flex;flex-direction:column;justify-content:center;padding-block:36px 44px}
   .hero-in{display:grid;grid-template-columns:minmax(0,1fr) 470px;gap:60px;align-items:center}
   .hero h1{font-size:clamp(2.2rem,4.4vw,3.5rem);margin-bottom:28px}
   .hero h1 em{font-style:normal;box-shadow:inset 0 -.3em 0 var(--sky-wash), inset 0 -.34em 0 -.28em var(--sky)}
@@ -276,6 +276,7 @@
   footer small{font-family:var(--la);font-size:.8125rem;letter-spacing:.04em;color:rgba(249,249,249,.7)}
 
   @media (max-width:1080px){
+    .hero{min-height:0}
     .head-in{flex-wrap:wrap;gap:14px 20px;padding-block:14px}
     .head-nav{order:3;width:100%;margin-left:0;gap:20px;overflow-x:auto;padding-bottom:2px;-webkit-overflow-scrolling:touch}
     .head-cta{margin-left:auto}
