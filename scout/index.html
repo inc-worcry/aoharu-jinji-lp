@@ -250,6 +250,7 @@
   .consent input{margin-top:5px;accent-color:var(--sky-deep);flex:none}
   .consent a{color:var(--sky-deep)}
   .form .btn{width:100%;margin-top:4px}
+  .form .btn:disabled{opacity:.55;cursor:default;transform:none}
 
   /* 相談フォームのモーダル（スマホ） */
   #ask{position:fixed;inset:0;background:rgba(20,24,29,.55);display:none;align-items:flex-end;justify-content:center;z-index:70}
@@ -562,10 +563,6 @@
         <p class="a">通数の上限は設けていません。制約は稼働時間（月30時間）だけで、その中でAIを駆使して送信数を最大化します。誰に当てるか・どう書くかの判断は学生とHR経験者が担い、AIは量とスピードを担当する分け方です。追加の従量課金はありません。</p>
       </details>
       <details>
-        <summary><span class="q">Q</span>試験期間に学生の稼働が落ちませんか？</summary>
-        <p class="a">主担当と副担当の2名体制で、どちらかが離れてももう一方が引き継げるようにしています。試験期間などあらかじめ稼働が読める時期は、事前にカレンダーをお渡しします。</p>
-      </details>
-      <details>
         <summary><span class="q">Q</span>契約後、いつ送信が始まりますか？</summary>
         <p class="a">初月はペルソナ設計と求人票のリライトに時間を充てるため、送信開始は契約からおおむね2週間後が目安です。以降は通常どおりの運用に入ります。</p>
       </details>
@@ -712,11 +709,23 @@
   window.closeDone=function(){ modal.classList.remove('on'); document.body.style.overflow=''; };
   modal.addEventListener('click',function(e){ if(e.target===modal) closeDone(); });
   document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeDone(); });
+  var sending=false;
   f.addEventListener('submit',function(e){
     e.preventDefault();
+    if(sending) return;                      /* 連打でも2件送らない */
     if(!f.checkValidity()){ f.reportValidity(); return; }
+    sending=true;
+    var btn=f.querySelector('button[type=submit]'), label=btn?btn.textContent:'';
+    if(btn){ btn.disabled=true; btn.textContent='送信中…'; }
+    var settled=false;
     fetch(GAS_URL,{method:'POST',mode:'no-cors',body:new URLSearchParams(new FormData(f))}).then(after).catch(after);
-    function after(){ try{ f.reset(); }catch(_){} closeAsk(); openDone(); }
+    function after(){
+      if(settled) return;                    /* then と catch の二重発火も塞ぐ */
+      settled=true; sending=false;
+      try{ f.reset(); }catch(_){}
+      if(btn){ btn.disabled=false; btn.textContent=label; }
+      closeAsk(); openDone();
+    }
   });
 })();
 </script>
