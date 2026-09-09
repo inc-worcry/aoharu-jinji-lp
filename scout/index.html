@@ -251,14 +251,32 @@
   .consent a{color:var(--sky-deep)}
   .form .btn{width:100%;margin-top:4px}
 
+  /* 相談フォームのモーダル（スマホ） */
+  #ask{position:fixed;inset:0;background:rgba(20,24,29,.55);display:none;align-items:flex-end;justify-content:center;z-index:70}
+  #ask.on{display:flex}
+  #ask .am{background:var(--surface);width:100%;max-height:92vh;overflow-y:auto;border-radius:14px 14px 0 0;position:relative}
+  #ask .am-x{position:absolute;top:6px;right:8px;background:none;border:0;cursor:pointer;font-size:1.6rem;line-height:1;color:var(--mute);padding:8px;z-index:1}
+  #ask .form{max-width:none;border-radius:0;padding:26px 22px 30px}
+
+  /* 送信後の流れ */
+  .dm-steps{list-style:none;margin:22px 0 24px;padding:18px 0 0;border-top:1px solid var(--rule)}
+  .dm-steps li{display:flex;gap:14px;padding:9px 0}
+  .dm-steps b{font-family:var(--la);font-size:.875rem;font-weight:500;color:var(--sky-deep);flex:none;line-height:1.7}
+  .dm-steps em{display:block;font-style:normal;font-weight:700;font-size:.9375rem;color:var(--ink)}
+  .dm-steps span{font-size:.875rem;line-height:1.75;color:var(--ink-soft)}
+  .dm-close{display:block;width:100%;margin-top:12px;background:none;border:0;cursor:pointer;font:inherit;font-size:.9375rem;color:var(--mute);padding:10px}
+  .dm-close:hover{color:var(--ink)}
+
+  .hero-btn{display:none}
+
   #done{position:fixed;inset:0;background:rgba(20,24,29,.55);display:none;align-items:center;justify-content:center;padding:24px;z-index:60}
   #done.on{display:flex}
-  #done .dm{background:var(--surface);border-top:4px solid var(--sky);max-width:420px;width:100%;padding:34px 30px 30px;position:relative;border-radius:var(--r)}
+  #done .dm{background:var(--surface);border-top:4px solid var(--sky);max-width:440px;width:100%;max-height:92vh;overflow-y:auto;padding:34px 30px 26px;position:relative;border-radius:var(--r)}
   #done .dm-x{position:absolute;top:8px;right:10px;background:none;border:0;cursor:pointer;font-size:1.4rem;line-height:1;color:var(--mute);padding:6px}
   #done .dm-t{font-size:1.1875rem;font-weight:900;margin-bottom:9px}
   #done .dm-s{font-size:1rem;color:var(--ink-soft);margin:0 0 22px}
-  #done .dm-spir{display:block;text-align:center;text-decoration:none;border:1.5px solid var(--sky);color:var(--sky-deep);padding:12px;font-weight:700;font-size:.9375rem;border-radius:999px}
-  #done .dm-spir:hover{background:var(--sky-wash)}
+  #done .dm-spir{display:block;text-align:center;text-decoration:none;background:var(--sky);color:#FFFFFF;padding:14px;font-weight:700;font-size:1rem;border-radius:999px}
+  #done .dm-spir:hover{opacity:.9}
 
   /* worcry.com と同じ濃グレーのフッター */
   footer{background:#4D5156;color:#F9F9F9;padding-block:48px 30px}
@@ -328,10 +346,17 @@
     .legal i{display:none}
     .form{padding:24px}
     .form .row{grid-template-columns:1fr}
-    .plist li{flex-wrap:wrap;gap:2px 20px}
-    .plist em{margin-left:auto}
-    .foot-in{grid-template-columns:1fr;gap:34px}
-    .foot-nav{justify-content:flex-start;max-width:none}
+    /* 料金リスト：金額を必ず次行に落として行の高さを揃える */
+    .plist li{display:block;padding:12px 0}
+    .plist em{display:block;margin-top:3px;font-size:.875rem}
+    /* ヘッダーを固定 */
+    header{position:sticky;top:0;box-shadow:0 6px 18px rgba(20,24,29,.06)}
+    /* FVのフォームはモーダルへ移すので隠し、代わりにボタンを置く */
+    .hero-form{display:none}
+    .hero-btn{display:block;text-align:center;margin-top:30px}
+    .foot-in{grid-template-columns:1fr;gap:26px}
+    .foot-nav{display:none}
+    .pc-br{display:none}
     .foot-legal{margin-top:36px}
     .btn{display:block;text-align:center}
   }
@@ -373,6 +398,7 @@
         <h1 class="disp" data-kn><span class="br">学生<span class="kn">が</span>、</span><span class="br">学生<span class="kn">のために</span></span><span class="br"><em>考<span class="kn">える</span></em>新卒採用。</span></h1>
         <p class="lead"><span class="br">スカウトを受け取るのは学生なのに、</span><span class="br"><span class="sp">戦略を立てているのは</span><span class="sp">学生ではない人たちです。</span></span><span class="br">現役の大学生2名が主担当となり、</span><span class="br">御社の新卒ダイレクトリクルーティングを設計から運用まで回します。</span></p>
       </div>
+      <a class="btn hero-btn" href="#contact">相談を申し込む</a>
       <div class="hero-form" id="contact">
         <form id="heroForm" class="form" novalidate>
           <p class="form-h">相談を申し込む</p>
@@ -477,18 +503,16 @@
         <h2 class="disp" data-kn><span class="br">月額98,000円<span class="kn">のみ</span>。</span><span class="br">成果報酬<span class="kn">も</span>、初期費用<span class="kn">もありません</span>。</span></h2>
         <p class="lede"><span class="br">私たちが引き受けるのは、</span><span class="br">候補者が面接の席に着くまでです。</span><span class="br">誰に当てるかを決め、</span><span class="br">届く言葉で書き、</span><span class="br">返信を受け、日程を確定させ、</span><span class="br">当日そこに来てもらう。</span><span class="br"><span class="sp">新卒採用でいちばん</span><span class="sp">歩留まりの落ちる区間を、</span></span><span class="br">まるごと預かります。</span></p>
         <div class="price"><b class="num">98,000</b><span>円 / 月（税抜）</span></div>
-        <p class="price-note">最低契約期間なし・月次解約可。合わないと感じた月で止められます。</p>
+        <p class="price-note">最低契約期間はありません。合わないと感じた翌月に止められます。</p>
       </div>
 
       <div class="pgrid">
         <div>
           <h3 class="lbl">INCLUDED / 月額に含むもの</h3>
           <ul class="plist">
-            <li>スカウト運用の8工程（設計 → 送信 → 返信 → 日程調整 → 報告）</li>
+            <li>スカウト運用の8工程</li>
             <li>スカウト送信（AI活用で最大化）<em>通数の上限なし</em></li>
-            <li>稼働 月30時間</li>
-            <li>体制 学生2名＋HR経験者1名<em>3名</em></li>
-            <li>面接前日のリマインドと意向上げ連絡</li>
+                                    <li>面接前日のリマインドと意向上げ連絡</li>
             <li>月次レポート（返信率・面接設定数）</li>
           </ul>
         </div>
@@ -496,7 +520,7 @@
           <h3 class="lbl">OPTION / 別途のもの</h3>
           <ul class="plist">
             <li>面接の代行（HR経験者が担当）<em>5,000円〜 / 件</em></li>
-            <li>新卒エージェント開拓およびエージェントコントロール<em>50,000円〜 / 月</em></li>
+            <li>AGT開拓及びAGTマネジメント<em>50,000円〜 / 月</em></li>
             <li>学生10名によるスカウト添削会<em>50,000円 / 回</em></li>
             <li>内定承諾フォロー／オンボーディング支援<em>要相談</em></li>
             <li>媒体・ツールの利用料<em>実費</em></li>
@@ -542,12 +566,12 @@
         <p class="a">主担当と副担当の2名体制で、どちらかが離れてももう一方が引き継げるようにしています。試験期間などあらかじめ稼働が読める時期は、事前にカレンダーをお渡しします。</p>
       </details>
       <details>
-        <summary><span class="q">Q</span>契約してから、いつ送信が始まりますか？</summary>
+        <summary><span class="q">Q</span>契約後、いつ送信が始まりますか？</summary>
         <p class="a">初月はペルソナ設計と求人票のリライトに時間を充てるため、送信開始は契約からおおむね2週間後が目安です。以降は通常どおりの運用に入ります。</p>
       </details>
       <details>
         <summary><span class="q">Q</span>途中でやめられますか？</summary>
-        <p class="a">最低契約期間はありません。月次でご解約いただけます。合わないと感じた月で止めていただけるので、長く縛られる心配はありません。</p>
+        <p class="a">最低契約期間はありません。合わないと感じた翌月に止められます。長く縛られる心配はありません。</p>
       </details>
     </div>
   </section>
@@ -557,19 +581,32 @@
     <div class="w">
       <p class="eyebrow">Contact</p>
       <h2 class="disp" data-kn><span class="br"><span class="kn">まず</span>、御社<span class="kn">の</span>今<span class="kn">のスカウト</span>文<span class="kn">を</span></span><span class="br">学生<span class="kn">に</span>読<span class="kn">ませてみませんか</span>。</span></h2>
-      <p class="lede"><span class="br"><span class="sp">現在お使いの媒体と</span><span class="sp">募集ポジションをうかがえれば、</span></span><span class="br">初回の打ち合わせで当てるターゲットと文面の方向性までお出しします。</span></p>
+      <p class="lede"><span class="br">まずは30分、</span><span class="br"><span class="sp">いまの採用状況を</span><span class="sp">うかがうところから。</span></span><span class="br"><span class="sp">合いそうかどうかを</span><span class="sp">一緒に確かめる場だと思ってください。</span></span></p>
       <p class="closing-cta"><a class="btn" href="#contact">相談を申し込む</a></p>
       <p class="btn-sub">新卒採用のみ対応しています。</p>
     </div>
   </section>
 </main>
 
+<div id="ask" role="dialog" aria-modal="true" aria-label="相談を申し込む">
+  <div class="am">
+    <button class="am-x" type="button" onclick="closeAsk()" aria-label="閉じる">&times;</button>
+    <div id="ask-slot"></div>
+  </div>
+</div>
+
 <div id="done" role="dialog" aria-modal="true" aria-labelledby="done-t">
   <div class="dm">
     <button class="dm-x" type="button" onclick="closeDone()" aria-label="閉じる">&times;</button>
     <div class="dm-t">送信ありがとうございます。</div>
-    <p class="dm-s" id="done-t">1営業日以内にご連絡いたします。お急ぎの場合は、そのまま日程をお選びいただけます。</p>
+    <p class="dm-s" id="done-t">1営業日以内に、担当よりご連絡します。</p>
+    <ol class="dm-steps">
+      <li><b>01</b><span><em>日程を決める</em>このまま候補日をお選びいただけます。</span></li>
+      <li><b>02</b><span><em>30分の打ち合わせ</em>お使いの媒体と募集ポジションをうかがいます。</span></li>
+      <li><b>03</b><span><em>ご提案</em>当てるターゲットと文面の方向性をお出しします。</span></li>
+    </ol>
     <a class="dm-spir" href="https://app.spirinc.com/t/H_vQ01vClf0LmLgUwmVWY/as/XMn5n8Z_s_rK6GUlabUGi/confirm" target="_blank" rel="noopener">日程を選んで予約する</a>
+    <button class="dm-close" type="button" onclick="closeDone()">閉じる</button>
   </div>
 </div>
 
@@ -578,7 +615,7 @@
     <div>
       <a href="https://www.worcry.com/" target="_blank" rel="noopener"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzM0IiBoZWlnaHQ9IjI2MiIgdmlld0JveD0iMCAwIDczNCAyNjIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xNDAuNjkgNzUuMjAyMkMxMzguMzY2IDc0Ljk0MiAxMzYuNDM3IDczLjE3ODMgMTM1LjkwMSA3MC44MjRDMTM1LjA3NiA2Ny4xOTk3IDEzNy44MTggNjMuODI4MyAxNDEuNDA3IDY0LjA1NDdMMTQzLjE0OSA2NC4xNjQ2QzE1NS40NjcgNjQuOTQxNyAxNjYuNzMgNzEuOTQxIDE3My4yNDcgODIuODY3OUwxNzMuODU2IDgzLjg4ODVDMTc1LjU4OCA4Ni43OTIzIDE3NC4zODIgOTAuNTU4MyAxNzEuMzM5IDkxLjc1MjZDMTY5LjA4NCA5Mi42MzczIDE2Ni41MDggOTEuODAzIDE2NS4xMDMgODkuNzMzM0wxNjMuNDg3IDg3LjM1MjRDMTU5LjAxMyA4MC43NjA5IDE1Mi4wMDUgNzYuNDY5MSAxNDQuMzA2IDc1LjYwNzJMMTQwLjY5IDc1LjIwMjJaIiBmaWxsPSIjNDZBN0UxIi8+CjxwYXRoIGQ9Ik0xNDkuMDA0IDYwLjc0MzFDMTQ2LjY4IDYwLjQ4MjkgMTQ0Ljc1MSA1OC43MTkyIDE0NC4yMTUgNTYuMzY0OUMxNDMuMzkxIDUyLjc0MDYgMTQ2LjEzMyA0OS4zNjkyIDE0OS43MjEgNDkuNTk1NkwxNTEuNDY0IDQ5LjcwNTVDMTYzLjc4MSA1MC40ODI2IDE3NS4wNDUgNTcuNDgxOSAxODEuNTYyIDY4LjQwODhMMTgyLjE3IDY5LjQyOTRDMTgzLjkwMiA3Mi4zMzMxIDE4Mi42OTcgNzYuMDk5MiAxNzkuNjUzIDc3LjI5MzVDMTc3LjM5OSA3OC4xNzgyIDE3NC44MjIgNzcuMzQzOSAxNzMuNDE3IDc1LjI3NDJMMTcxLjgwMiA3Mi44OTMyQzE2Ny4zMjggNjYuMzAxOCAxNjAuMzE5IDYyLjAxIDE1Mi42MjEgNjEuMTQ4TDE0OS4wMDQgNjAuNzQzMVoiIGZpbGw9IiM0NkE3RTEiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMC4zOTMyIDExNC4yNDVMNDAuODc5OCAxNjkuMzQzTDQwLjk0MzIgMTY5LjMwNUM0Ni43MTMgMTc5LjU5IDU5LjM2ODggMTgzLjA5NyA2OS4yNzQyIDE3Ny4xMjlDNzkuMjE2MSAxNzEuMTQgODIuNjIyNCAxNTcuODc1IDc2Ljg4MjUgMTQ3LjUwMUM3Ni41ODczIDE0Ni45NjggNzYuMjczNyAxNDYuNDUzIDc1Ljk0MyAxNDUuOTU2TDQ2LjQwMjMgOTIuNTY2OUM0Ni40MDAyIDkyLjU2MzIgNDYuMzk4MSA5Mi41NTk0IDQ2LjM5NiA5Mi41NTU3QzQ2LjM5NiA5Mi41NTU2IDQ2LjM5NiA5Mi41NTU2IDQ2LjM5NTkgOTIuNTU1NUM0MC42NTYgODIuMTgxNyAyNy45NDMzIDc4LjYyNzQgMTguMDAxNCA4NC42MTY3QzguMDU5NTEgOTAuNjA2IDQuNjUzMTYgMTAzLjg3MSAxMC4zOTMxIDExNC4yNDVDMTAuMzkzMiAxMTQuMjQ1IDEwLjM5MzIgMTE0LjI0NSAxMC4zOTMyIDExNC4yNDVaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyMy45NjIgOTIuNTE3NUwxMjMuOTYyIDkyLjUxNzZDMTI5LjcwMiA4Mi4xNDM5IDE0Mi40MTQgNzguNTg5NyAxNTIuMzU2IDg0LjU3OUMxNjIuMjk4IDkwLjU2ODMgMTY1LjcwNCAxMDMuODMzIDE1OS45NjUgMTE0LjIwN0wxNTkuOTMgMTE0LjI3TDEzMC40MTggMTY3LjYwNUMxMzAuMTcxIDE2OC4xNTMgMTI5LjkgMTY4LjY5NSAxMjkuNjA0IDE2OS4yMjlDMTI1LjUzMyAxNzYuNTg3IDExNy45NTMgMTgwLjUxNSAxMTAuMzQyIDE4MC4wMzhDMTAzLjEzOCAxODAuMDk5IDk2LjEwOTMgMTc2LjI0NSA5Mi4yMTU5IDE2OS4zMDVMOTIuMTUyNSAxNjkuMzQzTDYxLjY3MzYgMTE0LjI1OUw2MS42NjU4IDExNC4yNDVDNTUuOTI1OCAxMDMuODcxIDU5LjMzMjIgOTAuNjA2IDY5LjI3NDEgODQuNjE2N0M3OS4yMTYgNzguNjI3NCA5MS45Mjg2IDgyLjE4MTcgOTcuNjY4NiA5Mi41NTU1TDk3LjY2ODcgOTIuNTU1NkwxMTAuODA1IDExNi4yOTZMMTIzLjk2MiA5Mi41MTc1WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTIwOS43ODIgODMuNUwyMzQuOTA3IDE0OEwyNjEuMTU3IDc4LjgxMjVMMjg2LjI4MiAxNDhMMzEyLjk2OSA4My41SDMyOC43ODJMMjg1LjY1NyAxODYuMTI1TDI2MC44NDQgMTE3Ljc1TDIzNC45NjkgMTg2LjE4OEwxOTMuOTY5IDgzLjVIMjA5Ljc4MlpNMzI3LjIxOSAxNDkuMTI1QzMyNy4yMTkgMTQwLjMzMyAzMzAuMzY1IDEzMi44NTQgMzM2LjY1NyAxMjYuNjg4QzM0Mi45NDkgMTIwLjUyMSAzNTAuNjE1IDExNy40MzggMzU5LjY1NyAxMTcuNDM4QzM2OC43NCAxMTcuNDM4IDM3Ni40NDkgMTIwLjU0MiAzODIuNzgyIDEyNi43NUMzODkuMDMyIDEzMi45NTggMzkyLjE1NyAxNDAuNTgzIDM5Mi4xNTcgMTQ5LjYyNUMzOTIuMTU3IDE1OC43NSAzODkuMDExIDE2Ni4zOTYgMzgyLjcxOSAxNzIuNTYyQzM3Ni4zODYgMTc4LjY4OCAzNjguNjE1IDE4MS43NSAzNTkuNDA3IDE4MS43NUMzNTAuMjgyIDE4MS43NSAzNDIuNjM2IDE3OC42MjUgMzM2LjQ2OSAxNzIuMzc1QzMzMC4zMDMgMTY2LjIwOCAzMjcuMjE5IDE1OC40NTggMzI3LjIxOSAxNDkuMTI1Wk0zNDEuNTk0IDE0OS4zNzVDMzQxLjU5NCAxNTUuNDU4IDM0My4yMTkgMTYwLjI3MSAzNDYuNDY5IDE2My44MTJDMzQ5LjgwMyAxNjcuMzk2IDM1NC4xOTkgMTY5LjE4OCAzNTkuNjU3IDE2OS4xODhDMzY1LjE1NyAxNjkuMTg4IDM2OS41NTMgMTY3LjQxNyAzNzIuODQ0IDE2My44NzVDMzc2LjEzNiAxNjAuMzMzIDM3Ny43ODIgMTU1LjYwNCAzNzcuNzgyIDE0OS42ODhDMzc3Ljc4MiAxNDMuNzcxIDM3Ni4xMzYgMTM5LjA0MiAzNzIuODQ0IDEzNS41QzM2OS41MTEgMTMxLjkxNyAzNjUuMTE1IDEzMC4xMjUgMzU5LjY1NyAxMzAuMTI1QzM1NC4yODIgMTMwLjEyNSAzNDkuOTI4IDEzMS45MTcgMzQ2LjU5NCAxMzUuNUMzNDMuMjYxIDEzOS4wODMgMzQxLjU5NCAxNDMuNzA4IDM0MS41OTQgMTQ5LjM3NVpNNDA3LjA5NCAxMTkuMTI1SDQyMS4xNTdWMTI0LjU2M0M0MjMuNzQgMTIxLjg1NCA0MjYuMDMyIDEyMCA0MjguMDMyIDExOUM0MzAuMDc0IDExNy45NTggNDMyLjQ5IDExNy40MzggNDM1LjI4MiAxMTcuNDM4QzQzOC45OSAxMTcuNDM4IDQ0Mi44NjUgMTE4LjY0NiA0NDYuOTA3IDEyMS4wNjNMNDQwLjQ2OSAxMzMuOTM4QzQzNy44MDMgMTMyLjAyMSA0MzUuMTk5IDEzMS4wNjIgNDMyLjY1NyAxMzEuMDYyQzQyNC45OSAxMzEuMDYyIDQyMS4xNTcgMTM2Ljg1NCA0MjEuMTU3IDE0OC40MzhWMTgwSDQwNy4wOTRWMTE5LjEyNVpNNTI4Ljk2OSA4OC42ODc1VjEwNS45MzhDNTIwLjU1MyA5OC44OTU4IDUxMS44NDQgOTUuMzc1IDUwMi44NDQgOTUuMzc1QzQ5Mi45MjggOTUuMzc1IDQ4NC41NzQgOTguOTM3NSA0NzcuNzgyIDEwNi4wNjNDNDcwLjk0OSAxMTMuMTQ2IDQ2Ny41MzIgMTIxLjgxMyA0NjcuNTMyIDEzMi4wNjJDNDY3LjUzMiAxNDIuMTg4IDQ3MC45NDkgMTUwLjcyOSA0NzcuNzgyIDE1Ny42ODhDNDg0LjYxNSAxNjQuNjQ2IDQ5Mi45OSAxNjguMTI1IDUwMi45MDcgMTY4LjEyNUM1MDguMDMyIDE2OC4xMjUgNTEyLjM4NiAxNjcuMjkyIDUxNS45NjkgMTY1LjYyNUM1MTcuOTY5IDE2NC43OTIgNTIwLjAzMiAxNjMuNjY3IDUyMi4xNTcgMTYyLjI1QzUyNC4zMjQgMTYwLjgzMyA1MjYuNTk0IDE1OS4xMjUgNTI4Ljk2OSAxNTcuMTI1VjE3NC42ODhDNTIwLjYzNiAxNzkuMzk2IDUxMS44ODYgMTgxLjc1IDUwMi43MTkgMTgxLjc1QzQ4OC45MjggMTgxLjc1IDQ3Ny4xNTcgMTc2LjkzOCA0NjcuNDA3IDE2Ny4zMTJDNDU3LjY5OSAxNTcuNjA0IDQ1Mi44NDQgMTQ1Ljg5NiA0NTIuODQ0IDEzMi4xODhDNDUyLjg0NCAxMTkuODk2IDQ1Ni45MDcgMTA4LjkzOCA0NjUuMDMyIDk5LjMxMjVDNDc1LjAzMiA4Ny41MjA4IDQ4Ny45NjkgODEuNjI1IDUwMy44NDQgODEuNjI1QzUxMi41MTEgODEuNjI1IDUyMC44ODYgODMuOTc5MiA1MjguOTY5IDg4LjY4NzVaTTU0NC43MTkgMTE5LjEyNUg1NTguNzgyVjEyNC41NjNDNTYxLjM2NSAxMjEuODU0IDU2My42NTcgMTIwIDU2NS42NTcgMTE5QzU2Ny42OTkgMTE3Ljk1OCA1NzAuMTE1IDExNy40MzggNTcyLjkwNyAxMTcuNDM4QzU3Ni42MTUgMTE3LjQzOCA1ODAuNDkgMTE4LjY0NiA1ODQuNTMyIDEyMS4wNjNMNTc4LjA5NCAxMzMuOTM4QzU3NS40MjggMTMyLjAyMSA1NzIuODI0IDEzMS4wNjIgNTcwLjI4MiAxMzEuMDYyQzU2Mi42MTUgMTMxLjA2MiA1NTguNzgyIDEzNi44NTQgNTU4Ljc4MiAxNDguNDM4VjE4MEg1NDQuNzE5VjExOS4xMjVaTTYxNy40MDcgMTY4LjY4OEw1OTAuMDMyIDExOS4xMjVINjA2LjM0NEw2MjQuOTY5IDE1NC4xMjVMNjQyLjM0NCAxMTkuMTI1SDY1OC4yMTlMNjA5LjcxOSAyMTMuMTI1SDU5My42NTdMNjE3LjQwNyAxNjguNjg4WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==" alt="株式会社WorCry"></a>
       <p class="foot-name">株式会社WorCry（ワークライ）</p>
-      <p class="foot-addr">〒150-6139<br>東京都渋谷区渋谷2-24-12 渋谷スクランブルスクエア 39F</p>
+      <p class="foot-addr">〒150-6139<br class="pc-br"> 東京都渋谷区渋谷2-24-12 渋谷スクランブルスクエア 39F</p>
     </div>
     <nav class="foot-nav">
       <a href="https://www.worcry.com/contact" target="_blank" rel="noopener">CONTACT</a>
@@ -648,6 +685,29 @@
 (function(){
   var GAS_URL='https://script.google.com/macros/s/AKfycbzQ_aDz5yK8rmk0_zzZ4Kh-wTwplAm4ZTXhd0vk0zOXbjivkWjdPPC5Tv2KXYi3zdq_/exec';
   var f=document.getElementById('heroForm'), modal=document.getElementById('done');
+
+  /* スマホではフォームをモーダルへ移す（要素は1つのまま） */
+  var mq=matchMedia('(max-width:660px)');
+  var ask=document.getElementById('ask'), slot=document.getElementById('ask-slot');
+  var host=document.querySelector('.hero-form');
+  function place(){
+    if(mq.matches){ if(f.parentElement!==slot) slot.appendChild(f); }
+    else { if(f.parentElement!==host) host.insertBefore(f, host.firstChild); }
+  }
+  place();
+  mq.addEventListener('change',function(){ place(); closeAsk(); });
+  window.openAsk=function(){
+    if(!mq.matches) return false;
+    ask.classList.add('on'); document.body.style.overflow='hidden';
+    setTimeout(function(){ var i=f.querySelector('input[type=text]'); if(i) i.focus(); },80);
+    return true;
+  };
+  window.closeAsk=function(){ ask.classList.remove('on'); document.body.style.overflow=''; };
+  ask.addEventListener('click',function(e){ if(e.target===ask) closeAsk(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeAsk(); });
+  [].slice.call(document.querySelectorAll('a[href="#contact"]')).forEach(function(a){
+    a.addEventListener('click',function(e){ if(openAsk()) e.preventDefault(); });
+  });
   function openDone(){ modal.classList.add('on'); document.body.style.overflow='hidden'; }
   window.closeDone=function(){ modal.classList.remove('on'); document.body.style.overflow=''; };
   modal.addEventListener('click',function(e){ if(e.target===modal) closeDone(); });
@@ -656,7 +716,7 @@
     e.preventDefault();
     if(!f.checkValidity()){ f.reportValidity(); return; }
     fetch(GAS_URL,{method:'POST',mode:'no-cors',body:new URLSearchParams(new FormData(f))}).then(after).catch(after);
-    function after(){ try{ f.reset(); }catch(_){} openDone(); }
+    function after(){ try{ f.reset(); }catch(_){} closeAsk(); openDone(); }
   });
 })();
 </script>
