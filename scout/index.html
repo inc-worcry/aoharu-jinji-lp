@@ -67,6 +67,8 @@
   .kn{font-size:.82em;letter-spacing:.01em;display:inline}
   /* ここでだけ改行させる区切り */
   .br{display:inline-block}
+  /* スマホでだけ改行点になる区切り */
+  .sp{display:inline}
   h2.disp{font-size:clamp(1.625rem,3.2vw,2.375rem);margin-bottom:18px}
   .lede{margin:0;color:var(--ink-soft);max-width:33em}
   .eyebrow{
@@ -297,6 +299,7 @@
   }
   @media (max-width:660px){
     :root{--pad:22px;--sec:48px}
+    .sp{display:inline-block}
     /* 見出し：375px幅で1行あたりの文字数を確保する */
     .hero h1{font-size:1.9375rem}
     h2.disp{font-size:1.375rem}
@@ -363,7 +366,7 @@
       <div class="hero-txt">
         <p class="eyebrow">新卒ダイレクトリクルーティング戦略</p>
         <h1 class="disp" data-kn><span class="br">学生<span class="kn">が</span>、</span><span class="br">学生<span class="kn">のために</span></span><span class="br"><em>考<span class="kn">える</span></em>新卒採用。</span></h1>
-        <p class="lead"><span class="br">スカウトを受け取るのは学生なのに、</span><span class="br">戦略を立てているのは</span><span class="br">学生ではない人たちです。</span><span class="br">現役の大学生2名が主担当となり、</span><span class="br">御社の新卒ダイレクトリクルーティングを設計から運用まで回します。</span></p>
+        <p class="lead"><span class="br">スカウトを受け取るのは学生なのに、</span><span class="br"><span class="sp">戦略を立てているのは</span><span class="sp">学生ではない人たちです。</span></span><span class="br">現役の大学生2名が主担当となり、</span><span class="br">御社の新卒ダイレクトリクルーティングを設計から運用まで回します。</span></p>
       </div>
       <div class="hero-form" id="contact">
         <form id="heroForm" class="form" novalidate>
@@ -467,7 +470,7 @@
       <div class="w">
         <p class="eyebrow">Price</p>
         <h2 class="disp" data-kn><span class="br">月額98,000円<span class="kn">のみ</span>。</span><span class="br">成果報酬<span class="kn">も</span>、初期費用<span class="kn">もありません</span>。</span></h2>
-        <p class="lede"><span class="br">私たちが引き受けるのは、</span><span class="br">候補者が面接の席に着くまでです。</span><span class="br">誰に当てるかを決め、</span><span class="br">届く言葉で書き、</span><span class="br">返信を受け、日程を確定させ、</span><span class="br">当日そこに来てもらう。</span><span class="br">新卒採用でいちばん</span><span class="br">歩留まりの落ちる区間を、</span><span class="br">まるごと預かります。</span></p>
+        <p class="lede"><span class="br">私たちが引き受けるのは、</span><span class="br">候補者が面接の席に着くまでです。</span><span class="br">誰に当てるかを決め、</span><span class="br">届く言葉で書き、</span><span class="br">返信を受け、日程を確定させ、</span><span class="br">当日そこに来てもらう。</span><span class="br"><span class="sp">新卒採用でいちばん</span><span class="sp">歩留まりの落ちる区間を、</span></span><span class="br">まるごと預かります。</span></p>
         <div class="price"><b class="num">98,000</b><span>円 / 月（税抜）</span></div>
         <p class="price-note">最低契約期間なし・月次解約可。合わないと感じた月で止められます。</p>
       </div>
@@ -549,7 +552,7 @@
     <div class="w">
       <p class="eyebrow">Contact</p>
       <h2 class="disp" data-kn><span class="br"><span class="kn">まず</span>、御社<span class="kn">の</span>今<span class="kn">のスカウト</span>文<span class="kn">を</span></span><span class="br">学生<span class="kn">に</span>読<span class="kn">ませてみませんか</span>。</span></h2>
-      <p class="lede"><span class="br">現在お使いの媒体と</span><span class="br">募集ポジションをうかがえれば、</span><span class="br">初回の打ち合わせで当てるターゲットと文面の方向性までお出しします。</span></p>
+      <p class="lede"><span class="br"><span class="sp">現在お使いの媒体と</span><span class="sp">募集ポジションをうかがえれば、</span></span><span class="br">初回の打ち合わせで当てるターゲットと文面の方向性までお出しします。</span></p>
       <p class="closing-cta"><a class="btn" href="#contact">相談を申し込む</a></p>
       <p class="btn-sub">新卒採用のみ対応しています。中途採用のご相談はお受けしていません。</p>
     </div>
