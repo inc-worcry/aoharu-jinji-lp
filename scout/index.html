@@ -298,10 +298,24 @@
 
   .hero-btn{display:none}
 
-  #done{position:fixed;inset:0;background:rgba(20,24,29,.55);display:none;align-items:center;justify-content:center;padding:24px;z-index:60}
+  /* シートと同じ扱い。上端が画面外に出ないよう dvh 基準＋上余白を確保する */
+  #done{
+    position:fixed;inset:0;height:100vh;height:100dvh;
+    background:rgba(20,24,29,.55);display:none;align-items:center;justify-content:center;
+    padding:76px 22px calc(24px + env(safe-area-inset-bottom));z-index:60;
+  }
   #done.on{display:flex}
-  #done .dm{background:var(--surface);border-top:4px solid var(--sky);max-width:440px;width:100%;max-height:92vh;overflow-y:auto;padding:34px 30px 26px;position:relative;border-radius:var(--r)}
-  #done .dm-x{position:absolute;top:8px;right:10px;background:none;border:0;cursor:pointer;font-size:1.4rem;line-height:1;color:var(--mute);padding:6px}
+  #done .dm{background:var(--surface);border-top:4px solid var(--sky);max-width:440px;width:100%;max-height:100%;overflow-y:auto;padding:0 30px 26px;position:relative;border-radius:var(--r)}
+  #done .dm-head{
+    position:sticky;top:0;z-index:2;display:flex;justify-content:flex-end;
+    margin:0 -30px 0;padding:6px 8px 0;background:var(--surface);
+  }
+  #done .dm-x{
+    width:44px;height:44px;display:grid;place-items:center;border-radius:8px;
+    background:none;border:0;cursor:pointer;font-size:1.75rem;line-height:1;color:var(--ink-soft);padding:0;
+  }
+  #done .dm-x:hover{background:var(--ground);color:var(--ink)}
+  #done .dm-x:focus-visible{outline:2px solid var(--sky);outline-offset:2px}
   #done .dm-t{font-size:1.1875rem;font-weight:900;margin-bottom:9px}
   #done .dm-s{font-size:1rem;color:var(--ink-soft);margin:0 0 22px}
   #done .dm-spir{display:block;text-align:center;text-decoration:none;background:var(--sky);color:#FFFFFF;padding:14px;font-weight:700;font-size:1rem;border-radius:999px}
@@ -626,7 +640,7 @@
 
 <div id="done" role="dialog" aria-modal="true" aria-labelledby="done-t">
   <div class="dm">
-    <button class="dm-x" type="button" onclick="closeDone()" aria-label="閉じる">&times;</button>
+    <div class="dm-head"><button class="dm-x" type="button" onclick="closeDone()" aria-label="閉じる">&times;</button></div>
     <div class="dm-t">送信ありがとうございます。</div>
     <p class="dm-s" id="done-t">1営業日以内に、担当よりご連絡します。</p>
     <ol class="dm-steps">
