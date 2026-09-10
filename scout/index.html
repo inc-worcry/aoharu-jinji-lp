@@ -267,8 +267,20 @@
   #ask{position:fixed;inset:0;background:rgba(20,24,29,.55);display:none;align-items:flex-end;justify-content:center;z-index:70}
   #ask.on{display:flex}
   #ask .am{background:var(--surface);width:100%;max-height:92vh;overflow-y:auto;border-radius:14px 14px 0 0;position:relative}
-  #ask .am-x{position:absolute;top:6px;right:8px;background:none;border:0;cursor:pointer;font-size:1.6rem;line-height:1;color:var(--mute);padding:8px;z-index:1}
-  #ask .form{max-width:none;border-radius:0;padding:26px 22px 30px}
+  /* シート上部に固定する見出し。スクロールしても×が流れないようにする */
+  #ask .am-head{
+    position:sticky;top:0;z-index:2;display:flex;align-items:center;justify-content:space-between;
+    gap:12px;padding:10px 10px 10px 22px;background:var(--surface);border-bottom:1px solid var(--rule);
+  }
+  #ask .am-head b{font-size:1.0625rem;font-weight:900;letter-spacing:-.02em;font-feature-settings:"palt" 1}
+  #ask .am-x{
+    flex:none;width:44px;height:44px;display:grid;place-items:center;border-radius:8px;
+    background:none;border:0;cursor:pointer;font-size:1.75rem;line-height:1;color:var(--ink-soft);padding:0;
+  }
+  #ask .am-x:hover{background:var(--ground);color:var(--ink)}
+  #ask .am-x:focus-visible{outline:2px solid var(--sky);outline-offset:2px}
+  #ask .form-h{display:none}
+  #ask .form{max-width:none;border-radius:0;padding:20px 22px 30px}
 
   /* 送信後の流れ */
   .dm-steps{list-style:none;margin:22px 0 24px;padding:18px 0 0;border-top:1px solid var(--rule)}
@@ -599,7 +611,10 @@
 
 <div id="ask" role="dialog" aria-modal="true" aria-label="相談を申し込む">
   <div class="am">
-    <button class="am-x" type="button" onclick="closeAsk()" aria-label="閉じる">&times;</button>
+    <div class="am-head">
+      <b>相談を申し込む</b>
+      <button class="am-x" type="button" onclick="closeAsk()" aria-label="閉じる">&times;</button>
+    </div>
     <div id="ask-slot"></div>
   </div>
 </div>
